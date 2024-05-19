@@ -1,14 +1,33 @@
+import { Button } from "../../components/Button";
 import { Input } from "../../components/input";
-import { Container } from "./style";
+import { Container, Form } from "./style";
+import  Logo  from "../../assets/main.svg";
 
-export function SingIn(){
-    return(
+export function SingIn() {
+    return (
         <Container>
-            <Input 
-                nameInput="email"
-                label="Email"
-                placeholder="Exemplo: exemplo@exemplo.com.br"
-            />
+
+            <div>
+                <img src={Logo} />
+            </div>
+            <Form>
+                <Input
+                    nameInput="email"
+                    label="Email"
+                    placeholder="Exemplo: exemplo@exemplo.com.br"
+                />
+                 <Input
+                    nameInput="Senha"
+                    label="Senha"
+                    placeholder="No minimo 6 caracteres"
+                />
+
+                <Button 
+                    name="entrar"
+                />
+
+                <a href="">Ainda não tem uma conta?</a>
+            </Form>
         </Container>
     );
 }

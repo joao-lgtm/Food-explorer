@@ -18,10 +18,11 @@ export const Global = createGlobalStyle`
 
 
     }
-
-    body{
+    #root{
         width: 100vw;
         height: 100vh;
+    }
+    body{
         background-color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_400 : ThemeWhite.LIGHT_100};
         color: ${({ theme }) => theme.FONT_COLOR};
         transition: background-color 0.3s ease-in-out;
