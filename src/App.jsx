@@ -4,6 +4,7 @@ import { ThemeBlack, ThemeWhite } from './style/theme';
 import { Global } from './style/global';
 import { Home } from './page/Home';
 import { SingIn } from './page/SingIn';
+import { Routes } from './routes/index';
 
 export function App() {
     const { theme } = useTheme();
@@ -12,7 +13,7 @@ export function App() {
     return (
         <ThemeProvider theme={theme === true ? ThemeBlack : ThemeWhite}>
             <Global />
-            <SingIn/>
+            <Routes />
         </ThemeProvider>
     );
 }

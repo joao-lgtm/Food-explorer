@@ -1,9 +1,10 @@
 import { Button } from "../../components/Button";
-import { Input } from "../../components/input";
-import { Container, Form } from "./style";
+import { Input } from "../../components/Input";
+import { Container, CreateAccount, Form } from "./style";
 import  Logo  from "../../assets/main.svg";
 
 export function SingIn() {
+
     return (
         <Container>
 
@@ -26,7 +27,7 @@ export function SingIn() {
                     name="entrar"
                 />
 
-                <a href="">Ainda não tem uma conta?</a>
+                <CreateAccount to="/SingUp">Ainda não tem uma conta?</CreateAccount>
             </Form>
         </Container>
     );

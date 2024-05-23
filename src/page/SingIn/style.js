@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { DEVICE_BREAKPOINTS } from "../../style/deviceBreakPoint";
+import { Link }  from "react-router-dom";
+import { FONTS } from "../../style/fonts";
 
 export const Container = styled.div`
     
@@ -33,4 +35,16 @@ export const Form = styled.form`
      flex-direction: column;
      justify-content: center;
      gap: 2rem; 
+`;
+
+
+export const CreateAccount = styled(Link)`
+    font-family: ${FONTS.MEDIUM_100_POPPINS.FONTFAMILY};
+    font-weight: ${FONTS.MEDIUM_100_POPPINS.WEIGTH};
+    font-size: ${FONTS.MEDIUM_100_POPPINS.SIZE};
+    color: ${({theme}) => theme.LIGHT_100};
+
+    text-decoration: none;
+    text-align: center;
+    
 `;

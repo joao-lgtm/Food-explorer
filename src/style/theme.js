@@ -1,5 +1,4 @@
 const ThemeBlack = {
-  teste: 'teste',
   LIGHT_100:  'hsla(0, 0%, 100%, 1)',
   LIGHT_200:  'hsla(39, 100%, 97%, 1)',
   LIGHT_300:  'hsla(240, 9%, 89%, 1)',
@@ -24,7 +23,8 @@ const ThemeBlack = {
   CARROT_100: 'hsla(32, 96%, 64%, 1)',
   MINT_100:   'hsla(147, 96%, 42%, 1)',
   CAKE_100:   'hsla(186, 100%, 75%, 1)',
-  CAKE_200:   'hsla(195, 91%, 25%, 1)'
+  CAKE_200:   'hsla(195, 91%, 25%, 1)',
+  LINNEAR_GRADIANT_200: 'linear-gradient(95deg, rgba(9,30,38,1) 0%, rgba(0,19,28,1) 100%)'
 }
 
 const ThemeWhite = {
@@ -52,7 +52,8 @@ const ThemeWhite = {
   CARROT_100: 'hsla(32, 96%, 64%, 1)',
   MINT_100:   'hsla(147, 96%, 42%, 1)',
   CAKE_100:   'hsla(186, 100%, 75%, 1)',
-  CAKE_200:   'hsla(195, 91%, 25%, 1)'
+  CAKE_200:   'hsla(195, 91%, 25%, 1)',
+  LINNEAR_GRADIANT_200: 'linear-gradient(95deg, rgba(9,30,38,1) 0%, rgba(0,19,28,1) 100%)'
 }
 
 export { ThemeBlack, ThemeWhite }

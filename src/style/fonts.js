@@ -86,6 +86,12 @@ export const FONTS = {
         FONTFAMILY: "Roboto", 
         SIZE: '2.625rem',
         WEIGTH: 'bold'
-    }
+    },
+
+    REGULAR_ROBOTO:{
+        FONTFAMILY: "Roboto",
+        SIZE: '1.31rem',
+        WEIGTH: '400',
+    },
     
 }
