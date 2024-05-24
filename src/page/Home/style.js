@@ -30,13 +30,16 @@ export const Banner = styled.div`
     align-items: center;
     background: ${({ theme }) => theme.LINNEAR_GRADIANT_200};
 
-    >  img {
-        position: relative;
+      div:first-child {
         width: 11.93rem;
-        top: -0.9rem;
-        left: -1.875rem;
-    
-}
+        }
+
+        img{
+            position: relative;
+            width: 11.93rem;
+            top: -0.9rem;
+            left: -1.875rem;
+        }
 `;
 
 

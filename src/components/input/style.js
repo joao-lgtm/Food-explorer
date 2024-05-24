@@ -13,8 +13,12 @@ export const Container = styled.div`
         color: ${({theme}) => theme === ThemeBlack ? ThemeBlack.LIGHT_400 : ThemeWhite.LIGHT_400};
     }
     > div {
+        display: flex;
+        align-items: center;
+        gap:14px;
         background:  ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_900 : ThemeWhite.LIGHT_100};
         border-radius: 8px;
+        padding: 12px;
 
         > input {
             font-family: ${FONTS.SMALLREGULAR_ROBOTO.FONTFAMILY};
@@ -23,7 +27,6 @@ export const Container = styled.div`
             width: 100%;
             background: transparent;
             border: none;
-            padding: 16px;
             color: white;
             &::placeholder{
                 color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_500 : ThemeWhite.LIGHT_500};

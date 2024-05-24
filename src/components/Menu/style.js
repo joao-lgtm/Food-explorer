@@ -53,36 +53,31 @@ export const Header = styled.div`
     > img {
         width: 1.21rem;
     }
-    
-
 `
 
-export const ThemeSwicther = styled.div`
-    border: 2px solid red;
-    padding: 0.31rem;
-    border-radius: 0.625rem;
-    width: 4.5rem;
-    background-color: white;
-
-    > div {
-        background-image: url(${Sun}); 
-        background-repeat: no-repeat;
-        background-position: center;
-        width: 5px;
-        padding: 0.925rem;
-
-        border-radius: 50%;
-        transform: translateX(0%);
-        transition: transform 0.5s ease-in-out;
+export const Main = styled.main`
+    grid-area: content;
+    padding: 2.25rem 1.75rem 0.85rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.18rem;
 
 
-        &[data-theme-mode="true"]{
-            background-image: url(${moon}); 
-            background-repeat: no-repeat;
-            background-position: center;
-            transform: translateX(100%);
-            transition: transform 0.5s ease-in-out;
+    nav{
+        > ul {
+            list-style: none;
+            li {
+                margin-bottom: 0.65rem;
+                color: ${({ theme }) => theme.LIGHT_100};
+                font-family: ${FONTS.MEDIUM_500_POPPINS.FONTFAMILY};
+                font-weight: 200;
+                font-size: 1.5rem;
+
+                border-bottom: 1px solid ${({ theme }) => theme.DARK_1000};
+                padding-bottom: 0.65rem;
+            }
+            
         }
+
     }
 `;
-

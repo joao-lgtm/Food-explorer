@@ -4,7 +4,7 @@ import Hamburger from "../../assets/hamburger.svg";
 import { useEffect, useState } from "react";
 import { DEVICE_BREAKPOINTS } from "../../style/deviceBreakPoint";
 import { Menu } from '../Menu';
-import NotificationIcon from './../NotificationIcon/index';
+import { Receipt } from "../Receipt";
 
 export function Header() {
     const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -47,7 +47,7 @@ export function Header() {
                 onCloseMenu={() => setMenuIsOpen(false)}
             />
 
-            <NotificationIcon count={7} />
+            <Receipt count={7} />
 
         </Container>
     )

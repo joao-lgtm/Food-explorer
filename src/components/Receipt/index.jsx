@@ -1,10 +1,8 @@
-// src/NotificationIcon.js
 import React from 'react';
 import { Container } from './style';
-import { PiReceipt } from 'react-icons/pi';
 import recipt from '../../assets/Vector.svg'
 
-const NotificationIcon = ({ count }) => {
+export function Receipt ({ count }) {
     return (
         <Container>
             <img src={recipt} alt="" srcset="" />
@@ -12,5 +10,3 @@ const NotificationIcon = ({ count }) => {
         </Container>
     );
 };
-
-export default NotificationIcon;
