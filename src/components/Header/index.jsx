@@ -47,7 +47,7 @@ export function Header() {
                 onCloseMenu={() => setMenuIsOpen(false)}
             />
 
-            <Receipt count={7} />
+            <Receipt count={0} />
 
         </Container>
     )

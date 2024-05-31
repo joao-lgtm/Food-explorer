@@ -22,8 +22,8 @@ const ThemeBlack = {
   TOMATO_400: 'hsla(355, 38%, 49%, 1)',
   CARROT_100: 'hsla(32, 96%, 64%, 1)',
   MINT_100:   'hsla(147, 96%, 42%, 1)',
-  CAKE_100:   'hsla(186, 100%, 75%, 1)',
-  CAKE_200:   'hsla(195, 91%, 25%, 1)',
+  CAKE_100:   'hsla(195, 91%, 25%, 1)',
+  CAKE_200:   'hsla(186, 100%, 75%, 1)',
   LINNEAR_GRADIANT_200: 'linear-gradient(95deg, rgba(9,30,38,1) 0%, rgba(0,19,28,1) 100%)'
 }
 
@@ -51,8 +51,8 @@ const ThemeWhite = {
   TOMATO_400: 'hsla(355, 38%, 49%, 1)',
   CARROT_100: 'hsla(32, 96%, 64%, 1)',
   MINT_100:   'hsla(147, 96%, 42%, 1)',
-  CAKE_100:   'hsla(186, 100%, 75%, 1)',
-  CAKE_200:   'hsla(195, 91%, 25%, 1)',
+  CAKE_100:   'hsla(195, 91%, 25%, 1)',
+  CAKE_200:   'hsla(186, 100%, 75%, 1)',
   LINNEAR_GRADIANT_200: 'linear-gradient(95deg, rgba(9,30,38,1) 0%, rgba(0,19,28,1) 100%)'
 }
 

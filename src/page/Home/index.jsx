@@ -2,7 +2,7 @@ import { Banner, Container, Main, TextBanner } from "./style";
 import { Header } from './../../components/Header';
 import { Footer } from "../../components/Footer";
 import BannerImg from "../../assets/pngegg 2.svg"
-import { Card } from "../../components/Card";
+import { Carousel } from "../../components/Carousel";
 export function Home() {
     return (
         <Container>
@@ -18,8 +18,8 @@ export function Home() {
                     </TextBanner>
                 </Banner>
 
-
-                <Card />
+            <Carousel/>
+                
             </Main>
             <Footer />
         </Container>

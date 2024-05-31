@@ -26,7 +26,7 @@ export const Global = createGlobalStyle`
         background-color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_400 : ThemeWhite.LIGHT_100};
         color: ${({ theme }) => theme.FONT_COLOR};
         transition: background-color 0.3s ease-in-out;
-        -webkit-font-smoothing:antialiased;
+        -webkit-font-smoothing: antialiased;
     }
 `
 

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { ThemeBlack, ThemeWhite } from "../../style/theme";
 import { FONTS } from "../../style/fonts";
 
 export const Container = styled.button`
@@ -7,7 +6,14 @@ export const Container = styled.button`
     border: none;
     padding: 12px 0;
     border-radius: 6px;
+    cursor:pointer;
+    position: relative;
 
+
+    &:active{
+        opacity: 0.8;
+    }
+    
 
     > span {
         color: ${({ theme }) => theme.LIGHT_100};
