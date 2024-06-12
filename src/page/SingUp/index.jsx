@@ -20,6 +20,24 @@ export function SingUp() {
                     label="Email"
                     placeholder="Exemplo: exemplo@exemplo.com.br"
                 />
+                <div>
+                    <Input
+                        nameInput="address"
+                        label="Endereço"
+                    />
+                    <Input
+                        nameInput="neighborhood"
+                        label="Bairro"
+                    />
+                    <Input
+                        nameInput="number"
+                        label="Número"
+                    />
+                    <Input
+                        nameInput="zipcode"
+                        label="zipcode"
+                    />
+                </div>
                 <Input
                     nameInput="Senha"
                     label="Senha"
