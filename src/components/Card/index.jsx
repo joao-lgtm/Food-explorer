@@ -6,7 +6,7 @@ import { LuPlus } from "react-icons/lu";
 import { MdOutlineFavoriteBorder, MdOutlineFavorite } from "react-icons/md";
 import { useEffect, useState, useRef } from "react";
 
-export function Card({ name = "Salada Ravanello", price = "49,97",liked = false}) {
+export function Card({id, name , price ,liked = false}) {
     const [isOver, setIsOver] = useState(false);
     const [isLiked, setIsLiked] = useState(liked);
     const [count, setCount] = useState(1);
@@ -16,6 +16,12 @@ export function Card({ name = "Salada Ravanello", price = "49,97",liked = false}
     function Liked(isliked) {
         
         //api.update('/like')
+    }
+
+
+    function include(){
+        console.log(name, count,id)
+
     }
 
     useEffect(() => {
@@ -64,7 +70,7 @@ export function Card({ name = "Salada Ravanello", price = "49,97",liked = false}
                 {count}
                 <LuPlus onClick={() => ammount("sum")} cursor="pointer" size={18} />
             </Count>
-            <Button name="Incluir" />
+            <Button onClick={include} name="Incluir" />
         </Container>
     );
 }

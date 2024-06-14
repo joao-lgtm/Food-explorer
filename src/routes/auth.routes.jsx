@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { SingIn } from './../page/SingIn';
-import { SingUp } from './../page/SingUp/index';
+import { SingUp } from './../page/SingUp';
 
 export function AuthRoutes () {
     return(

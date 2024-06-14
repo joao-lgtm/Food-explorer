@@ -4,8 +4,6 @@ import { Link }  from "react-router-dom";
 import { FONTS } from "../../style/fonts";
 
 export const Container = styled.div`
-    
-
     @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
         display: flex;
         flex-direction: column;
@@ -46,5 +44,19 @@ export const AccountExists = styled(Link)`
 
     text-decoration: none;
     text-align: center;
-    
+`;
+
+
+export const Address = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    .addressAndZipcode{
+        width: 100%;
+    }
+
+    .neighborhoodAndNumber{
+        width: 46%;
+    }
 `;
