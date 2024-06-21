@@ -5,24 +5,20 @@ import { LuMinus } from "react-icons/lu";
 import { LuPlus } from "react-icons/lu";
 import { MdOutlineFavoriteBorder, MdOutlineFavorite } from "react-icons/md";
 import { useEffect, useState, useRef } from "react";
+import { useOrder } from "../../hooks/order";
 
 export function Card({id, name , price ,liked = false}) {
     const [isOver, setIsOver] = useState(false);
     const [isLiked, setIsLiked] = useState(liked);
-    const [count, setCount] = useState(1);
-
+    const [amount, setAmount] = useState(1);
     const favoriteRef = useRef(null);
+    const { handleOrder } = useOrder();
 
     function Liked(isliked) {
         
         //api.update('/like')
     }
 
-
-    function include(){
-        console.log(name, count,id)
-
-    }
 
     useEffect(() => {
         const handleMouseEnter = () => setIsOver(true);
@@ -38,11 +34,11 @@ export function Card({id, name , price ,liked = false}) {
         };
     }, []);
 
-    function ammount(action) {
+    function count(action) {
         if (action === "sum") {
-            setCount(count + 1);
-        } else if (action === "subtraction" && count > 1) {
-            setCount(count - 1);
+            setAmount(amount + 1);
+        } else if (action === "subtraction" && amount > 1) {
+            setAmount(amount - 1);
         }
     }
 
@@ -66,11 +62,11 @@ export function Card({id, name , price ,liked = false}) {
                 R$ {price}
             </Price>
             <Count>
-                <LuMinus onClick={() => ammount("subtraction")} cursor="pointer" size={18} />
-                {count}
-                <LuPlus onClick={() => ammount("sum")} cursor="pointer" size={18} />
+                <LuMinus onClick={() => count("subtraction")} cursor="pointer" size={18} />
+                {amount}
+                <LuPlus onClick={() => count("sum")} cursor="pointer" size={18} />
             </Count>
-            <Button onClick={include} name="Incluir" />
+            <Button onClick={() => handleOrder(id, amount ,price)} name="Incluir" />
         </Container>
     );
 }

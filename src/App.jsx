@@ -6,6 +6,7 @@ import { Routes } from './routes/index';
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthProvider } from './hooks/auth';
+import { OrderProvider } from './hooks/order';
 
 export function App() {
     const { theme } = useTheme();
@@ -25,7 +26,9 @@ export function App() {
                 transition:Bounce />
             <Global />
             <AuthProvider>
-                <Routes />
+                <OrderProvider>
+                    <Routes />
+                </OrderProvider>
             </AuthProvider>
         </ThemeProvider>
     );

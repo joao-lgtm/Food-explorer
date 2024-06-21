@@ -9,13 +9,13 @@ function ThemeSwitchProvider({ children }) {
         
         setTheme(prevState => {
             const newTheme = !prevState;
-            localStorage.setItem("@pokedex:theme" , JSON.stringify(newTheme))
+            localStorage.setItem("@theme:theme" , JSON.stringify(newTheme))
             return newTheme;
         });
     };
 
     useEffect(() => {
-        const localtheme = localStorage.getItem("@pokedex:theme");
+        const localtheme = localStorage.getItem("@theme:theme");
         if (localtheme) {
             setTheme(JSON.parse(localtheme))
         }

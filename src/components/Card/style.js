@@ -33,11 +33,16 @@ export const Presentation = styled.div`
     display: flex;
     flex-direction: column;
     gap: 12px;
+    align-items: center;
     
     font-family: ${FONTS.MEDIUM_100_POPPINS.FONTFAMILY};
     font-size: ${FONTS.MEDIUM_100_POPPINS.SIZE};
     font-weight: ${FONTS.MEDIUM_100_POPPINS.WEIGTH};
     line-height: ${FONTS.MEDIUM_100_POPPINS.LINEHEIGHT};
+
+    > img {
+        width: 5.5rem;
+    }
 `;
 
 export const Price = styled.div`

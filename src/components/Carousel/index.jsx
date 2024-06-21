@@ -1,45 +1,21 @@
+import { useEffect, useState } from "react";
 import { Card } from "../Card";
 import { Container, ContainerCarousel } from "./style";
+import { api } from "../../services/api";
 
 export function Carousel({ title = "refeição" }) {
+    const [dishes, setDishes] = useState();
+    const [dishesName, setDishesName] = useState("");
+    const [ingredientsName, setIngredientsName] = useState("");
 
-    const pratos_principais = [    {
-        id: 1,
-        name: "salada Ravnelio",
-        price: "47.40",
-        liked: true
-    },
-    {
-        id: 2,
-        name: "salada Alface",
-        price: "47.40",
-        liked: true
-    },
-    {
-        id: 3,
-        name: "salada Cebola",
-        price: "47.40",
-        liked: true
-    },
-    {
-        id: 4,
-        name: "salada de Rabanete",
-        price: "47.40",
-        liked: true
-    },
-    {
-        id: 5,
-        name: "salada Cenoura",
-        price: "47.40",
-        liked: true
-    },
-    {
-        id: 6,
-        name: "salada de beterraba",
-        price: "47.40",
-        liked: true
-    }]
+    useEffect(() => {
+        async function handleDishes() {
+            const response = await api.get(`/dishes?dishes_name=${dishesName}&ingredients_name=${ingredientsName}`, { withCredentials: true });
+            setDishes(response.data);
+        }
 
+        handleDishes()
+    }, [])
 
 
     return (
@@ -48,7 +24,7 @@ export function Carousel({ title = "refeição" }) {
                 <h2>{title}</h2>
             </div>
             <ContainerCarousel>
-                {pratos_principais.map((pratos, index) => (
+                {dishes && dishes.map((pratos, index) => (
                     <Card key={index} id={pratos.id} name={pratos.name} liked={pratos.liked} price={pratos.price} />
                 ))}
             </ContainerCarousel>
