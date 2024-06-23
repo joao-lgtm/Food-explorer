@@ -8,6 +8,7 @@ import {
 const AuthContext = createContext({});
 
 import { api } from "../services/api";
+import { toast } from 'react-toastify';
 
 function AuthProvider({ children }) {
   const [data, setData] = useState({});
@@ -20,13 +21,9 @@ function AuthProvider({ children }) {
       localStorage.setItem("@food:user", JSON.stringify(user));
 
       setData({ user });
-
+      
     } catch (error) {
-      if (error.response) {
-        alert(error.response.data.message);
-      } else {
-        alert("Não foi possível entrar.");
-      }
+        toast.error("Não encontrado");
     }
   };
 

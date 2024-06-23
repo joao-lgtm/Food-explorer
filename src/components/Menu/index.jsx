@@ -1,8 +1,9 @@
 import { Footer } from "../Footer";
 import { Container, Header, Main } from "./style";
 import Close from "../../assets/Close.svg"
-import { Input } from './../Input';
+
 import { CiSearch } from "react-icons/ci";
+import { Input } from "../Input";
 
 
 export function Menu({ menuIsOpen, onCloseMenu }) {

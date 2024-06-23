@@ -8,6 +8,7 @@ function OrderProvider({ children }) {
     const [order, setOrder] = useState(null);
     const [count, setCount] = useState(0); // Inicialize com 0 ou qualquer valor padrão
     const { user } = useAuth();
+    const [orderObservetion, setOrderObservetion] = useState(false);
 
     async function handleOrder(id, amount, price) {
         try {
@@ -16,11 +17,26 @@ function OrderProvider({ children }) {
                 quantity: amount,
                 price: price
             }, { withCredentials: true });
+            setOrderObservetion(!orderObservetion);
         } catch (error) {
             console.error("Erro ao criar pedido", error);
         }
     }
-
+    useEffect(() => {
+        async function getOrder() {
+            try {
+                const response = await api.get('/salesOrder', { withCredentials: true });
+                const data = response.data;
+    
+                localStorage.setItem("@food:order", JSON.stringify(data));
+                setOrder(data);
+            } catch (error) {
+                console.error("Erro ao buscar o pedido:", error);
+            }
+        }
+    
+        getOrder();
+    }, []);
 
 useEffect(() => {
     async function getOrder() {
@@ -36,7 +52,7 @@ useEffect(() => {
     }
 
     getOrder();
-}, []);
+}, [orderObservetion]);
 
 useEffect(() => {
     const data = localStorage.getItem("@food:order");
