@@ -8,8 +8,10 @@ export const Container = styled.button`
     border-radius: 6px;
     cursor:pointer;
     position: relative;
-
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5.43px;
     &:active{
         opacity: 0.8;
     }

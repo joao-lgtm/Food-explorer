@@ -1,11 +1,11 @@
-import { Container, Count, Favorite, Presentation, Price } from "./style";
+import { Container, Favorite, Presentation, Price } from "./style";
 import { Button } from './../Button';
+import { Count } from '../../components/Count';
 import Dish from "../../assets/Dish.svg";
-import { LuMinus } from "react-icons/lu";
-import { LuPlus } from "react-icons/lu";
 import { MdOutlineFavoriteBorder, MdOutlineFavorite } from "react-icons/md";
 import { useEffect, useState, useRef } from "react";
 import { useOrder } from "../../hooks/order";
+import { useNavigate } from "react-router-dom";
 
 export function Card({id, name , price ,liked = false}) {
     const [isOver, setIsOver] = useState(false);
@@ -13,6 +13,7 @@ export function Card({id, name , price ,liked = false}) {
     const [amount, setAmount] = useState(1);
     const favoriteRef = useRef(null);
     const { handleOrder } = useOrder();
+    const navigation = useNavigate();
 
     function Liked(isliked) {
         
@@ -34,14 +35,9 @@ export function Card({id, name , price ,liked = false}) {
         };
     }, []);
 
-    function count(action) {
-        if (action === "sum") {
-            setAmount(amount + 1);
-        } else if (action === "subtraction" && amount > 1) {
-            setAmount(amount - 1);
-        }
+    function singleDisher(id) {
+        navigation(`/disher/${id}`)
     }
-
     return (
         <Container>
             <Favorite
@@ -53,7 +49,7 @@ export function Card({id, name , price ,liked = false}) {
                     : <MdOutlineFavoriteBorder cursor="pointer" color="white" size={24} />
                 }
             </Favorite>
-            <Presentation>
+            <Presentation  onClick={() => singleDisher(id)}>
                 <img src={Dish} alt="" />
                 {name}
             </Presentation>
@@ -61,11 +57,7 @@ export function Card({id, name , price ,liked = false}) {
             <Price>
                 R$ {price}
             </Price>
-            <Count>
-                <LuMinus onClick={() => count("subtraction")} cursor="pointer" size={18} />
-                {amount}
-                <LuPlus onClick={() => count("sum")} cursor="pointer" size={18} />
-            </Count>
+            <Count setAmount={setAmount} amount={amount} size={18}/>
             <Button onClick={() => handleOrder(id, amount ,price)} name="Incluir" />
         </Container>
     );

@@ -1,41 +1,32 @@
-import { useEffect, useState } from "react";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
-import { Container, Main } from "./style";
-import { api } from "../../services/api";
-import { useParams } from "react-router-dom";
+import { Back, Container, Main} from "./style";
+import { useNavigate, useParams } from "react-router-dom";
+import { Button } from "../../components/Button";
+import { IoIosArrowBack } from "react-icons/io";
+import { Order } from "../../components/Order";
 
 export function MyOrder() {
     const { id } = useParams();
-    const [order, setOrder] = useState(null);
 
-    useEffect(() => {
-        async function handleOrder() {
-            const response = await api.get(`salesOrder/${id}`, { withCredentials: true });
-            setOrder(response.data);
-        }
-        handleOrder();
-    }, [id]);
+    const navigate = useNavigate();
 
-    function handleImg(img) {
-        return `${api.defaults.baseURL}/files/${img}`;
+    function handleBack() {
+        navigate(-1);
     }
 
     return (
         <Container>
             <Header />
             <Main>
-                <div>
-                    <h1>Meu pedido</h1>
-                    <div>
-                        {order && order.details.map((details, index) => (
-                            <div key={index}>
-                                <img src={handleImg(details.img)} alt={details.description} />
-                                <h2>{details.description}</h2>
-                            </div>
-                        ))}
-                    </div>
-                    <div>Total: R$ {order && order.price}</div>
+                <Back onClick={handleBack}>
+                    <IoIosArrowBack size={20} /> <span>voltar</span>
+                </Back>
+
+                <Order id={id}/>
+
+                <div className="Advanced">
+                    <Button name="Avançar" />
                 </div>
             </Main>
             <Footer />

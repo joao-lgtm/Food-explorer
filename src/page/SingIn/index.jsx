@@ -26,12 +26,17 @@ export function SingIn() {
                     label="Email"
                     placeholder="Exemplo: exemplo@exemplo.com.br"
                     onChange={e => setEmail(e.target.value)}
+                    type="email"
+                    required
+                    
                 />
                  <Input
                     nameInput="Senha"
                     label="Senha"
                     placeholder="No minimo 6 caracteres"
                     onChange={e => setPassword(e.target.value)}
+                    type="password"
+                    required
                 />
 
                 <Button 

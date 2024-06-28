@@ -34,6 +34,8 @@ export const Presentation = styled.div`
     flex-direction: column;
     gap: 12px;
     align-items: center;
+
+    cursor: pointer;
     
     font-family: ${FONTS.MEDIUM_100_POPPINS.FONTFAMILY};
     font-size: ${FONTS.MEDIUM_100_POPPINS.SIZE};
@@ -53,16 +55,3 @@ export const Price = styled.div`
 
     color: ${({theme}) => theme.CAKE_200};
 `;
-
-export const Count = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap:16px;
-
-    font-family: ${FONTS.SMALLREGULAR_ROBOTO.FONTFAMILY};
-    font-size: ${FONTS.SMALLREGULAR_ROBOTO.SIZE};
-    font-weight: ${FONTS.SMALLREGULAR_ROBOTO.SIZE};
-    line-height: ${FONTS.SMALLREGULAR_ROBOTO.SIZE};
-`;
-

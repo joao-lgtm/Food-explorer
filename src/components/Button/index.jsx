@@ -1,9 +1,9 @@
 import { Container } from "./style";
 
-export function Button ({name, ...rest}) {
-    return(
+export function Button({ name, icon: Icon, ...rest }) {
+    return (
         <Container type="button" {...rest}>
-            <span>{name}</span>
+            {Icon && <Icon size={24} color="white" />} <span>{name}</span>
         </Container>
     );
 }

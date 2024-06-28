@@ -4,9 +4,11 @@ import Close from "../../assets/Close.svg"
 
 import { CiSearch } from "react-icons/ci";
 import { Input } from "../Input";
+import { useAuth } from "../../hooks/auth";
 
 
 export function Menu({ menuIsOpen, onCloseMenu }) {
+    const { signOut } = useAuth();
     return (
         <Container data-menu-is-open={menuIsOpen}>
             <Header>
@@ -19,7 +21,7 @@ export function Menu({ menuIsOpen, onCloseMenu }) {
                 <nav>
                     <ul>
                         <li>Meus favoritos</li>
-                        <li>Sair</li>
+                        <li onClick={() => signOut()}>Sair</li>
                     </ul>
                 </nav>
             </Main>

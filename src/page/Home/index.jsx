@@ -18,8 +18,8 @@ export function Home() {
                     </TextBanner>
                 </Banner>
 
-            <Carousel/>
-                
+                <Carousel />
+
             </Main>
             <Footer />
         </Container>

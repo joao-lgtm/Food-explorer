@@ -3,13 +3,15 @@ import { useTheme } from './hooks/ThemeSwitcher';
 import { ThemeBlack, ThemeWhite } from './style/theme';
 import { Global } from './style/global';
 import { Routes } from './routes/index';
-import { ToastContainer } from 'react-toastify'
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthProvider } from './hooks/auth';
 import { OrderProvider } from './hooks/order';
+import { BrowserRouter } from 'react-router-dom';
 
 export function App() {
     const { theme } = useTheme();
+
     return (
         <ThemeProvider theme={theme === true ? ThemeBlack : ThemeWhite}>
             <ToastContainer
@@ -27,7 +29,9 @@ export function App() {
             <Global />
             <AuthProvider>
                 <OrderProvider>
-                    <Routes />
+                    <BrowserRouter>
+                        <Routes />
+                    </BrowserRouter>
                 </OrderProvider>
             </AuthProvider>
         </ThemeProvider>
