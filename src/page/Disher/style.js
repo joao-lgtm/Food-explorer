@@ -28,7 +28,8 @@ export const Main = styled.div`
 
 export const Back = styled.div`
     display: flex;
-    margin-bottom: 15px;
+    margin-top: 2.25rem;
+    margin-bottom: 1rem;
     align-items: center;
 
     > span {

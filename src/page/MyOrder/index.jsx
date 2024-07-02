@@ -1,6 +1,6 @@
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
-import { Back, Container, Main} from "./style";
+import { Back, Container, Main } from "./style";
 import { useNavigate, useParams } from "react-router-dom";
 import { Button } from "../../components/Button";
 import { IoIosArrowBack } from "react-icons/io";
@@ -23,8 +23,8 @@ export function MyOrder() {
                     <IoIosArrowBack size={20} /> <span>voltar</span>
                 </Back>
 
-                <Order id={id}/>
-
+                <Order id={id} />
+                
                 <div className="Advanced">
                     <Button name="Avançar" />
                 </div>

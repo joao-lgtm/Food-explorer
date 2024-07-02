@@ -6,7 +6,7 @@ import { DEVICE_BREAKPOINTS } from "../../style/deviceBreakPoint";
 import { Menu } from '../Menu';
 import { Receipt } from "../Receipt";
 
-export function Header() {
+export function Header({ setDisherIngredients }) {
     const [menuIsOpen, setMenuIsOpen] = useState(false);
 
     const [windowSize, setWindowSize] = useState({
@@ -38,11 +38,12 @@ export function Header() {
     return (
         <Container>
             <div onClick={() => setMenuIsOpen(true)}>
-                <img src={Hamburger} alt=""/>
+                <img src={Hamburger} alt="" />
             </div>
             <img src={Logo} alt="" />
 
             <Menu
+                setDisherIngredients={setDisherIngredients}
                 menuIsOpen={menuIsOpen}
                 onCloseMenu={() => setMenuIsOpen(false)}
             />

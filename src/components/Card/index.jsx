@@ -6,8 +6,9 @@ import { MdOutlineFavoriteBorder, MdOutlineFavorite } from "react-icons/md";
 import { useEffect, useState, useRef } from "react";
 import { useOrder } from "../../hooks/order";
 import { useNavigate } from "react-router-dom";
+import { api } from "../../services/api";
 
-export function Card({id, name , price ,liked = false}) {
+export function Card({id, img,  name , price ,liked = false}) {
     const [isOver, setIsOver] = useState(false);
     const [isLiked, setIsLiked] = useState(liked);
     const [amount, setAmount] = useState(1);
@@ -20,6 +21,7 @@ export function Card({id, name , price ,liked = false}) {
         //api.update('/like')
     }
 
+    const disherImg = img ? `${api.defaults.baseURL}/files/${img}` : null;
 
     useEffect(() => {
         const handleMouseEnter = () => setIsOver(true);
@@ -50,7 +52,7 @@ export function Card({id, name , price ,liked = false}) {
                 }
             </Favorite>
             <Presentation  onClick={() => singleDisher(id)}>
-                <img src={Dish} alt="" />
+                <img src={disherImg} alt="" />
                 {name}
             </Presentation>
 
