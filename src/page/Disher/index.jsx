@@ -18,7 +18,7 @@ export function DisherPage() {
             <Header />
             <Main>
                 <Back onClick={handleBack}>
-                    <IoIosArrowBack size={20} /> <span>voltar</span>
+                    <IoIosArrowBack size={20} /> <span>Voltar</span>
                 </Back>
                 <Disher id={id}/>
             </Main>

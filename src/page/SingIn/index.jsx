@@ -33,10 +33,11 @@ export function SingIn() {
                  <Input
                     nameInput="Senha"
                     label="Senha"
-                    placeholder="No minimo 6 caracteres"
+                    placeholder="senha"
                     onChange={e => setPassword(e.target.value)}
                     type="password"
                     required
+                    
                 />
 
                 <Button 

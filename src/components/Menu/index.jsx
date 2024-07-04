@@ -5,14 +5,17 @@ import { VscClose } from "react-icons/vsc";
 import { CiSearch } from "react-icons/ci";
 import { Input } from "../Input";
 import { useAuth } from "../../hooks/auth";
+import { useNavigate } from "react-router-dom";
 
 
-export function Menu({ menuIsOpen, onCloseMenu,setDisherIngredients }) {
+export function Menu({ menuIsOpen, onCloseMenu, setDisherIngredients }) {
     const { signOut } = useAuth();
+
+    const navigation = useNavigate();
     return (
         <Container data-menu-is-open={menuIsOpen}>
             <Header>
-                <VscClose onClick={onCloseMenu} size={24}/>
+                <VscClose onClick={onCloseMenu} size={24} />
                 <span>Menu</span>
             </Header>
             <Main>
@@ -20,6 +23,7 @@ export function Menu({ menuIsOpen, onCloseMenu,setDisherIngredients }) {
 
                 <nav>
                     <ul>
+                        <li onClick={() => navigation('/salesOrder')}>Meus Pedidos</li>
                         <li>Meus favoritos</li>
                         <li onClick={() => signOut()}>Sair</li>
                     </ul>

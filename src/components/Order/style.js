@@ -36,7 +36,7 @@ export const Dishes = styled.div`
 
     > div span {
         font-family: ${FONTS.MEDIUM_200_POPPINS.FONTFAMILY};
-        font-size: 12px;
+        font-size: 0.75rem;
         font-weight: ${FONTS.MEDIUM_200_POPPINS.WEIGTH};
         line-height: ${FONTS.MEDIUM_200_POPPINS.LINEHEIGHT};
         text-align: center;
@@ -63,7 +63,7 @@ export const Count = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    gap:16px;
+    gap:1rem;
 
     font-family: ${FONTS.SMALLREGULAR_ROBOTO.FONTFAMILY};
     font-size: ${FONTS.SMALLREGULAR_ROBOTO.SIZE};

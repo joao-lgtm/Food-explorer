@@ -1,4 +1,4 @@
-import { Container } from "./style";
+import { Container,InputMask } from "./style";
 
 export function Input ({nameInput,label,placeholder, icon: Icon, ...rest}){
     return(
@@ -6,7 +6,7 @@ export function Input ({nameInput,label,placeholder, icon: Icon, ...rest}){
             {label && <label htmlFor={nameInput}>{label}</label>}
             <div >
                 {Icon && <Icon size={24} color="white"/>}
-                <input {...rest} id={nameInput} placeholder={placeholder}/>
+                <InputMask {...rest} id={nameInput} placeholder={placeholder}/>
             </div>
         </Container>
     )

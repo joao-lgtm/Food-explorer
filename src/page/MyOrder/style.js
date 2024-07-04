@@ -28,9 +28,7 @@ export const Main = styled.main`
     justify-content: space-between;
     
     width: 100%;
-    padding: 3.5rem 2.3125rem;
-   
-    
+
     span {
         font-family: ${FONTS.MEDIUM_200_POPPINS.FONTFAMILY};
         font-size: ${FONTS.MEDIUM_200_POPPINS.SIZE};
@@ -41,18 +39,20 @@ export const Main = styled.main`
     .Advanced {
         display: flex;
         justify-content: flex-end;
-
+        padding-top: 1.863rem;
         > button {
         width: 13.5rem;
         }
     }
+`;
 
-    
+export const Detail = styled.div`
+    padding: 3.5rem 2.3125rem;
 `;
 
 export const Back = styled.div`
     display: flex;
-    margin-bottom: 15px;
+    margin-bottom: 0.938rem;
     align-items: center;
    
 `;

@@ -6,16 +6,16 @@ export const Container = styled.div`
     background: ${({theme}) => theme.DARK_200};
 
     border: 1px solid ${({theme}) => theme.DARK_300};
-    border-radius: 8px;
+    border-radius: 0.5rem;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap:12px;
+    gap: 0.75rem;
 
     width: 18.18rem;
-    padding: 24px;
-    color: white;
+    padding: 1.5rem;
+    color: ${({theme}) => theme.LIGHT_100};
 
     > button {
         width: 100%;
@@ -24,15 +24,15 @@ export const Container = styled.div`
 
 export const Favorite = styled.div`
     position: absolute;
-    top: 16px;
-    right: 16px;
+    top: 1rem;
+    right: 1rem;
     
 `;
 
 export const Presentation = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 0.75rem;
     align-items: center;
 
     cursor: pointer;

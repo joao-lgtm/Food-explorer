@@ -5,7 +5,6 @@ import BannerImg from "../../assets/pngegg 2.svg"
 import { Carousel } from "../../components/Carousel";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
-import { PaymentMethod } from "../../components/Payment";
 
 export function Home() {
     const [dishes, setDishes] = useState();
@@ -37,10 +36,6 @@ export function Home() {
                 {dishes && dishes.map(disher => (
                     <Carousel key={disher.key} title={disher.key} disher={disher.value}/>
                 ))}
-
-
-
-                <PaymentMethod/>
             </Main>
             <Footer />
         </Container>

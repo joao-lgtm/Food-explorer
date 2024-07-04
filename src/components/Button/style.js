@@ -4,14 +4,14 @@ import { FONTS } from "../../style/fonts";
 export const Container = styled.button`
     background-color:  ${({ theme }) => theme.TOMATO_100};
     border: none;
-    padding: 12px 0;
-    border-radius: 6px;
+    padding: 0.75rem 0;
+    border-radius: 0.375rem;
     cursor:pointer;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5.43px;
+    gap: 0.339rem;
     &:active{
         opacity: 0.8;
     }

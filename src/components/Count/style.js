@@ -5,7 +5,7 @@ export const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    gap:16px;
+    gap:1rem;
     color: white;
 
     font-family: ${FONTS.SMALLREGULAR_ROBOTO.FONTFAMILY};

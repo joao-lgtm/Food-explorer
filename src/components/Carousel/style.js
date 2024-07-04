@@ -19,7 +19,7 @@ export const ContainerCarousel = styled.div`
     max-width: 100%;
     overflow-x: auto;
     display: inline-flex;
-    gap: 16px;
+    gap: 1rem;
 
 
     > * {

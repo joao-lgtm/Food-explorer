@@ -1,0 +1,116 @@
+import styled from "styled-components";
+import { FONTS } from "../../style/fonts";
+import { DEVICE_BREAKPOINTS } from "../../style/deviceBreakPoint";
+
+
+export const Container = styled.div`
+    @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+        display: none;
+
+
+        &[data-paymentobservetion="true"]{
+           display: block;
+           position: absolute;
+           background-color: ${({ theme }) => theme.DARK_400};
+           color: white;
+           width: 100%;
+           height: 100%;
+           padding: 0 0.625rem;
+        }
+    }
+
+    h2{
+        margin: 3.5rem 0 2rem 0;
+        font-family: ${FONTS.MEDIUM_400_POPPINS.FONTFAMILY};
+        font-size: ${FONTS.MEDIUM_400_POPPINS.SIZE};
+        font-weight: ${FONTS.MEDIUM_400_POPPINS.WEIGTH};
+        line-height: ${FONTS.MEDIUM_400_POPPINS.LINEHEIGHT};
+    }
+
+    span {
+        font-family: ${FONTS.SMALLREGULAR_ROBOTO.FONTFAMILY};
+        font-size: ${FONTS.SMALLREGULAR_ROBOTO.SIZE};
+        font-weight: ${FONTS.SMALLREGULAR_ROBOTO.WEIGTH};
+        line-height: ${FONTS.SMALLREGULAR_ROBOTO.LINEHEIGHT};
+        color: ${({ theme }) => theme.LIGHT_100}
+    }
+
+    img{
+        padding: 25px;
+        
+    }
+`;
+
+export const PaymentContainer = styled.div`
+    border: 1px solid ${({ theme }) => theme.LIGHT_600};
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0.5rem;
+    
+
+    .conclude {
+        display: flex;
+        justify-content: center;
+        padding: 15px;
+        width: 100%;
+        
+    }
+
+    .conclude button{
+        width: 100%;
+        padding: 15px;
+    }
+ `;
+
+export const PaymentMedthod = styled.div`
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 0.938rem;
+
+    div:first-child {
+        border-right: 1px solid ${({ theme }) => theme.LIGHT_600};
+    }
+
+    > div {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.875rem;
+        padding: 0.625rem 0;
+        border-bottom: 1px solid ${({ theme }) => theme.LIGHT_600};
+        cursor: pointer;
+
+        
+        &[data-payment="pix"]{
+            background-color: ${({ theme }) => theme.DARK_800};
+            border-top-left-radius: 0.438rem;
+        }
+        &[data-payment="credito"]{
+            background-color: ${({ theme }) => theme.DARK_800};
+            border-top-right-radius: 0.438rem;
+        }
+    }
+`;
+
+
+export const InfoCard = styled.form`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+    padding: 15px;
+    margin-top: 25px;
+
+    .card_number{
+        width: 100%;
+    }
+
+    .expiry_cvc{
+        display: flex;
+        gap: 25px;
+        width: 100%;
+    }
+`;

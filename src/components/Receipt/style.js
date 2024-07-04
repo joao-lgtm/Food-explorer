@@ -9,12 +9,12 @@ export const Container = styled.div`
     
     .notification-count {
       position: absolute;
-      top: -12px;
-      right: -10px;
+      top: -0.75rem;
+      right: -0.625rem;
       background-color: #b71c1c;
-      color: white;
-      width: 20px;
-      height: 20px;
+      color: ${({theme}) => theme.LIGHT_100};
+      width: 1.25rem;
+      height: 1.25rem;
       display: flex;
       align-items: center;
       justify-content: center;

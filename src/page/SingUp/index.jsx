@@ -42,28 +42,27 @@ export function SingUp() {
     }
 
     async function handleSignUP() {
-        await api.post("/users", {
-            name,
-            email,
-            password,
-            street,
-            neighborhood,
-            number,
-            city,
-            uf,
-            zipcode
-        }).then(() => {
-            toast.success("Usuario criado com sucesso!");
-            navigate('/');
-        }).catch(err => {
-            if (err.response) {
-                toast.error(err.response.data.message);
-            } else {
-                toast.error("não foi possivel cadastrar o usuario")
-            }
-        });
+        if (password.length < 6) {
+            toast.error("Sua senha precisa ter no mínimo 7 caracteres");
+            return;
+        }
+        try {
+            await api.post("/users", {
+                name,
+                email,
+                password,
+                street,
+                neighborhood,
+                number,
+                city,
+                uf,
+                zipcode
+            });
+            toast.success("Usuário criado com sucesso!");
+        } catch (error) {
+            toast.error("Usuário já existe ou houve um problema na criação");
+        }
     }
-
     return (
         <Container>
             <div>
@@ -149,12 +148,12 @@ export function SingUp() {
                             required
                         />
                     </div>
-                   
+
                 </Address>
                 <Button
-                        onClick={handleFindeByZipcode}
-                        name="Consultar via CEP"
-                    />
+                    onClick={handleFindeByZipcode}
+                    name="Consultar via CEP"
+                />
                 <Button
                     name="Criar Conta"
                     onClick={handleSignUP}
