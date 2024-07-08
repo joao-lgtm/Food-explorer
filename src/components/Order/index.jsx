@@ -1,4 +1,4 @@
-import { Count, Description, Dishes, DishesContainer, Container, Quantity, Remove } from "./style";
+import { Count, Description, Dishes, DishesContainer, Container, Quantity, Remove, Address } from "./style";
 import { LuMinus, LuPlus } from "react-icons/lu";
 import { FaRegTrashCan } from "react-icons/fa6";
 import { useEffect, useState } from "react";
@@ -77,6 +77,15 @@ export function Order({ id }) {
                     </Dishes>
                 ))}
             </DishesContainer>
+            {orderById && orderById.address.map((address, index) => (
+                <Address key={Number(index)}>
+                    <span> {address.street}</span> 
+                    <span>{address.neighborhood}</span>
+                    <span>{address.number}</span>
+                    <span>{address.zipcode}</span>
+                </Address>
+
+            ))}
             <div>
                 <span>Total: R$ {orderById && orderById.price}</span>
             </div>

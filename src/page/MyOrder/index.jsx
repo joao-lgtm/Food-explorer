@@ -33,7 +33,7 @@ export function MyOrder() {
                         <Button name="Avançar" onClick={() => setPaymentObservetion(true)} />
                     </div>
                 </Detail>
-                <PaymentMethod paymentObservetion={paymentObservetion} />
+                <PaymentMethod setPaymentObservetion={setPaymentObservetion} paymentObservetion={paymentObservetion} />
 
             </Main>
 

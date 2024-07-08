@@ -39,7 +39,7 @@ export const Main = styled.main`
     .Advanced {
         display: flex;
         justify-content: flex-end;
-        padding-top: 1.863rem;
+        margin-top: 1.863rem;
         > button {
         width: 13.5rem;
         }

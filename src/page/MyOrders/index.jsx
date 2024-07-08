@@ -1,13 +1,15 @@
-import { Container, Details, Main, Orders, Status } from "./style";
+import { Container, Details, Main, Orders, Status, StatusBall } from "./style";
 import { Header } from "../../components/Header"
 import { Footer } from "../../components/Footer";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { toast } from "react-toastify";
 import { dateFormatad } from "../../utils/dateFormated";
+import { useNavigate } from "react-router-dom";
 
 export function MyOrders() {
     const [data, setData] = useState();
+    const navigation = useNavigate()
 
     useEffect(() => {
         async function handleOrders() {
@@ -16,7 +18,9 @@ export function MyOrders() {
                 setData(response.data)
 
             } catch (error) {
-                toast.error("Erro ao buscar pedidos")
+                toast.error("Nenhum pedido encontrado ou ocorreu um Erro ao buscar pedidos");
+                navigation('/')
+
             }
         }
 
@@ -24,7 +28,22 @@ export function MyOrders() {
     }, []);
 
 
+    function status(statusOrder) {
+        let status
+        switch (statusOrder) {
+            case statusOrder = 0:
+                status = "Pendete"
+                break;
+            case statusOrder = 1:
+                status = "Preparando"
+                break;
+            case statusOrder = 2:
+                status = "Entregue"
+                break;
+        }
 
+        return status
+    }
 
     return (
         <Container>
@@ -36,8 +55,10 @@ export function MyOrders() {
                 {data && data.map((orders, index) => (
                     <Orders key={Number(index)}>
                         <Status>
-                            <span>Pedido:{orders.id}</span>
-                            <span>Status: {orders.status}</span>
+                            <span>{orders.id}</span>
+                            <div>
+                                <StatusBall data-status={orders.status} /><span> {status(orders.status)} </span>
+                            </div>
                             <span>{dateFormatad(orders.created_at)}</span>
                         </Status>
                         <Details key={Number(index)} >

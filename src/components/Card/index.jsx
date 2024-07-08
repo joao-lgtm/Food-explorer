@@ -1,7 +1,6 @@
 import { Container, Favorite, Presentation, Price } from "./style";
 import { Button } from './../Button';
 import { Count } from '../../components/Count';
-import Dish from "../../assets/Dish.svg";
 import { MdOutlineFavoriteBorder, MdOutlineFavorite } from "react-icons/md";
 import { useEffect, useState, useRef } from "react";
 import { useOrder } from "../../hooks/order";

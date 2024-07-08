@@ -23,7 +23,7 @@ export const Main = styled.main`
 `;
 
 export const Orders = styled.div`
-    border: 1px solid ${({theme}) => theme.DARK_1000};
+    border: 1px solid ${({ theme }) => theme.DARK_1000};
     border-radius: 8px;
 
     font-family: ${FONTS.SMALLREGULAR_ROBOTO.FONTFAMILY};
@@ -31,7 +31,7 @@ export const Orders = styled.div`
     font-weight: ${FONTS.SMALLREGULAR_ROBOTO.WEIGTH};
     line-height: ${FONTS.SMALLREGULAR_ROBOTO.LINEHEIGHT};
     
-    color: ${({theme}) => theme.LIGHT_100};
+    color: ${({ theme }) => theme.LIGHT_400};
     
 
     display: flex;
@@ -46,6 +46,29 @@ export const Status = styled.div`
     display: flex;
     justify-content: space-between;
     
+    > div {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+`;
+
+export const StatusBall = styled.div`
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+
+    
+   &[data-status="0"]{
+        background-color: ${({theme}) => theme.TOMATO_300};   
+    }
+
+    &[data-status="1"]{
+        background-color: ${({theme}) => theme.CARROT_100};   
+    }
+    &[data-status="2"]{
+        background-color: ${({theme}) => theme.MINT_100};   
+    }
 
 `;
 

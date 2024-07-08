@@ -1,13 +1,14 @@
 import Cards from 'react-credit-cards-2';
 import 'react-credit-cards-2/dist/es/styles-compiled.css';
 import { PiCreditCardLight, PiPixLogoFill } from "react-icons/pi";
+import { IoClose } from "react-icons/io5";
 import { Container, PaymentMedthod, InfoCard, PaymentContainer } from './style';
 import { useState } from 'react';
 import { Input } from '../Input';
 import { Button } from '../Button'
 import QRCode from '../../assets/Meu_QR_Code_Instagram.svg' 
 
-export function PaymentMethod({ paymentObservetion }) {
+export function PaymentMethod({ paymentObservetion,setPaymentObservetion }) {
     const [state, setState] = useState({
         number: '',
         expiry: '',
@@ -16,6 +17,7 @@ export function PaymentMethod({ paymentObservetion }) {
         focus: '',
     });
     const [paymentMethod, setPaymentMethod] = useState("");
+    
 
     const handleInputChange = (evt) => {
         const { name, value } = evt.target;
@@ -33,6 +35,7 @@ export function PaymentMethod({ paymentObservetion }) {
 
     return (
         <Container data-paymentobservetion={paymentObservetion} >
+            <IoClose onClick={() => setPaymentObservetion(!paymentObservetion)} size={24} color="white"/>
             <h2>Pagamento </h2>
             <PaymentContainer>
                 <PaymentMedthod>

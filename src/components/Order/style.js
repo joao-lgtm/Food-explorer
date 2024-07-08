@@ -5,7 +5,6 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     
-    height: 100%;
     margin-bottom: 1.9375rem;
 
     > h2 {
@@ -18,7 +17,7 @@ export const Container = styled.div`
 `;
 
 export const DishesContainer = styled.div`
-    min-height: 90%;
+
 `;
 
 export const Dishes = styled.div`
@@ -80,3 +79,9 @@ export const Remove = styled.div`
         color: ${({ theme }) => theme.TOMATO_300};
     }
 `;
+
+export const Address = styled.div`
+    display: flex;
+    flex-direction: column;
+
+`

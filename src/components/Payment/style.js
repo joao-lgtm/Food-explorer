@@ -16,6 +16,7 @@ export const Container = styled.div`
            width: 100%;
            height: 100%;
            padding: 0 0.625rem;
+           margin-top: 1rem
         }
     }
 

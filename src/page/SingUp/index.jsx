@@ -59,6 +59,7 @@ export function SingUp() {
                 zipcode
             });
             toast.success("Usuário criado com sucesso!");
+            navigate('/')
         } catch (error) {
             toast.error("Usuário já existe ou houve um problema na criação");
         }
@@ -146,6 +147,7 @@ export function SingUp() {
                             value={zipcode}
                             onChange={e => setZipcode(e.target.value)}
                             required
+                            mask="99999-999"
                         />
                     </div>
 

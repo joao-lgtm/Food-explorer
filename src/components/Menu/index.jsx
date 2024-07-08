@@ -1,6 +1,5 @@
 import { Footer } from "../Footer";
 import { Container, Header, Main } from "./style";
-import Close from "../../assets/Close.svg"
 import { VscClose } from "react-icons/vsc";
 import { CiSearch } from "react-icons/ci";
 import { Input } from "../Input";
@@ -23,6 +22,7 @@ export function Menu({ menuIsOpen, onCloseMenu, setDisherIngredients }) {
 
                 <nav>
                     <ul>
+                        <li onClick={() => navigation('/newDisher')}>Novo Prato</li>
                         <li onClick={() => navigation('/salesOrder')}>Meus Pedidos</li>
                         <li>Meus favoritos</li>
                         <li onClick={() => signOut()}>Sair</li>
