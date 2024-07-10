@@ -26,17 +26,3 @@ export const Main = styled.div`
     padding: 2.25rem 3.5rem 2.25rem 3.5rem ;
 `;
 
-export const Back = styled.div`
-    display: flex;
-    margin-top: 2.25rem;
-    margin-bottom: 1rem;
-    align-items: center;
-
-    > span {
-        font-family: ${FONTS.MEDIUM_400_POPPINS.FONTFAMILY};
-        font-size: 1.6rem;
-        line-height: ${FONTS.MEDIUM_400_POPPINS.LINEHEIGHT};
-        font-weight: ${FONTS.MEDIUM_400_POPPINS.WEIGTH};  
-    }
-   
-`;

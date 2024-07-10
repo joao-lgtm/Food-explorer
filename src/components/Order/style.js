@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { FONTS } from "../../style/fonts";
 
+
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
@@ -14,6 +15,15 @@ export const Container = styled.div`
         line-height: ${FONTS.MEDIUM_400_POPPINS.LINEHEIGHT};
        
     }
+  
+    span {
+        font-family: ${FONTS.MEDIUM_200_POPPINS.FONTFAMILY};
+        font-size: ${FONTS.MEDIUM_200_POPPINS.SIZE};
+        font-weight: ${FONTS.MEDIUM_200_POPPINS.WEIGTH};
+        line-height: ${FONTS.MEDIUM_200_POPPINS.LINEHEIGHT};   
+    }
+
+   
 `;
 
 export const DishesContainer = styled.div`
@@ -31,15 +41,6 @@ export const Dishes = styled.div`
     > img {
         width: 4.5rem;
         height: 4.5rem;
-    }
-
-    > div span {
-        font-family: ${FONTS.MEDIUM_200_POPPINS.FONTFAMILY};
-        font-size: 0.75rem;
-        font-weight: ${FONTS.MEDIUM_200_POPPINS.WEIGTH};
-        line-height: ${FONTS.MEDIUM_200_POPPINS.LINEHEIGHT};
-        text-align: center;
-    
     }
    
 `;
@@ -83,5 +84,11 @@ export const Remove = styled.div`
 export const Address = styled.div`
     display: flex;
     flex-direction: column;
-
+    margin-top: 1.5rem;
 `
+
+export const Total = styled.div`
+    margin-top: 1.5rem;
+
+   
+`;

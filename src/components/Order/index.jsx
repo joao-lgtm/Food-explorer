@@ -1,10 +1,11 @@
-import { Count, Description, Dishes, DishesContainer, Container, Quantity, Remove, Address } from "./style";
+import { Count, Description, Dishes, DishesContainer, Container, Quantity, Remove, Address, Total } from "./style";
 import { LuMinus, LuPlus } from "react-icons/lu";
 import { FaRegTrashCan } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import { useOrder } from "../../hooks/order";
 import { api } from "../../services/api";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export function Order({ id }) {
     const { handleOrderById, orderById, removeDetail } = useOrder();
@@ -47,7 +48,6 @@ export function Order({ id }) {
         }
     }
 
-
     return (
         <Container>
             <h2>Meu pedido</h2>
@@ -56,8 +56,7 @@ export function Order({ id }) {
                     <Dishes key={index}>
                         <img src={handleImg(details.img)} alt={details.description} />
                         <Description>
-                            <span>{details.description}</span>
-                            <div></div>
+                            <span> {details.name}</span>
                             <div>
                                 <span>R$ {details.price}</span>
                             </div>
@@ -86,9 +85,9 @@ export function Order({ id }) {
                 </Address>
 
             ))}
-            <div>
+            <Total>
                 <span>Total: R$ {orderById && orderById.price}</span>
-            </div>
+            </Total>
         </Container>
     )
 }

@@ -18,5 +18,5 @@ export const Container = styled.div`
 
 
 export const Main = styled.main`
-
+    grid-area: content; 
 `;

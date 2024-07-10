@@ -18,8 +18,15 @@ export const Container = styled.div`
 `;
 
 export const Main = styled.main`
-    padding: 0 35px;
-
+    padding: 56px 35px;
+    h2 {
+        color: ${({theme}) => theme.LIGHT_100};
+        margin-bottom: 17px;
+        font-family: ${FONTS.MEDIUM_400_POPPINS.FONTFAMILY};
+        font-weight: ${FONTS.MEDIUM_400_POPPINS.WEIGTH};
+        font-size: ${FONTS.MEDIUM_400_POPPINS.SIZE};
+        line-height: ${FONTS.MEDIUM_400_POPPINS.LINEHEIGHT};
+    }
 `;
 
 export const Orders = styled.div`

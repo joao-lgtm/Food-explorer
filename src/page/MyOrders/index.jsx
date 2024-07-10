@@ -50,7 +50,7 @@ export function MyOrders() {
             <Header />
             <Main>
 
-                <h2> Histórico de pedidos</h2>
+                <h2>Pedidos</h2>
 
                 {data && data.map((orders, index) => (
                     <Orders key={Number(index)}>

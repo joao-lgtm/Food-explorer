@@ -1,25 +1,19 @@
-import { useNavigate, useParams } from 'react-router-dom';
-import { Back, Container,Main } from './style'
+import { useParams } from 'react-router-dom';
+import { Container,Main } from './style'
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
-import { IoIosArrowBack } from 'react-icons/io';
 import { Disher } from '../../components/Disher';
+import { Back } from '../../components/Back';
 
 export function DisherPage() {
     const { id } = useParams();
 
-    const navigate = useNavigate();
-  
-    function handleBack() {
-        navigate(-1);
-    }
+
     return (
         <Container>
             <Header />
             <Main>
-                <Back onClick={handleBack}>
-                    <IoIosArrowBack size={20} /> <span>Voltar</span>
-                </Back>
+                <Back />
                 <Disher id={id}/>
             </Main>
             <Footer />
