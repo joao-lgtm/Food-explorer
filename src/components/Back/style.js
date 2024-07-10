@@ -12,6 +12,7 @@ export const Container = styled.div`
         font-size: 1.6rem;
         line-height: ${FONTS.MEDIUM_400_POPPINS.LINEHEIGHT};
         font-weight: ${FONTS.MEDIUM_400_POPPINS.WEIGTH};  
+        color: ${({theme}) => theme.LIGHT_100};
     }
    
 `;

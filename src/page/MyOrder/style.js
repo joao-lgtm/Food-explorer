@@ -27,7 +27,7 @@ export const Main = styled.main`
     flex-direction: column;
     
     width: 100%;
-    padding: 0rem 2.3125rem;
+    padding: 3.5rem 2.3125rem;
 
     span {
         font-family: ${FONTS.MEDIUM_200_POPPINS.FONTFAMILY};

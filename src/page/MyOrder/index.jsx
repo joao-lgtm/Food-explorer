@@ -15,7 +15,6 @@ export function MyOrder() {
         <Container>
             <Header />
             <Main>
-                <Back />
                 <Detail>
                     <Order id={id} />
 
