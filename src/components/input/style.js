@@ -12,6 +12,7 @@ export const Container = styled.div`
         font-weight: ${FONTS.SMALLREGULAR_ROBOTO.WEIGTH};
         font-size: ${FONTS.SMALLREGULAR_ROBOTO.SIZE};
         color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_400 : ThemeWhite.LIGHT_400};
+        width: 100%;
     }
     > div {
         display: flex;
@@ -39,6 +40,11 @@ export const InputMask = styled(ReactInputMask)`
         &:focus-visible{
         outline: 0;
     }   
+
+    &[data-type="file"]{
+      display: none;
+      width: 100%;
+    }
 
 
 
