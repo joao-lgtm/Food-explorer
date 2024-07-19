@@ -1,9 +1,11 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthRoutes } from "./auth.routes";
-import { AppRoutes } from "./app.routes";
 import { useAuth } from "../hooks/auth";
 import { api } from "../services/api";
+import { USER_ROLE } from "../utils/roles";
+import { ClientRoutes } from "./client.routes";
+import { AdminRoutes } from "./admin.routes";
 
 function RoutesComponent() {
     const { user, signOut } = useAuth();
@@ -24,7 +26,16 @@ function RoutesComponent() {
         validateUser();
     }, []);
 
-    return user ? <AppRoutes /> : <AuthRoutes />;
+    function AccessRoute() {
+        switch (user.role) {
+          case USER_ROLE.ADMIN:
+            return <AdminRoutes />
+          case USER_ROLE.CLIENT:
+            return <ClientRoutes />
+        }
+      }
+
+    return user ? <AccessRoute /> : <AuthRoutes />;
 }
 
 export function Routes() {

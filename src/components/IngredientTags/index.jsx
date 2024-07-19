@@ -1,6 +1,6 @@
 import { Container } from "./style";
 
-export function Ingredient({ name }) {
+export function IngredientTags({ name }) {
     return (
         <Container>
             <span>{name}</span>

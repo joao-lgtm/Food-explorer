@@ -20,9 +20,7 @@ export const Container = styled.div`
         gap:0.875rem;
         background:  ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_900 : ThemeWhite.LIGHT_100};
         border-radius: 0.5rem;
-        padding: 0.75rem;
-
-       
+        padding: 16px 14px;
     }
 `;
 
@@ -33,6 +31,7 @@ export const InputMask = styled(ReactInputMask)`
     width: 100%;
     background: transparent;
     border: none;
+    
     color: ${({ theme }) => theme.LIGHT_100};
         &::placeholder{
             color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_500 : ThemeWhite.LIGHT_500};

@@ -18,10 +18,10 @@ export const Container = styled.div`
 `;
 
 export const Main = styled.main`
-    padding: 56px 35px;
+    padding: 3.5rem 2.188rem;
     h2 {
         color: ${({theme}) => theme.LIGHT_100};
-        margin-bottom: 17px;
+        margin-bottom: 1.063rem;
         font-family: ${FONTS.MEDIUM_400_POPPINS.FONTFAMILY};
         font-weight: ${FONTS.MEDIUM_400_POPPINS.WEIGTH};
         font-size: ${FONTS.MEDIUM_400_POPPINS.SIZE};
@@ -31,7 +31,7 @@ export const Main = styled.main`
 
 export const Orders = styled.div`
     border: 1px solid ${({ theme }) => theme.DARK_1000};
-    border-radius: 8px;
+    border-radius: 0.5rem;
 
     font-family: ${FONTS.SMALLREGULAR_ROBOTO.FONTFAMILY};
     font-size: ${FONTS.SMALLREGULAR_ROBOTO.SIZE};
@@ -43,9 +43,9 @@ export const Orders = styled.div`
 
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    padding: 26px 20px 26px 23px;
-    margin-bottom: 17px;
+    gap: 1rem;
+    padding: 1.625rem 1.25rem 1.625rem 1.438rem;
+    margin-bottom: 1.063rem;
 `;
 
 export const Status = styled.div`
@@ -56,13 +56,13 @@ export const Status = styled.div`
     > div {
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 0.5rem;
     }
 `;
 
 export const StatusBall = styled.div`
-    width: 8px;
-    height: 8px;
+    width: 0.5rem;
+    height: 0.5rem;
     border-radius: 100%;
 
     

@@ -50,7 +50,7 @@ export const AccountExists = styled(Link)`
 export const Address = styled.div`
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 0.938rem;
 
     .addressAndZipcode{
         width: 100%;

@@ -5,7 +5,7 @@ import { Button } from '../../components/Button';
 import { PiReceiptLight } from "react-icons/pi";
 import { Count } from '../../components/Count';
 import { useAuth } from '../../hooks/auth';
-import { Ingredient } from '../../components/Ingredient';
+import { IngredientTags } from '../../components/IngredientTags';
 import { useOrder } from '../../hooks/order';
 
 export function Disher({ id }) {
@@ -52,7 +52,7 @@ export function Disher({ id }) {
 
                     <Ingredients>
                         {disher && disher.ingredients.map((ingredient, index) => (
-                            <Ingredient key={index} name={ingredient.name} />
+                            <IngredientTags key={index} name={ingredient.name} />
                         ))}
                     </Ingredients>
 
@@ -61,7 +61,7 @@ export function Disher({ id }) {
                         <Count setAmount={setAmount} amount={amount} size={24} />
                         <Button
                             icon={PiReceiptLight}
-                            name={`pedir ° R$ ${(disher.price * amount).toFixed(2)} `}
+                            name={`pedir ° R$ ${(disher.price * amount).toFixed(2)}`}
                             onClick={() => handleOrder(disher.id, amount, disher.price)}
                         />
 

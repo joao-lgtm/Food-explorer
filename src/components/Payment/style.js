@@ -37,7 +37,7 @@ export const Container = styled.div`
     }
 
     img{
-        padding: 25px;
+        padding: 1.563rem;
         
     }
 `;
@@ -53,14 +53,14 @@ export const PaymentContainer = styled.div`
     .conclude {
         display: flex;
         justify-content: center;
-        padding: 15px;
+        padding: 0.938rem;
         width: 100%;
         
     }
 
     .conclude button{
         width: 100%;
-        padding: 15px;
+        padding: 0.938rem;
     }
  `;
 
@@ -101,9 +101,9 @@ export const InfoCard = styled.form`
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 15px;
-    padding: 15px;
-    margin-top: 25px;
+    gap: 0.938rem;
+    padding: 0.938rem;
+    margin-top: 1.563rem;
 
     .card_number{
         width: 100%;
@@ -111,7 +111,7 @@ export const InfoCard = styled.form`
 
     .expiry_cvc{
         display: flex;
-        gap: 25px;
+        gap: 1.563rem;
         width: 100%;
     }
 `;

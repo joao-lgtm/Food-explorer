@@ -1,14 +1,21 @@
-import { Container } from "./style"
-export function Select({name, data,label }) {
+import { Container, SelectApparence } from "./style";
+
+export function Select({ name, data, label, setItem }) {
     return (
         <Container>
             <label htmlFor={name}>{label}</label>
-            <select name={name} id={name}>
-                {data && data.map((categorys) => (
-                    <option key={categorys.id} value={categorys.id}>{categorys.name}</option>
-                ))
-                }
-            </select>
+            <SelectApparence>
+                <select
+                    onChange={(e) => setItem(e.target.value)}
+                    name={name}
+                    id={name}
+                >
+                    <option value="">--Please choose an option--</option>
+                    {data && data.map((item) => (
+                        <option key={item.id} value={item.id}>{item.name}</option>
+                    ))}
+                </select>
+            </SelectApparence>
         </Container>
-    )
+    );
 }

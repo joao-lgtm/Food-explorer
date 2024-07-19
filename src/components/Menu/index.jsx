@@ -5,10 +5,11 @@ import { CiSearch } from "react-icons/ci";
 import { Input } from "../Input";
 import { useAuth } from "../../hooks/auth";
 import { useNavigate } from "react-router-dom";
+import { USER_ROLE } from "../../utils/roles";
 
 
 export function Menu({ menuIsOpen, onCloseMenu, setDisherIngredients }) {
-    const { signOut } = useAuth();
+    const { signOut, user } = useAuth();
 
     const navigation = useNavigate();
     return (
@@ -22,7 +23,7 @@ export function Menu({ menuIsOpen, onCloseMenu, setDisherIngredients }) {
 
                 <nav>
                     <ul>
-                        <li onClick={() => navigation('/newDisher')}>Novo Prato</li>
+                        {[USER_ROLE.ADMIN].includes(user.role) && <li onClick={() => navigation('/newDisher')}>Novo Prato</li>}
                         <li onClick={() => navigation('/salesOrder')}>Meus Pedidos</li>
                         <li>Meus favoritos</li>
                         <li onClick={() => signOut()}>Sair</li>
