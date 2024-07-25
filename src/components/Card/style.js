@@ -17,10 +17,6 @@ export const Container = styled.div`
     width: 18.18rem;
     padding: 1.5rem;
     color: ${({ theme }) => theme.LIGHT_100};
-
-    > button {
-        width: 100%;
-    }
 `;
 
 export const Favorite = styled.div`
@@ -35,31 +31,42 @@ export const Edit = styled.div`
     right: 1rem;  
 `;
 
-export const Presentation = styled.div`
+export const Disher = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
     align-items: center;
-   
+    gap: 1rem;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
 
-
-    cursor: pointer;
-    
-    font-family: ${FONTS.MEDIUM_100_POPPINS.FONTFAMILY};
-    font-size: ${FONTS.MEDIUM_100_POPPINS.SIZE};
-    font-weight: ${FONTS.MEDIUM_100_POPPINS.WEIGTH};
-    line-height: ${FONTS.MEDIUM_100_POPPINS.LINEHEIGHT};
-
-    > img {
-        width: 5.5rem;
+    button{
+        width: 100%;
     }
 `;
 
+export const Presentation = styled.div`
+    cursor: pointer;    
+    > img {
+        width: 88px;
+        height: 88px;
+    }
+`;
+
+export const Name = styled.div`
+    font-family: ${FONTS.MEDIUM_100_POPPINS.FONTFAMILY};
+    font-size: ${FONTS.MEDIUM_100_POPPINS.SIZE};
+    font-weight: ${FONTS.MEDIUM_100_POPPINS.WEIGTH};
+    line-height: ${FONTS.MEDIUM_100_POPPINS.LINEHEIGHT};  
+`;
+
 export const Price = styled.div`
+    color: ${({ theme }) => theme.CAKE_200};
+
     font-family: ${FONTS.SMALLREGULAR_ROBOTO.FONTFAMILY};
     font-size: ${FONTS.SMALLREGULAR_ROBOTO.SIZE};
     font-weight: ${FONTS.SMALLREGULAR_ROBOTO.SIZE};
     line-height: ${FONTS.SMALLREGULAR_ROBOTO.SIZE};
 
-    color: ${({ theme }) => theme.CAKE_200};
+    
 `;

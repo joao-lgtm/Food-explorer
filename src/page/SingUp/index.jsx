@@ -1,12 +1,12 @@
 import { Input } from "../../components/Input";
 import { AccountExists, Address, Container, Form } from "./style";
-import Logo from "../../assets/main.svg";
 import { Button } from "../../components/Button";
 import { useState } from "react";
 import axios from "axios";
 import { api } from "../../services/api";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { Logo } from "../../components/Logo";
 
 export function SingUp() {
     const [name, setName] = useState("");
@@ -66,9 +66,7 @@ export function SingUp() {
     }
     return (
         <Container>
-            <div>
-                <img src={Logo} alt="Logo" />
-            </div>
+            <Logo ImgSize="2.688rem" FontSize="2.328rem"/>
             <Form>
                 <Input
                     nameInput="name"

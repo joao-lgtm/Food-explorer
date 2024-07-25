@@ -1,4 +1,4 @@
-import { Container, Edit, Favorite, Presentation, Price } from "./style";
+import { Container, Disher, Edit, Favorite, Name, Presentation, Price } from "./style";
 import { Button } from './../Button';
 import { Count } from '../../components/Count';
 import { MdOutlineFavoriteBorder, MdOutlineFavorite } from "react-icons/md";
@@ -11,13 +11,14 @@ import { USER_ROLE } from "../../utils/roles";
 import { useAuth } from "../../hooks/auth";
 
 export function Card({ id, img, name, price, liked = false }) {
+    const { user } = useAuth();
     const [isOver, setIsOver] = useState(false);
     const [isLiked, setIsLiked] = useState(liked);
     const [amount, setAmount] = useState(1);
     const favoriteRef = useRef(null);
     const { handleOrder } = useOrder();
     const navigation = useNavigate();
-    const { user } = useAuth();
+
 
     function Liked(isliked) {
 
@@ -43,12 +44,17 @@ export function Card({ id, img, name, price, liked = false }) {
     function singleDisher(id) {
         navigation(`/disher/${id}`)
     }
+
+    function editDisher(id) {
+        navigation(`disher/edit/${id}`)
+    }
+
     return (
         <Container>
             {[USER_ROLE.ADMIN].includes(user.role) &&
                 <>
                     <Edit ref={favoriteRef}>
-                        <MdOutlineModeEditOutline cursor="pointer" color="white" size={24} />
+                        <MdOutlineModeEditOutline onClick={() => editDisher(id)} cursor="pointer" color="white" size={24} />
                     </Edit>
                 </>
             }
@@ -65,16 +71,23 @@ export function Card({ id, img, name, price, liked = false }) {
                     </Favorite>
                 </>
             }
-            <Presentation onClick={() => singleDisher(id)}>
-                <img src={disherImg} alt="" />
-                {name}
-            </Presentation>
+            <Disher>
+                <Presentation onClick={() => singleDisher(id)}>
+                    <img src={disherImg} alt="" />
 
-            <Price>
-                R$ {price}
-            </Price>
-            <Count setAmount={setAmount} amount={amount} size={18} />
-            <Button onClick={() => handleOrder(id, amount, price)} name="Incluir" />
+                </Presentation>
+                <Name>{name}</Name>
+                <Price>
+                    R$ {price}
+                </Price>
+                {[USER_ROLE.CLIENT].includes(user.role) &&
+                    <>
+                        <Count setAmount={setAmount} amount={amount} size={18} />
+
+                        <Button onClick={() => handleOrder(id, amount, price)} name="Incluir" />
+                    </>
+                }
+            </Disher>
         </Container>
     );
 }

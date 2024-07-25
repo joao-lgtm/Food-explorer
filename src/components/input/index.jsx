@@ -7,7 +7,7 @@ export function Input({ nameInput, label, placeholder, icon: Icon, type, ...rest
             <div >
                 {Icon && <Icon size={24} color="white" />}
                 {type === "file" && 
-                    <label htmlFor={nameInput}>{label}</label>
+                    <label htmlFor={nameInput}>{placeholder}</label>
                 }
                 <InputMask data-type={type} type={type} {...rest} id={nameInput} placeholder={placeholder} />
             </div>

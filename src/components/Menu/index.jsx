@@ -24,8 +24,8 @@ export function Menu({ menuIsOpen, onCloseMenu, setDisherIngredients }) {
                 <nav>
                     <ul>
                         {[USER_ROLE.ADMIN].includes(user.role) && <li onClick={() => navigation('/newDisher')}>Novo Prato</li>}
-                        <li onClick={() => navigation('/salesOrder')}>Meus Pedidos</li>
-                        <li>Meus favoritos</li>
+                        {[USER_ROLE.CLIENT].includes(user.role) && <li onClick={() => navigation('/salesOrder')}>Meus Pedidos</li>}
+                        {[USER_ROLE.CLIENT].includes(user.role) && <li>Meus favoritos</li>}
                         <li onClick={() => signOut()}>Sair</li>
                     </ul>
                 </nav>

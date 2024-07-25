@@ -1,20 +1,23 @@
 import { Container } from "./style";
-import Logo from "../../assets/main.svg";
-import Hamburger from "../../assets/hamburger.svg";
 import { useEffect, useState } from "react";
 import { DEVICE_BREAKPOINTS } from "../../style/deviceBreakPoint";
 import { Menu } from '../Menu';
 import { Receipt } from "../Receipt";
 import { useNavigate } from "react-router-dom";
+import { USER_ROLE } from "../../utils/roles";
+import { useAuth } from "../../hooks/auth";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { Logo } from "../Logo";
 
 export function Header({ setDisherIngredients }) {
     const [menuIsOpen, setMenuIsOpen] = useState(false);
     const [windowSize, setWindowSize] = useState({
         width: window.innerWidth,
     });
+    const { user } = useAuth();
     const navigation = useNavigate();
 
-    function handleHome(){
+    function handleHome() {
         navigation('/');
     }
 
@@ -42,10 +45,9 @@ export function Header({ setDisherIngredients }) {
 
     return (
         <Container>
-            <div onClick={() => setMenuIsOpen(true)}>
-                <img src={Hamburger} alt="" />
-            </div>
-            <img onClick={() => handleHome()} src={Logo} alt="" />
+            <RxHamburgerMenu onClick={() => setMenuIsOpen(true)}color="white" size={24}/>
+            
+            <Logo onClick={() => handleHome()}/>
 
             <Menu
                 setDisherIngredients={setDisherIngredients}
@@ -53,8 +55,9 @@ export function Header({ setDisherIngredients }) {
                 onCloseMenu={() => setMenuIsOpen(false)}
             />
 
-            <Receipt count={0} />
-
+            <div>
+                {[USER_ROLE.CLIENT].includes(user.role) && <Receipt count={0} />}
+            </div>
         </Container>
     )
 }

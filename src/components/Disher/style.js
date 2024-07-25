@@ -12,8 +12,8 @@ export const Img = styled.div`
     margin-bottom: 1rem;
 
     > img {
-        width: 16.5rem;
-        height:  16.5rem;
+        width: 263px;
+        height: 263px;
     }
 `;
 

@@ -24,7 +24,7 @@ export const Main = styled.main`
     padding: 0.625rem 2rem 3.313rem 2rem;
 
     h2{
-        color: ${({theme}) => theme.LIGHT_100};
+        color: ${({ theme }) => theme.LIGHT_100};
         margin-top: 2.188rem;
         margin-bottom: 1.063rem;
         font-family: ${FONTS.MEDIUM_400_POPPINS.FONTFAMILY};
@@ -53,6 +53,13 @@ export const PreviewIMG = styled.div`
     }
 `;
 
+export const Label = styled.label`
+    font-family: ${FONTS.SMALLREGULAR_ROBOTO.FONTFAMILY};
+    font-weight: ${FONTS.SMALLREGULAR_ROBOTO.WEIGTH};
+    font-size: ${FONTS.SMALLREGULAR_ROBOTO.SIZE};
+    color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_400 : ThemeWhite.LIGHT_400};
+`;
+
 export const NewIgredients = styled.div`
     width: 100%;
     background:  ${({ theme }) => theme.DARK_900};
@@ -66,9 +73,29 @@ export const NewIgredients = styled.div`
     gap: 1rem;
 `;
 
-export const Label = styled.label`
-    font-family: ${FONTS.SMALLREGULAR_ROBOTO.FONTFAMILY};
-    font-weight: ${FONTS.SMALLREGULAR_ROBOTO.WEIGTH};
-    font-size: ${FONTS.SMALLREGULAR_ROBOTO.SIZE};
-    color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_400 : ThemeWhite.LIGHT_400};
+export const Buttons = styled.div`
+    display: flex;
+    gap: 24px;
+    width: 100%;
+
+    > button{
+        padding: 16px 0;
+        width: 100%;
+    }
+`;
+
+
+export const ExcludeButton = styled.button`
+    background-color: ${({ theme }) => theme.DARK_800};
+    border-radius: 8px;
+    border: none;
+
+    color: ${({ theme }) => theme.LIGHT_100};
+   
+    cursor: pointer;
+    
+    font-family: ${FONTS.MEDIUM_100_POPPINS.FONTFAMILY};
+    font-size: ${FONTS.MEDIUM_100_POPPINS.SIZE};
+    line-height: ${FONTS.MEDIUM_100_POPPINS.LINEHEIGHT};
+    font-weight: ${FONTS.MEDIUM_100_POPPINS.WEIGTH};
 `;

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { FONTS } from "../../style/fonts";
 
 export const Container = styled.button`
-    background-color:  ${({ theme }) => theme.TOMATO_100};
+    background-color:  ${({ color, theme }) => color === "black" ? theme.DARK_800 : theme.TOMATO_100};
     border: none;
     padding: 0.75rem 0;
     border-radius: 0.375rem;

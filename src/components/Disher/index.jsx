@@ -7,12 +7,21 @@ import { Count } from '../../components/Count';
 import { useAuth } from '../../hooks/auth';
 import { IngredientTags } from '../../components/IngredientTags';
 import { useOrder } from '../../hooks/order';
+import { USER_ROLE } from '../../utils/roles';
+import { useNavigate } from 'react-router-dom';
 
 export function Disher({ id }) {
     const [disher, setDisher] = useState();
     const [amount, setAmount] = useState(1);
-    const { signOut } = useAuth();
+    const { signOut, user } = useAuth();
     const { handleOrder } = useOrder();
+    const navigation = useNavigate();
+    
+
+    function editDisher(id) {
+        navigation(`/disher/edit/${id}`);
+    }
+
 
     useEffect(() => {
         async function getDisher() {
@@ -57,12 +66,20 @@ export function Disher({ id }) {
                     </Ingredients>
 
                     <OrderControls>
+                        {[USER_ROLE.CLIENT].includes(user.role) &&
+                            <>
+                                <Count setAmount={setAmount} amount={amount} size={24} />
+                                <Button
+                                    icon={PiReceiptLight}
+                                    name={`pedir ° R$ ${(disher.price * amount).toFixed(2)}`}
+                                    onClick={() => handleOrder(disher.id, amount, disher.price)}
+                                />
+                            </>
+                        }
 
-                        <Count setAmount={setAmount} amount={amount} size={24} />
                         <Button
-                            icon={PiReceiptLight}
-                            name={`pedir ° R$ ${(disher.price * amount).toFixed(2)}`}
-                            onClick={() => handleOrder(disher.id, amount, disher.price)}
+                            name={`Editar prato`}
+                            onClick={() => editDisher(id)}
                         />
 
                     </OrderControls>

@@ -32,7 +32,7 @@ export const Container = styled.div`
     > button {
         background: none;
         border: none;
-        
+        cursor: pointer;
     }
 
     .button-add{

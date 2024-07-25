@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { ThemeBlack, ThemeWhite } from "../../style/theme";
+import { FONTS } from "../../style/fonts";
 
 export const Container = styled.header`
     grid-area: header;
@@ -10,13 +11,4 @@ export const Container = styled.header`
     padding: 3.5rem 1.75rem 1.5rem 1.75rem;
 
 
-    img {
-        height: 1.5rem;     
-    }
-    > div{
-        > img {
-            width:  1.5rem;
-        }
-    }
-
-`
+`;
