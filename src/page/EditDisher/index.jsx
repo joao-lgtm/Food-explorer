@@ -11,23 +11,26 @@ import { Ingredients } from "../../components/Ingredients";
 import { TextArea } from "../../components/TextArea";
 import { Button } from "../../components/Button";
 import { toast } from "react-toastify";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export function EditDisher() {
     const { id } = useParams();
     const [data, setData] = useState([]);
-    const [file, setFile] = useState(null);
-    const [fileName, setFileName] = useState(null);
     const [name, setName] = useState('');
     const [category, setCategory] = useState('');
     const [price, setPrice] = useState('');
     const [description, setDescription] = useState('');
-    const [previewUrl, setPreviewUrl] = useState('');
     const [ingredients, setIngredients] = useState([]);
     const [OldIngredients, setOldingredients] = useState([])
     const [newIngredient, setNewIngredient] = useState('');
-    const [oldImg, setOldImg] = useState("")
+    const [file, setFile] = useState(null);
+    const [fileName, setFileName] = useState(null);
+    const [oldImg, setOldImg] = useState("");
+    const [previewUrl, setPreviewUrl] = useState('');
     const [remove, setRemove] = useState(false);
+    const disherImg = `${api.defaults.baseURL}/files/${oldImg}`;
+    const navigation = useNavigate();
+
 
     useEffect(() => {
         async function getDisher() {
@@ -58,7 +61,7 @@ export function EditDisher() {
         getCategory();
     }, []);
 
-    const disherImg = `${api.defaults.baseURL}/files/${oldImg}`;
+   
 
     useEffect(() => {
         async function getDisher() {
@@ -160,11 +163,24 @@ export function EditDisher() {
                 }, withCredentials: true
             });
             toast.success("Prato atualizado com sucesso!");
+            navigation("/");
         } catch (error) {
             if (error.response.status === 401) {
                 toast.error("Você não tem permissão para criar pratos");
             }
 
+        }
+    }
+
+    async function handleDeleteDisher() {
+        try {
+            await api.delete(`/dishes/${id}`, {
+                withCredentials: true
+            });
+            toast.success("Prato exluido com sucesso!");
+            navigation("/");
+        } catch (error) {
+            toast.error("Erro a excluir prato");
         }
     }
 
@@ -251,7 +267,7 @@ export function EditDisher() {
                         onChange={(e) => setDescription(e.target.value)}
                     />
                     <Buttons>
-                        <Button color="black" name="Exluir prato"/>
+                        <Button onClick={handleDeleteDisher} color="black" name="Exluir prato" />
                         <Button onClick={handleEditDisher} name="Salvar alterações" />
                     </Buttons>
                 </form>

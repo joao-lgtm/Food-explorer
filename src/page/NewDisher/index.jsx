@@ -11,6 +11,7 @@ import { Ingredients } from "../../components/Ingredients";
 import { TextArea } from "../../components/TextArea";
 import { Button } from "../../components/Button";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 export function NewDisher() {
     const [data, setData] = useState([]);
@@ -22,6 +23,8 @@ export function NewDisher() {
     const [previewUrl, setPreviewUrl] = useState('');
     const [ingredients, setIngredients] = useState([]);
     const [newIngredient, setNewIngredient] = useState('');
+    const navigation = useNavigate();
+
 
     useEffect(() => {
         async function getCategory() {
@@ -96,6 +99,7 @@ export function NewDisher() {
                 }, withCredentials: true
             });
             toast.success("Prato adicionado com sucesso!");
+            navigation("/");
         } catch (error) {
             console.log(error.response.status === 401)
             if (error.response.status === 401){
@@ -175,7 +179,7 @@ export function NewDisher() {
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
                     />
-                    <Button onClick={handleAddNewDisher} name="Salvar alterações" />
+                    <Button onClick={handleAddNewDisher} name="Criar prato" />
                 </form>
             </Main>
             <Footer />
