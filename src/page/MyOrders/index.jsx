@@ -6,6 +6,7 @@ import { api } from "../../services/api";
 import { toast } from "react-toastify";
 import { dateFormatad } from "../../utils/dateFormated";
 import { useNavigate } from "react-router-dom";
+import { USER_ROLE } from "../../utils/roles";
 
 export function MyOrders() {
     const [data, setData] = useState();
@@ -14,7 +15,11 @@ export function MyOrders() {
     useEffect(() => {
         async function handleOrders() {
             try {
-                const response = await api.get('salesOrder/all', { withCredentials: true })
+                if (USER_ROLE.ADMIN) {
+                    const response = await api.get('/salesOrder/all', { withCredentials: true })
+                    setData(response.data);
+                }
+                const response = await api.get('/user/all', { withCredentials: true })
                 setData(response.data)
 
             } catch (error) {
