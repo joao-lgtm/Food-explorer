@@ -16,7 +16,7 @@ export function Disher({ id }) {
     const { signOut, user } = useAuth();
     const { handleOrder } = useOrder();
     const navigation = useNavigate();
-    
+
 
     function editDisher(id) {
         navigation(`/disher/edit/${id}`);
@@ -76,12 +76,12 @@ export function Disher({ id }) {
                                 />
                             </>
                         }
-
-                        <Button
-                            name={`Editar prato`}
-                            onClick={() => editDisher(id)}
-                        />
-
+                        {[USER_ROLE.ADMIN].includes(user.role) &&
+                            <Button
+                                name={`Editar prato`}
+                                onClick={() => editDisher(id)}
+                            />
+                        }
                     </OrderControls>
                 </>
             }

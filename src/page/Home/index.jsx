@@ -5,15 +5,26 @@ import BannerImg from "../../assets/pngegg 2.svg"
 import { Carousel } from "../../components/Carousel";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
+import { useAuth } from "../../hooks/auth";
 
 export function Home() {
     const [dishes, setDishes] = useState();
     const [disheringredients, setDisherIngredients] = useState("");
+    const { signOut } = useAuth();
 
     useEffect(() => {
         async function handleDishes() {
-            const response = await api.get(`/dishes?disher_ingredients=${disheringredients}`, { withCredentials: true });
-            setDishes(response.data);
+            try {
+                const response = await api.get(`/dishes?disher_ingredients=${disheringredients}`, { withCredentials: true });
+                setDishes(response.data);
+            } catch (error) {
+                if (error.response?.status === 401) {
+                    signOut();
+                    window.location.href = '/';
+                }
+            }
+
+
         }
 
         handleDishes()
@@ -34,7 +45,7 @@ export function Home() {
                     </TextBanner>
                 </Banner>
                 {dishes && dishes.map(disher => (
-                    <Carousel key={disher.key} title={disher.key} disher={disher.value}/>
+                    <Carousel key={disher.key} title={disher.key} disher={disher.value} />
                 ))}
             </Main>
             <Footer />

@@ -101,7 +101,6 @@ export function NewDisher() {
             toast.success("Prato adicionado com sucesso!");
             navigation("/");
         } catch (error) {
-            console.log(error.response.status === 401)
             if (error.response.status === 401){
                 toast.error("Você não tem permissão para criar pratos");
             }

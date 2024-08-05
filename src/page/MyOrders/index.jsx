@@ -7,20 +7,24 @@ import { toast } from "react-toastify";
 import { dateFormatad } from "../../utils/dateFormated";
 import { useNavigate } from "react-router-dom";
 import { USER_ROLE } from "../../utils/roles";
+import { useAuth } from "../../hooks/auth";
 
 export function MyOrders() {
     const [data, setData] = useState();
-    const navigation = useNavigate()
+    const navigation = useNavigate();
+    const { user } = useAuth();
 
     useEffect(() => {
         async function handleOrders() {
             try {
-                if (USER_ROLE.ADMIN) {
+                if (USER_ROLE.ADMIN.includes(user?.role)) {
                     const response = await api.get('/salesOrder/all', { withCredentials: true })
-                    setData(response.data);
+                     setData(response.data);
                 }
-                const response = await api.get('/user/all', { withCredentials: true })
-                setData(response.data)
+                else if (USER_ROLE.CLIENT.includes(user?.role)) {
+                    const response = await api.get('/salesOrder/user/all', { withCredentials: true })
+                    setData(response.data)
+                }
 
             } catch (error) {
                 toast.error("Nenhum pedido encontrado ou ocorreu um Erro ao buscar pedidos");
