@@ -18,6 +18,7 @@ export function SingIn() {
 
             <Logo ImgSize="2.688rem" FontSize="2.328rem"/>
             <Form>
+                <h1>Faça Login</h1>
                 <Input
                     nameInput="email"
                     label="Email"

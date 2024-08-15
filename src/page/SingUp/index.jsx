@@ -1,5 +1,5 @@
 import { Input } from "../../components/Input";
-import { AccountExists, Address, Container, Form } from "./style";
+import { AccountExists, Address, Container, Form, Infos } from "./style";
 import { Button } from "../../components/Button";
 import { useState } from "react";
 import axios from "axios";
@@ -18,6 +18,7 @@ export function SingUp() {
     const [neighborhood, setNeighborhood] = useState("");
     const [number, setNumber] = useState("");
     const [zipcode, setZipcode] = useState("");
+    const [next, setNext] = useState(false)
 
     const navigate = useNavigate();
 
@@ -46,53 +47,60 @@ export function SingUp() {
             toast.error("Sua senha precisa ter no mínimo 7 caracteres");
             return;
         }
-        try {
-            await api.post("/users", {
-                name,
-                email,
-                password,
-                street,
-                neighborhood,
-                number,
-                city,
-                uf,
-                zipcode
-            });
-            toast.success("Usuário criado com sucesso!");
-            navigate('/')
-        } catch (error) {
-            toast.error("Usuário já existe ou houve um problema na criação");
+
+        if (!street, !neighborhood, !number, !city, !uf, !zipcode){
+            toast.error("Preencha os campos de endereço");
+            return
         }
+            try {
+                await api.post("/users", {
+                    name,
+                    email,
+                    password,
+                    street,
+                    neighborhood,
+                    number,
+                    city,
+                    uf,
+                    zipcode
+                });
+                toast.success("Usuário criado com sucesso!");
+                navigate('/')
+            } catch (error) {
+                toast.error("Usuário já existe ou houve um problema na criação");
+            }
     }
     return (
         <Container>
-            <Logo ImgSize="2.688rem" FontSize="2.328rem"/>
+            <Logo ImgSize="2.688rem" FontSize="2.328rem" />
             <Form>
-                <Input
-                    nameInput="name"
-                    label="Seu nome"
-                    placeholder="Exemplo: Maria da Silva"
-                    onChange={e => setName(e.target.value)}
-                    required
-                />
-                <Input
-                    nameInput="email"
-                    label="Email"
-                    placeholder="Exemplo: exemplo@exemplo.com.br"
-                    onChange={e => setEmail(e.target.value)}
-                    type="email"
-                    required
-                />
-                <Input
-                    nameInput="Senha"
-                    label="Senha"
-                    placeholder="No mínimo 6 caracteres"
-                    onChange={e => setPassword(e.target.value)}
-                    type="password"
-                    required
-                />
+                <Infos data-next={next}>
+                    <Input
+                        nameInput="name"
+                        label="Seu nome"
+                        placeholder="Exemplo: Maria da Silva"
+                        onChange={e => setName(e.target.value)}
+                        required
+                    />
+                    <Input
+                        nameInput="email"
+                        label="Email"
+                        placeholder="Exemplo: exemplo@exemplo.com.br"
+                        onChange={e => setEmail(e.target.value)}
+                        type="email"
+                        required
+                    />
+                    <Input
+                        nameInput="Senha"
+                        label="Senha"
+                        placeholder="No mínimo 6 caracteres"
+                        onChange={e => setPassword(e.target.value)}
+                        type="password"
+                        required
+                    />
+                </Infos>
 
-                <Address>
+                <Address data-next={next}>
                     <div className="addressAndZipcode">
                         <Input
                             nameInput="street"
@@ -148,12 +156,14 @@ export function SingUp() {
                             mask="99999-999"
                         />
                     </div>
-
+                    <Button
+                        onClick={handleFindeByZipcode}
+                        name="Consultar via CEP"
+                    />
                 </Address>
-                <Button
-                    onClick={handleFindeByZipcode}
-                    name="Consultar via CEP"
-                />
+
+                <span onClick={() => setNext(!next)}>next</span>
+
                 <Button
                     name="Criar Conta"
                     onClick={handleSignUP}

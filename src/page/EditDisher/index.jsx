@@ -61,8 +61,6 @@ export function EditDisher() {
         getCategory();
     }, []);
 
-   
-
     useEffect(() => {
         async function getDisher() {
             try {

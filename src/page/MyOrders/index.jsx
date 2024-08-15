@@ -1,4 +1,4 @@
-import { Container, Details, Main, Orders, Status, StatusBall } from "./style";
+import { Container, Details, Main, Message, Orders, Status, StatusBall } from "./style";
 import { Header } from "../../components/Header"
 import { Footer } from "../../components/Footer";
 import { useEffect, useState } from "react";
@@ -16,25 +16,18 @@ export function MyOrders() {
 
     useEffect(() => {
         async function handleOrders() {
-            try {
-                if (USER_ROLE.ADMIN.includes(user?.role)) {
-                    const response = await api.get('/salesOrder/all', { withCredentials: true })
-                     setData(response.data);
-                }
-                else if (USER_ROLE.CLIENT.includes(user?.role)) {
-                    const response = await api.get('/salesOrder/user/all', { withCredentials: true })
-                    setData(response.data)
-                }
-
-            } catch (error) {
-                toast.error("Nenhum pedido encontrado ou ocorreu um Erro ao buscar pedidos");
-                navigation('/')
-
+            if (USER_ROLE.ADMIN.includes(user?.role)) {
+                const response = await api.get('/salesOrder/all', { withCredentials: true })
+                setData(response.data);
+            }
+            else if (USER_ROLE.CLIENT.includes(user?.role)) {
+                const response = await api.get('/salesOrder/user/all', { withCredentials: true })
+                setData(response.data)
             }
         }
 
-        handleOrders();
-    }, []);
+            handleOrders();
+        }, []);
 
 
     function status(statusOrder) {
@@ -60,7 +53,9 @@ export function MyOrders() {
             <Main>
 
                 <h2>Pedidos</h2>
-
+                {!data && 
+                <Message> Não ha pedidos </Message>
+                }
                 {data && data.map((orders, index) => (
                     <Orders key={Number(index)}>
                         <Status>

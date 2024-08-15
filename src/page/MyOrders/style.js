@@ -20,13 +20,23 @@ export const Container = styled.div`
 export const Main = styled.main`
     padding: 3.5rem 2.188rem;
     h2 {
-        color: ${({theme}) => theme.LIGHT_100};
+        color: ${({ theme }) => theme.LIGHT_100};
         margin-bottom: 1.063rem;
         font-family: ${FONTS.MEDIUM_400_POPPINS.FONTFAMILY};
         font-weight: ${FONTS.MEDIUM_400_POPPINS.WEIGTH};
         font-size: ${FONTS.MEDIUM_400_POPPINS.SIZE};
         line-height: ${FONTS.MEDIUM_400_POPPINS.LINEHEIGHT};
     }
+`;
+
+export const Message = styled.div`
+    color: ${({ theme }) => theme.LIGHT_100};
+
+
+    font-family: ${FONTS.MEDIUM_200_POPPINS.FONTFAMILY};
+    font-weight: ${FONTS.MEDIUM_200_POPPINS.WEIGTH};
+    font-size: ${FONTS.MEDIUM_200_POPPINS.SIZE};
+    line-height: ${FONTS.MEDIUM_200_POPPINS.LINEHEIGHT};
 `;
 
 export const Orders = styled.div`
@@ -67,14 +77,14 @@ export const StatusBall = styled.div`
 
     
    &[data-status="0"]{
-        background-color: ${({theme}) => theme.TOMATO_300};   
+        background-color: ${({ theme }) => theme.TOMATO_300};   
     }
 
     &[data-status="1"]{
-        background-color: ${({theme}) => theme.CARROT_100};   
+        background-color: ${({ theme }) => theme.CARROT_100};   
     }
     &[data-status="2"]{
-        background-color: ${({theme}) => theme.MINT_100};   
+        background-color: ${({ theme }) => theme.MINT_100};   
     }
 
 `;

@@ -12,6 +12,8 @@ export function Home() {
     const [disheringredients, setDisherIngredients] = useState("");
     const { signOut } = useAuth();
 
+
+    
     useEffect(() => {
         async function handleDishes() {
             try {
@@ -23,8 +25,6 @@ export function Home() {
                     window.location.href = '/';
                 }
             }
-
-
         }
 
         handleDishes()
