@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { DEVICE_BREAKPOINTS } from "../../style/deviceBreakPoint";
-import { Link }  from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FONTS } from "../../style/fonts";
 
 export const Container = styled.div`
@@ -9,6 +9,7 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-around;
+    
 
 
     @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
@@ -21,7 +22,26 @@ export const Container = styled.div`
         margin-bottom: 25px;
         padding: 25px;
     }
+
+    .next{
+        text-align: right;
+    }
+
+    .previous{
+        text-align: left;
+    }
     
+`;
+
+export const PreviousAndNext = styled.div`
+    span{
+        color: ${({ theme }) => theme.LIGHT_100};
+        font-family: ${FONTS.MEDIUM_100_POPPINS.FONTFAMILY};
+        font-weight: ${FONTS.MEDIUM_100_POPPINS.WEIGTH};
+        font-size: ${FONTS.MEDIUM_100_POPPINS.SIZE};
+    }
+    
+  
 `;
 
 export const Form = styled.form`
@@ -64,7 +84,7 @@ export const AccountExists = styled(Link)`
     font-family: ${FONTS.MEDIUM_100_POPPINS.FONTFAMILY};
     font-weight: ${FONTS.MEDIUM_100_POPPINS.WEIGTH};
     font-size: ${FONTS.MEDIUM_100_POPPINS.SIZE};
-    color: ${({theme}) => theme.LIGHT_100};
+    color: ${({ theme }) => theme.LIGHT_100};
 
     text-decoration: none;
     text-align: center;
@@ -74,7 +94,10 @@ export const AccountExists = styled(Link)`
 export const Infos = styled.div`
     display: none;
     &[data-next="false"]{
-        display: block;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
     }
 `;
 

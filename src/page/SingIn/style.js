@@ -10,8 +10,6 @@ export const Container = styled.div`
     align-items: center;
     justify-content: space-around;
     
-
-
     @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
         display: flex;
         flex-direction: column;

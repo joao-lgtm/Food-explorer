@@ -1,5 +1,5 @@
 import { Input } from "../../components/Input";
-import { AccountExists, Address, Container, Form, Infos } from "./style";
+import { AccountExists, Address, Container, Form, Infos, PreviousAndNext } from "./style";
 import { Button } from "../../components/Button";
 import { useState } from "react";
 import axios from "axios";
@@ -43,37 +43,44 @@ export function SingUp() {
     }
 
     async function handleSignUP() {
+        if (!name || !email || !password) {
+            toast.error("Preencha os campos do usuario");
+            return
+        }
+
         if (password.length < 6) {
             toast.error("Sua senha precisa ter no mínimo 7 caracteres");
             return;
         }
 
-        if (!street, !neighborhood, !number, !city, !uf, !zipcode){
+        if (!street ||  !neighborhood ||  !number ||  !city ||  !uf ||  !zipcode) {
             toast.error("Preencha os campos de endereço");
             return
         }
-            try {
-                await api.post("/users", {
-                    name,
-                    email,
-                    password,
-                    street,
-                    neighborhood,
-                    number,
-                    city,
-                    uf,
-                    zipcode
-                });
-                toast.success("Usuário criado com sucesso!");
-                navigate('/')
-            } catch (error) {
-                toast.error("Usuário já existe ou houve um problema na criação");
-            }
+        try {
+            await api.post("/users", {
+                name,
+                email,
+                password,
+                street,
+                neighborhood,
+                number,
+                city,
+                uf,
+                zipcode
+            });
+            toast.success("Usuário criado com sucesso!");
+            navigate('/')
+        } catch (error) {
+            toast.error("Usuário já existe ou houve um problema na criação");
+        }
     }
+
     return (
         <Container>
             <Logo ImgSize="2.688rem" FontSize="2.328rem" />
             <Form>
+                <h1>Crie sua conta</h1>
                 <Infos data-next={next}>
                     <Input
                         nameInput="name"
@@ -162,7 +169,9 @@ export function SingUp() {
                     />
                 </Address>
 
-                <span onClick={() => setNext(!next)}>next</span>
+                <PreviousAndNext className={next ? 'previous' : 'next'} >
+                    <span onClick={() => setNext(!next)}>{next ? 'Anterior' :'Proximo'}</span>
+                </PreviousAndNext>
 
                 <Button
                     name="Criar Conta"
