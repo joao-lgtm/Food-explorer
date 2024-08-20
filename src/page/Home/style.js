@@ -31,13 +31,13 @@ export const Main = styled.div`
 
 export const Banner = styled.div`
     background: ${({ theme }) => theme.LINNEAR_GRADIANT_200};
-    width: 70rem;
     height: 16.25rem;
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: 7.5rem;
     align-items: center;
     align-content: center;
+    border-radius: 8px;
 
     div:first-child {
         width: 39.5rem;
@@ -56,7 +56,7 @@ export const Banner = styled.div`
         grid-template-columns: 10rem 1fr;
         grid-template-rows: 7.5rem;
         align-items: center;
-        
+        height: unset;
 
         div:first-child {
             width: 11.93rem;
@@ -73,19 +73,36 @@ export const Banner = styled.div`
 
 
 export const TextBanner = styled.div`
-    color: ${({ theme }) => theme.LIGHT_100};
-    > p{
-        font-family: ${FONTS.MEDIUM_200_POPPINS.FONTFAMILY};
-        font-size: 1.12rem;
-        font-weight: 600;
-        line-height: ${FONTS.MEDIUM_200_POPPINS.LINEHEIGHT};
+        > h2 {
+            color: ${({ theme }) => theme.LIGHT_100};
+            font-family: ${FONTS.MEDIUM_500_POPPINS.FONTFAMILY};
+            font-size: ${FONTS.MEDIUM_500_POPPINS.SIZE};
+            font-weight: ${FONTS.MEDIUM_500_POPPINS.WEIGTH};
+            line-height: ${FONTS.MEDIUM_500_POPPINS.LINEHEIGHT};
+        }
 
-    }
-    > span {
-        font-family: ${FONTS.MEDIUM_100_POPPINS.FONTFAMILY};
-        font-size: 0.75rem;
-        line-height: ${FONTS.MEDIUM_100_POPPINS.LINEHEIGHT};
-    }
+        > span {
+            color: ${({ theme }) => theme.LIGHT_300};
+            font-family: ${FONTS.SMALLREGULAR_ROBOTO.FONTFAMILY};
+            font-size:  ${FONTS.SMALLREGULAR_ROBOTO.SIZE};
+            line-height: ${FONTS.SMALLREGULAR_ROBOTO.LINEHEIGHT};
+        }
 
+    @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+        > h2 {
+            color: ${({ theme }) => theme.LIGHT_100};
+            font-family: ${FONTS.MEDIUM_200_POPPINS.FONTFAMILY};
+            font-size: 1.12rem;
+            font-weight: 600;
+            line-height: ${FONTS.MEDIUM_200_POPPINS.LINEHEIGHT};
+
+        }
+        > span {
+            color: ${({ theme }) => theme.LIGHT_300};
+            font-family: ${FONTS.MEDIUM_100_POPPINS.FONTFAMILY};
+            font-size: 0.75rem;
+            line-height: ${FONTS.MEDIUM_100_POPPINS.LINEHEIGHT};
+        }
+    }
 
 `
