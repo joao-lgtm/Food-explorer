@@ -1,9 +1,17 @@
 import styled from "styled-components";
 import { FONTS } from "../../style/fonts";
+import { DEVICE_BREAKPOINTS } from "../../style/deviceBreakPoint";
 
 export const Container = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+
+
+
+    @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+        display: flex;
+        flex-direction: column;
+    }
 `;
 
 export const Img = styled.div`
@@ -15,6 +23,11 @@ export const Img = styled.div`
         width: 263px;
         height: 263px;
     }
+`;
+
+export const Info = styled.div`
+
+
 `;
 
 export const Title = styled.div`

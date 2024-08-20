@@ -1,4 +1,4 @@
-import { Container, Description, Img, Ingredients, OrderControls, Title } from './style'
+import { Container, Description, Img, Info, Ingredients, OrderControls, Title } from './style'
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { Button } from '../../components/Button';
@@ -51,38 +51,40 @@ export function Disher({ id }) {
                         <img src={img} alt='imagem do prato' />
                     </Img>
 
-                    <Title>
-                        <h2>{disher.name}</h2>
-                    </Title>
+                    <Info>
+                        <Title>
+                            <h2>{disher.name}</h2>
+                        </Title>
 
-                    <Description>
-                        <span>{disher.description}</span>
-                    </Description>
+                        <Description>
+                            <span>{disher.description}</span>
+                        </Description>
 
-                    <Ingredients>
-                        {disher && disher.ingredients.map((ingredient, index) => (
-                            <IngredientTags key={index} name={ingredient.name} />
-                        ))}
-                    </Ingredients>
+                        <Ingredients>
+                            {disher && disher.ingredients.map((ingredient, index) => (
+                                <IngredientTags key={index} name={ingredient.name} />
+                            ))}
+                        </Ingredients>
 
-                    <OrderControls>
-                        {[USER_ROLE.CLIENT].includes(user.role) &&
-                            <>
-                                <Count setAmount={setAmount} amount={amount} size={24} />
+                        <OrderControls>
+                            {[USER_ROLE.CLIENT].includes(user.role) &&
+                                <>
+                                    <Count setAmount={setAmount} amount={amount} size={24} />
+                                    <Button
+                                        icon={PiReceiptLight}
+                                        name={`pedir ° R$ ${(disher.price * amount).toFixed(2)}`}
+                                        onClick={() => handleOrder(disher.id, amount, disher.price)}
+                                    />
+                                </>
+                            }
+                            {[USER_ROLE.ADMIN].includes(user.role) &&
                                 <Button
-                                    icon={PiReceiptLight}
-                                    name={`pedir ° R$ ${(disher.price * amount).toFixed(2)}`}
-                                    onClick={() => handleOrder(disher.id, amount, disher.price)}
+                                    name={`Editar prato`}
+                                    onClick={() => editDisher(id)}
                                 />
-                            </>
-                        }
-                        {[USER_ROLE.ADMIN].includes(user.role) &&
-                            <Button
-                                name={`Editar prato`}
-                                onClick={() => editDisher(id)}
-                            />
-                        }
-                    </OrderControls>
+                            }
+                        </OrderControls>
+                    </Info>
                 </>
             }
         </Container>
