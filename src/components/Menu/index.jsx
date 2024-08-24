@@ -27,7 +27,7 @@ export function Menu({ menuIsOpen, onCloseMenu, setDisherIngredients }) {
                         {[USER_ROLE.CLIENT].includes(user.role) && <li onClick={() => navigation('/salesOrder')}>Meus Pedidos</li>}
                         {[USER_ROLE.ADMIN].includes(user.role) && <li onClick={() => navigation('/salesOrder')}>Pedidos</li>}
                         {[USER_ROLE.CLIENT].includes(user.role) && <li>Meus favoritos</li>}
-                        <li onClick={() => signOut()}>Sair</li>
+                        <li onClick={() => (navigation('/') ,signOut())}>Sair</li>
                     </ul>
                 </nav>
             </Main>

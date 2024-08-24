@@ -29,6 +29,16 @@ export const Main = styled.main`
     }
 `;
 
+export const Message = styled.div`
+    color: ${({ theme }) => theme.LIGHT_100};
+
+
+    font-family: ${FONTS.MEDIUM_200_POPPINS.FONTFAMILY};
+    font-weight: ${FONTS.MEDIUM_200_POPPINS.WEIGTH};
+    font-size: ${FONTS.MEDIUM_200_POPPINS.SIZE};
+    line-height: ${FONTS.MEDIUM_200_POPPINS.LINEHEIGHT};
+`;
+
 export const Orders = styled.div`
     border: 1px solid ${({ theme }) => theme.DARK_1000};
     border-radius: 0.5rem;

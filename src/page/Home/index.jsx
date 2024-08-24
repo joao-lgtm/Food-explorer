@@ -12,6 +12,8 @@ export function Home() {
     const [disheringredients, setDisherIngredients] = useState("");
     const { signOut } = useAuth();
 
+
+    
     useEffect(() => {
         async function handleDishes() {
             try {
@@ -23,8 +25,6 @@ export function Home() {
                     window.location.href = '/';
                 }
             }
-
-
         }
 
         handleDishes()
@@ -40,7 +40,7 @@ export function Home() {
                         <img src={BannerImg} alt="" />
                     </div>
                     <TextBanner>
-                        <p>Sabores inigualáveis</p>
+                        <h2>Sabores inigualáveis</h2>
                         <span>Sinta o cuidado do preparo com ingredientes selecionados.</span>
                     </TextBanner>
                 </Banner>

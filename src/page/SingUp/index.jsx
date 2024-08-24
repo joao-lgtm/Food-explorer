@@ -1,5 +1,5 @@
 import { Input } from "../../components/Input";
-import { AccountExists, Address, Container, Form } from "./style";
+import { AccountExists, Address, Container, Form, Infos, PreviousAndNext } from "./style";
 import { Button } from "../../components/Button";
 import { useState } from "react";
 import axios from "axios";
@@ -18,6 +18,7 @@ export function SingUp() {
     const [neighborhood, setNeighborhood] = useState("");
     const [number, setNumber] = useState("");
     const [zipcode, setZipcode] = useState("");
+    const [next, setNext] = useState(false)
 
     const navigate = useNavigate();
 
@@ -42,9 +43,19 @@ export function SingUp() {
     }
 
     async function handleSignUP() {
+        if (!name || !email || !password) {
+            toast.error("Preencha os campos do usuario");
+            return
+        }
+
         if (password.length < 6) {
             toast.error("Sua senha precisa ter no mínimo 7 caracteres");
             return;
+        }
+
+        if (!street ||  !neighborhood ||  !number ||  !city ||  !uf ||  !zipcode) {
+            toast.error("Preencha os campos de endereço");
+            return
         }
         try {
             await api.post("/users", {
@@ -64,35 +75,39 @@ export function SingUp() {
             toast.error("Usuário já existe ou houve um problema na criação");
         }
     }
+
     return (
         <Container>
-            <Logo ImgSize="2.688rem" FontSize="2.328rem"/>
+            <Logo ImgSize="2.688rem" FontSize="2.328rem" />
             <Form>
-                <Input
-                    nameInput="name"
-                    label="Seu nome"
-                    placeholder="Exemplo: Maria da Silva"
-                    onChange={e => setName(e.target.value)}
-                    required
-                />
-                <Input
-                    nameInput="email"
-                    label="Email"
-                    placeholder="Exemplo: exemplo@exemplo.com.br"
-                    onChange={e => setEmail(e.target.value)}
-                    type="email"
-                    required
-                />
-                <Input
-                    nameInput="Senha"
-                    label="Senha"
-                    placeholder="No mínimo 6 caracteres"
-                    onChange={e => setPassword(e.target.value)}
-                    type="password"
-                    required
-                />
+                <h1>Crie sua conta</h1>
+                <Infos data-next={next}>
+                    <Input
+                        nameInput="name"
+                        label="Seu nome"
+                        placeholder="Exemplo: Maria da Silva"
+                        onChange={e => setName(e.target.value)}
+                        required
+                    />
+                    <Input
+                        nameInput="email"
+                        label="Email"
+                        placeholder="Exemplo: exemplo@exemplo.com.br"
+                        onChange={e => setEmail(e.target.value)}
+                        type="email"
+                        required
+                    />
+                    <Input
+                        nameInput="Senha"
+                        label="Senha"
+                        placeholder="No mínimo 6 caracteres"
+                        onChange={e => setPassword(e.target.value)}
+                        type="password"
+                        required
+                    />
+                </Infos>
 
-                <Address>
+                <Address data-next={next}>
                     <div className="addressAndZipcode">
                         <Input
                             nameInput="street"
@@ -148,12 +163,16 @@ export function SingUp() {
                             mask="99999-999"
                         />
                     </div>
-
+                    <Button
+                        onClick={handleFindeByZipcode}
+                        name="Consultar via CEP"
+                    />
                 </Address>
-                <Button
-                    onClick={handleFindeByZipcode}
-                    name="Consultar via CEP"
-                />
+
+                <PreviousAndNext className={next ? 'previous' : 'next'} >
+                    <span onClick={() => setNext(!next)}>{next ? 'Anterior' :'Proximo'}</span>
+                </PreviousAndNext>
+
                 <Button
                     name="Criar Conta"
                     onClick={handleSignUP}
