@@ -20,7 +20,7 @@ export const Container = styled.div`
 export const Main = styled.main`
     padding: 3.5rem 2.188rem;
     h2 {
-        color: ${({theme}) => theme.LIGHT_100};
+        color: ${({ theme }) => theme.LIGHT_100};
         margin-bottom: 1.063rem;
         font-family: ${FONTS.MEDIUM_400_POPPINS.FONTFAMILY};
         font-weight: ${FONTS.MEDIUM_400_POPPINS.WEIGTH};
@@ -59,6 +59,10 @@ export const Status = styled.div`
         gap: 0.5rem;
     }
 `;
+export const Infos = styled.div`
+    display: flex;
+    gap: 1.5rem;
+`;
 
 export const StatusBall = styled.div`
     width: 0.5rem;
@@ -67,14 +71,14 @@ export const StatusBall = styled.div`
 
     
    &[data-status="0"]{
-        background-color: ${({theme}) => theme.TOMATO_300};   
+        background-color: ${({ theme }) => theme.TOMATO_300};   
     }
 
     &[data-status="1"]{
-        background-color: ${({theme}) => theme.CARROT_100};   
+        background-color: ${({ theme }) => theme.CARROT_100};   
     }
     &[data-status="2"]{
-        background-color: ${({theme}) => theme.MINT_100};   
+        background-color: ${({ theme }) => theme.MINT_100};   
     }
 
 `;
