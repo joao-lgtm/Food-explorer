@@ -10,14 +10,21 @@ export const Container = styled.header`
     background-color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_700 : ThemeWhite.LIGHT_100};
     justify-content: space-evenly;
     padding: 3.5rem 1.75rem 1.5rem 1.75rem;
+    color:${({ theme }) => theme.LIGHT_300};
+    font-family: ${FONTS.SMALLREGULAR_ROBOTO.FONTFAMILY};
+    font-size: ${FONTS.SMALLREGULAR_ROBOTO.SIZE};
+    font-weight: ${FONTS.SMALLREGULAR_ROBOTO.WEIGTH};
+    line-height: ${FONTS.SMALLREGULAR_ROBOTO.LINEHEIGHT};
     
     .icon{
          display: none;
     }
 
     .search{
-        width: 60%;
+        width: 23%;
     }
+
+   
 
     .receipt{
         display: none;
@@ -53,6 +60,12 @@ export const Container = styled.header`
         }
 
         .logout{
+            display: none;
+        }
+        .favorites{
+            display: none;
+        }
+        .order-history{
             display: none;
         }
     }

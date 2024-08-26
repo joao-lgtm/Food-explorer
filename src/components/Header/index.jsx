@@ -68,6 +68,14 @@ export function Header({ setDisherIngredients }) {
                 <Input type="text" onChange={e => setDisherIngredients(e.target.value)} icon={CiSearch} placeholder="Busque por pratos ou ingredientes" />
             </div>
 
+            <div className="favorites">
+                {[USER_ROLE.CLIENT].includes(user.role) && <span >Meus favoritos</span>}
+            </div>
+
+            <div className="order-history">
+                {[USER_ROLE.CLIENT].includes(user.role) && <span  onClick={() => navigation('/salesOrder')}>Histórico de pedidos</span>}
+            </div>
+
             {[USER_ROLE.CLIENT].includes(user.role) && <Button  onClick={() => order ? handleOrderPreview(order.id) : null}  className='button-receipt' icon={PiReceiptLight } name={`pedidos (${count})`}/>}
 
             {[USER_ROLE.ADMIN].includes(user.role) && <Button onClick={() => navigation('/newDisher')} className='button-receipt' name={`Novo prato`}/>}
