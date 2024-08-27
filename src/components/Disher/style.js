@@ -5,7 +5,8 @@ import { DEVICE_BREAKPOINTS } from "../../style/deviceBreakPoint";
 export const Container = styled.div`
     display: flex;
     flex-direction: row;
-
+    gap: 47px;
+    color: ${({ theme }) => theme.LIGHT_300};
 
 
     @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
@@ -15,62 +16,105 @@ export const Container = styled.div`
 `;
 
 export const Img = styled.div`
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1rem;
-
     > img {
-        width: 263px;
-        height: 263px;
+        width: 24.375rem;
+        height: 389px;
+    }
+
+    @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+
+        > img {
+            width: 263px;
+            height: 263px;
+        }
     }
 `;
 
 export const Info = styled.div`
-
-
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: center;
 `;
 
 export const Title = styled.div`
     display: flex;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-     > h2 {
-        font-family: ${FONTS.MEDIUM_400_POPPINS.FONTFAMILY};
-        font-size: 1.6rem;
-        line-height: ${FONTS.MEDIUM_400_POPPINS.LINEHEIGHT};
-        font-weight: ${FONTS.MEDIUM_400_POPPINS.WEIGTH};
+    
+    > h2 {
+            font-family: ${FONTS.MEDIUM_500_POPPINS.FONTFAMILY};
+            font-size: ${FONTS.MEDIUM_500_POPPINS.SIZE};
+            line-height: ${FONTS.MEDIUM_500_POPPINS.LINEHEIGHT};
+            font-weight: ${FONTS.MEDIUM_500_POPPINS.WEIGTH};
+        }
+
+
+    @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+        display: flex;
+        justify-content: center;
+        > h2 {
+            font-family: ${FONTS.MEDIUM_400_POPPINS.FONTFAMILY};
+            font-size: 1.6rem;
+            line-height: ${FONTS.MEDIUM_400_POPPINS.LINEHEIGHT};
+            font-weight: ${FONTS.MEDIUM_400_POPPINS.WEIGTH};
+        }
     }
 `;
 
 export const Description = styled.div`
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-    > span {
-            text-align: center;
-            font-family: ${FONTS.REGULAR_300_POPPINS.FONTFAMILY};
-            font-size: ${FONTS.REGULAR_300_POPPINS.SIZE};
-            line-height: ${FONTS.REGULAR_300_POPPINS.LINEHEIGHT};
+        > span {
+                text-align: center;
+                font-family: ${FONTS.REGULAR_300_POPPINS.FONTFAMILY};
+                font-size: ${FONTS.REGULAR_300_POPPINS.SIZE};
+                line-height: ${FONTS.REGULAR_300_POPPINS.LINEHEIGHT};
+        }
+
+    @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+        display: flex;
+        justify-content: center;
+        > span {
+                text-align: center;
+                font-family: ${FONTS.REGULAR_300_POPPINS.FONTFAMILY};
+                font-size: ${FONTS.REGULAR_300_POPPINS.SIZE};
+                line-height: ${FONTS.REGULAR_300_POPPINS.LINEHEIGHT};
+        }
     }
 `;
 
 export const Ingredients = styled.div`
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
     gap: 1.5rem;
-    margin-bottom: 3rem;
+
+    @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
 `;
 
 
 export const OrderControls = styled.div`
     display: flex;
-    gap: 0.625rem;
-    
-    > div {
-        flex: 1;
-    }
+    gap: 33px;
+
     > button{
-        flex: 2;
+        padding: 12px 24px;
+    }
+
+    @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+        display: flex;
+        gap: 0.625rem;
+        
+        > div {
+            flex: 1;
+        }
+        > button{
+            flex: 2;
+        }
     }
 `;

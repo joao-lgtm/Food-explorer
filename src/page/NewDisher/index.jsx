@@ -101,10 +101,10 @@ export function NewDisher() {
             toast.success("Prato adicionado com sucesso!");
             navigation("/");
         } catch (error) {
-            if (error.response.status === 401){
+            if (error.response.status === 401) {
                 toast.error("Você não tem permissão para criar pratos");
             }
-           
+
         }
     }
 
@@ -115,34 +115,37 @@ export function NewDisher() {
             <Main>
                 <Back />
                 <h2>Novo Prato</h2>
-                <form>
+                <form >
                     {previewUrl && (
                         <PreviewIMG>
                             <img src={previewUrl} alt="Preview" />
                         </PreviewIMG>
                     )}
-                    <Input
-                        label="Imagem do prato"
-                        nameInput="Imagem do prato"
-                        placeholder="Selecione imagem"
-                        type="file"
-                        icon={FiUpload}
-                        onChange={(e) => handleImageChange(e.target.files)}
-                    />
-                    <Input
-                        label="Nome"
-                        nameInput="nome"
-                        placeholder="Ex.: Salada Ceasar"
-                        type="text"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                    />
-                    <Select
-                        label="Categoria"
-                        name="category"
-                        data={data}
-                        setItem={setCategory}
-                    />
+                    <div className="ImgAndNameAndCategory">
+                        <Input
+                            label="Imagem do prato"
+                            nameInput="Imagem do prato"
+                            placeholder="Selecione imagem"
+                            type="file"
+                            icon={FiUpload}
+                            onChange={(e) => handleImageChange(e.target.files)}
+                            className="imagem"
+                        />
+                        <Input
+                            label="Nome"
+                            nameInput="nome"
+                            placeholder="Ex.: Salada Ceasar"
+                            type="text"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                        />
+                        <Select
+                            label="Categoria"
+                            name="category"
+                            data={data}
+                            setItem={setCategory}
+                        />
+                    </div>
                     <div>
                         <Label>Ingredientes</Label>
                         <NewIgredients>

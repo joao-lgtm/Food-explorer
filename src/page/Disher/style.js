@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { FONTS } from "../../style/fonts";
+import { DEVICE_BREAKPOINTS } from "../../style/deviceBreakPoint";
 
 export const Container = styled.main`
     width: 100%;
@@ -18,11 +19,15 @@ export const Container = styled.main`
 
 export const Main = styled.div`
     grid-area: content; 
-    color: white;
 
     display: flex;
     flex-direction: column;
+    gap: 47px;
 
-    padding: 2.25rem 3.5rem 2.25rem 3.5rem ;
+    padding: 0 121px 151px 121px;
+
+    @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+        padding: 2.25rem 3.5rem 2.25rem 3.5rem ;
+    }
 `;
 
