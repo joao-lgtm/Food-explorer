@@ -62,7 +62,7 @@ export const Label = styled.label`
 
 export const NewIgredients = styled.div`
     width: 100%;
-    background:  ${({ theme }) => theme.DARK_900};
+    background:  ${({ theme }) => theme.DARK_800};
 
     padding: 0.5rem;
     border-radius: 0.5rem;

@@ -146,34 +146,36 @@ export function NewDisher() {
                             setItem={setCategory}
                         />
                     </div>
-                    <div>
-                        <Label>Ingredientes</Label>
-                        <NewIgredients>
-                            {ingredients.map((ingredient, index) => (
+                    <div className="igredientsAndPrice">
+                        <div className="igredients">
+                            <Label>Ingredientes</Label>
+                            <NewIgredients>
+                                {ingredients.map((ingredient, index) => (
+                                    <Ingredients
+                                        key={String(index)}
+                                        value={ingredient.name}
+                                        onClick={() => handleRemoveIngredient(ingredient.name)}
+                                    />
+                                ))}
                                 <Ingredients
-                                    key={String(index)}
-                                    value={ingredient.name}
-                                    onClick={() => handleRemoveIngredient(ingredient.name)}
+                                    isNew
+                                    placeholder="Adicionar"
+                                    value={newIngredient}
+                                    onChange={(e) => setNewIngredient(e.target.value)}
+                                    onClick={handleAddNewIngredient}
                                 />
-                            ))}
-                            <Ingredients
-                                isNew
-                                placeholder="Adicionar"
-                                value={newIngredient}
-                                onChange={(e) => setNewIngredient(e.target.value)}
-                                onClick={handleAddNewIngredient}
-                            />
-                        </NewIgredients>
+                            </NewIgredients>
+                        </div>
+                        <Input
+                            label="Preço"
+                            nameInput="preco"
+                            placeholder="R$ 00,00"
+                            type="text"
+                            value={price}
+                            onChange={(e) => setPrice(e.target.value)}
+                            mask="99,99"
+                        />
                     </div>
-                    <Input
-                        label="Preço"
-                        nameInput="preco"
-                        placeholder="R$ 00,00"
-                        type="text"
-                        value={price}
-                        onChange={(e) => setPrice(e.target.value)}
-                        mask="99,99"
-                    />
                     <TextArea
                         label="Descrição"
                         name="description"

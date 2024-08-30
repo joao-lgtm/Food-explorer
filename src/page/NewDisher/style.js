@@ -22,10 +22,46 @@ export const Container = styled.div`
 
 export const Main = styled.main`
     grid-area: content; 
+    padding: 0 125px;
+
+    form{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 32px;
+    }
 
     .ImgAndNameAndCategory{
         display: flex;
+        align-items: center;
         gap: 1.5rem;
+
+        div {
+            &:nth-child(1) {
+                flex: 2;
+            }
+
+            &:nth-child(2) {
+                flex: 4;
+            }
+
+            &:nth-child(3) {
+                flex: 4; 
+            }
+        }
+    }
+
+    .igredientsAndPrice{
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+
+        .igredients{
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            width: 90%;
+        }
     }
 
 
@@ -52,6 +88,23 @@ export const Main = styled.main`
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
+
+            div{
+                width: 100%;
+            }
+        }
+       
+        .igredientsAndPrice{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            .igredients{
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                width: 100%;
+            }
         }
 
         textarea{
@@ -71,7 +124,7 @@ export const PreviewIMG = styled.div`
 
 export const NewIgredients = styled.div`
     width: 100%;
-    background:  ${({ theme }) => theme.DARK_900};
+    background:  ${({ theme }) => theme.DARK_800};
 
     padding: 0.5rem;
     border-radius: 0.5rem;

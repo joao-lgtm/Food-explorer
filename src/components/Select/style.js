@@ -8,7 +8,7 @@ import arrowDown from "../../assets/arrowDown.svg"
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.5rem;
 
     
     label{
@@ -36,7 +36,7 @@ export const SelectApparence = styled.div`
 
             padding: 16px 14px;
             border-radius: 0.5rem;
-            background-color:  ${({ theme }) => theme.DARK_900};
+            background-color:  ${({ theme }) => theme.DARK_800};
             color: ${({ theme }) => theme.LIGHT_400};
             font-family: ${FONTS.SMALLER_ROBOTO.FONTFAMILY};
             font-weight: ${FONTS.SMALLER_ROBOTO.WEIGTH};

@@ -18,7 +18,7 @@ export const Container = styled.div`
         display: flex;
         align-items: center;
         gap:0.875rem;
-        background:  ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_900 : ThemeWhite.LIGHT_100};
+        background:  ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_800 : ThemeWhite.LIGHT_100};
         border-radius: 0.5rem;
         padding: 16px 14px;
     }
