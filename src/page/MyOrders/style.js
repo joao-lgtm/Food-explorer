@@ -27,6 +27,29 @@ export const Main = styled.main`
         font-size: ${FONTS.MEDIUM_400_POPPINS.SIZE};
         line-height: ${FONTS.MEDIUM_400_POPPINS.LINEHEIGHT};
     }
+
+    div{
+        border: 1px solid #333;
+        border-radius: 8px;
+    }
+
+    table {
+      width: 100%;
+      font-size: 16px;
+      color: #fff;
+      border-collapse: collapse;
+    }
+    tr{
+        
+        border: 1px solid #333;
+    }
+
+    th, td {
+        border: 1px solid #333;
+        padding: 21px 24px 21px 24px;
+        text-align: left;
+        
+    }
 `;
 
 export const Message = styled.div`

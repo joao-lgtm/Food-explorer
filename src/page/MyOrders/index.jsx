@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { USER_ROLE } from "../../utils/roles";
 import { useAuth } from "../../hooks/auth";
 import { CustomSelect } from "../../components/DropDown";
+import { DEVICE_BREAKPOINTS } from "../../style/deviceBreakPoint";
 
 export function MyOrders() {
     const [data, setData] = useState();
@@ -27,8 +28,8 @@ export function MyOrders() {
             }
         }
 
-            handleOrders();
-        }, []);
+        handleOrders();
+    }, []);
 
 
     function status(statusOrder) {
@@ -51,26 +52,46 @@ export function MyOrders() {
         <Container>
             <Header />
             <Main>
-
                 <h2>Pedidos</h2>
-                {!data && 
-                <Message> Não ha pedidos </Message>
+                {!data &&
+                    <Message> Não ha pedidos </Message>
                 }
                 {[USER_ROLE.CLIENT].includes(user.role) &&
-                    data && data.map((orders, index) => (
-                        <Orders key={Number(index)}>
-                            <Status>
-                                <span>{orders.id}</span>
-                                <div>
-                                    <StatusBall data-status={orders.status} /><span> {status(orders.status)} </span>
-                                </div>
-                                <span>{dateFormatad(orders.created_at)}</span>
-                            </Status>
-                            <Details key={Number(index)} >
-                                {orders.details.map(detail => `${detail.quantity} x ${detail.name}`).join(", ")}
-                            </Details>
-                        </Orders>
-                    ))}
+                    <div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Status</th>
+                                    <th>Codigo</th>
+                                    <th>Detalhamento</th>
+                                    <th>Data e hora</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {data && data.map((orders, index) => (
+                                    <tr key={Number(index)}>
+                                        <td>{status(orders.status)}</td>
+                                        <td>{orders.id}</td>
+                                        <td>{orders.details.map(detail => `${detail.quantity} x ${detail.name}`).join(", ")}</td>
+                                        <td>{dateFormatad(orders.created_at)}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                    // <Orders key={Number(index)}>
+                    //     <Status>
+                    //         <span>{orders.id}</span>
+                    //         <div>
+                    //             <StatusBall data-status={orders.status} /><span> {status(orders.status)} </span>
+                    //         </div>
+                    //         <span>{dateFormatad(orders.created_at)}</span>
+                    //     </Status>
+                    //     <Details key={Number(index)} >
+                    //         {orders.details.map(detail => `${detail.quantity} x ${detail.name}`).join(", ")}
+                    //     </Details>
+                    // </Orders>
+                }
                 {[USER_ROLE.ADMIN].includes(user.role) &&
                     data && data.map((orders, index) => (
                         <Orders key={Number(index)}>
