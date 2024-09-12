@@ -69,11 +69,11 @@ export function Header({ setDisherIngredients }) {
             </div>
 
             <div className="favorites">
-                {[USER_ROLE.CLIENT].includes(user.role) && <span >Meus favoritos</span>}
+                 <span >Meus favoritos</span>
             </div>
 
             <div className="order-history">
-                {[USER_ROLE.CLIENT].includes(user.role) && <span  onClick={() => navigation('/salesOrder')}>Histórico de pedidos</span>}
+               <span  onClick={() => navigation('/salesOrder')}>Histórico de pedidos</span>
             </div>
 
             {[USER_ROLE.CLIENT].includes(user.role) && <Button  onClick={() => order ? handleOrderPreview(order.id) : null}  className='button-receipt' icon={PiReceiptLight } name={`pedidos (${count})`}/>}

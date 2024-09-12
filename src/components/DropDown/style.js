@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const Dropdown = styled.div`
   position: relative;
-  display: inline-block;
-  width: 200px;
+  width: 100%;
+  background-color: ${({ theme }) => theme.DARK_900};
 `;
 
 export const DropdownToggle = styled.div`
@@ -12,8 +12,15 @@ export const DropdownToggle = styled.div`
   cursor: pointer;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   border-radius: 4px;
+  width: 100%;
+
+  .infos{
+    display: flex; 
+    align-items: center;
+    gap: 0.5rem;
+  }
 `;
 
 export const DropdownMenu = styled.div`
@@ -32,6 +39,7 @@ export const DropdownMenu = styled.div`
 export const DropdownItem = styled.div`
   padding: 10px;
   display: flex;
+  gap: 0.5rem;
   align-items: center;
   cursor: pointer;
   background-color: ${({ theme }) => theme.DARK_700};

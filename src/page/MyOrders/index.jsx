@@ -1,4 +1,4 @@
-import { Container, Details, Main, Message, Orders, Status, StatusBall } from "./style";
+import { Container, Details, Main, Message, Orders, OrderStatus, Status, StatusBall } from "./style";
 import { Header } from "../../components/Header"
 import { Footer } from "../../components/Footer";
 import { useEffect, useState } from "react";
@@ -16,19 +16,18 @@ export function MyOrders() {
 
     useEffect(() => {
         async function handleOrders() {
-            if (USER_ROLE.ADMIN.includes(user?.role)) {
+            if ([USER_ROLE.ADMIN].includes(user.role)) {
                 const response = await api.get('/salesOrder/all', { withCredentials: true })
                 setData(response.data);
             }
-            else if (USER_ROLE.CLIENT.includes(user?.role)) {
+            else if ([USER_ROLE.CLIENT].includes(user.role)) {
                 const response = await api.get('/salesOrder/user/all', { withCredentials: true })
-                setData(response.data)
+                setData(response.data);
             }
         }
 
         handleOrders();
     }, []);
-
 
     function status(statusOrder) {
         let status
@@ -55,47 +54,63 @@ export function MyOrders() {
                 {!data &&
                     <Message> Não ha pedidos </Message>
                 }
-                {[USER_ROLE.CLIENT].includes(user.role) &&
-                    <div className="container">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Status</th>
-                                    <th>Código</th>
-                                    <th>Detalhamento</th>
-                                    <th>Data e hora</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {data && data.map((orders, index) => (
-                                    <tr key={Number(index)}>
-                                        <td> <div><StatusBall data-status={orders.status} /><span> {status(orders.status)} </span></div></td>
-                                        <td>{orders.id}</td>
-                                        <td>{orders.details.map(detail => `${detail.quantity} x ${detail.name}`).join(", ")}</td>
-                                        <td>{dateFormatad(orders.created_at)}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                        <div>
+                <div className="container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Status</th>
+                                <th>Código</th>
+                                <th>Detalhamento</th>
+                                <th>Data e hora</th>
+                            </tr>
+                        </thead>
+                        <tbody>
                             {data && data.map((orders, index) => (
-                                <Orders key={Number(index)}>
-                                    <Status>
-                                        <span>{orders.id}</span>
-                                        <div>
-                                            <StatusBall data-status={orders.status} /><span> {status(orders.status)} </span>
-                                        </div>
-                                        <span>{dateFormatad(orders.created_at)}</span>
-                                    </Status>
-                                    <Details key={Number(index)} >
-                                        {orders.details.map(detail => `${detail.quantity} x ${detail.name}`).join(", ")}
-                                    </Details>
-                                </Orders>
+                                <tr key={Number(index)}>
+                                    <td>
+                                        {[USER_ROLE.ADMIN].includes(user.role) &&
+                                            <CustomSelect status={orders.status} statusName={status(orders.status)} />
+                                        }
+                                        {[USER_ROLE.CLIENT].includes(user.role) &&
+                                            <div>
+                                                <StatusBall data-status={orders.status} />
+                                                <span> {status(orders.status)} </span>
+                                            </div>
+                                        }
+                                    </td>
+                                    <td>{orders.id}</td>
+                                    <td>{orders.details.map(detail => `${detail.quantity} x ${detail.name}`).join(", ")}</td>
+                                    <td>{dateFormatad(orders.created_at)}</td>
+                                </tr>
                             ))}
-                        </div>
-                    </div>
+                        </tbody>
+                    </table>
+                    <div>
+                        {data && data.map((orders, index) => (
+                            <Orders key={Number(index)}>
+                                <Status data-client={user.role}>
+                                    <span>{orders.id}</span>
+                                    {[USER_ROLE.CLIENT].includes(user.role) &&
+                                        <OrderStatus >
+                                            <StatusBall data-status={orders.status} />
+                                            <span> {status(orders.status)} </span>
+                                        </OrderStatus>
+                                    }
+                                    <span>{dateFormatad(orders.created_at)}</span>
+                                </Status>
+                                <Details key={Number(index)} >
+                                    {orders.details.map(detail => `${detail.quantity} x ${detail.name}`).join(", ")}
+                                </Details>
 
-                }
+                                {[USER_ROLE.ADMIN].includes(user.role) &&
+                                    <CustomSelect status={orders.status} statusName={status(orders.status)} />
+                                }
+                            </Orders>
+                        ))}
+                    </div>
+                </div>
+
+
                 {/* {[USER_ROLE.ADMIN].includes(user.role) &&
                     data && data.map((orders, index) => (
                         <Orders key={Number(index)}>
@@ -107,8 +122,7 @@ export function MyOrders() {
                                 {orders.details.map(detail => `${detail.quantity} x ${detail.name}`).join(", ")}
                             </Details>
 
-                            <CustomSelect />
-
+                          
                         </Orders>
                     ))} */}
 

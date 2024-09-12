@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { FONTS } from "../../style/fonts";
 import { DEVICE_BREAKPOINTS } from "../../style/deviceBreakPoint";
+import { USER_ROLE } from "../../utils/roles";
 
 export const Container = styled.div`
     width: 100%;
@@ -159,17 +160,30 @@ export const Orders = styled.div`
 export const Status = styled.div`
     width: 100%;
     display: flex;
-    justify-content: space-between;
+
+    &[data-client="admin"]{
+        gap: 1rem;
+    }
+
+    &[data-client="client"]{
+        justify-content: space-between;
+    }
     
     > div {
         display: flex;
         align-items: center;
         gap: 0.5rem;
     }
+
 `;
 export const Infos = styled.div`
     display: flex;
     gap: 1.5rem;
+`;
+
+export const OrderStatus = styled.div`
+    margin-left: 2rem;
+    margin-right: 2rem;
 `;
 
 export const StatusBall = styled.div`

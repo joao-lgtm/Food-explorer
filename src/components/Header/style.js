@@ -15,6 +15,14 @@ export const Container = styled.header`
     font-size: ${FONTS.SMALLREGULAR_ROBOTO.SIZE};
     font-weight: ${FONTS.SMALLREGULAR_ROBOTO.WEIGTH};
     line-height: ${FONTS.SMALLREGULAR_ROBOTO.LINEHEIGHT};
+
+
+    .favorites{
+        cursor: pointer;
+    }
+    .order-history{
+        cursor: pointer;
+    }
     
     .icon{
          display: none;
