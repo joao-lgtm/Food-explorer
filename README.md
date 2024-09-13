@@ -1,6 +1,8 @@
 <h1 align="center" id="title">Food Explorer</h1>
 
-<p align="center"><img src="https://img.shields.io/badge/Node-v18.12.0-blue" alt="shields"></p>
+<p align="center"><img src="https://socialify.git.ci/joao-lgtm/Food-explorer/image?font=Jost&amp;language=1&amp;name=1&amp;pattern=Circuit%20Board&amp;theme=Dark" alt="project-image"></p>
+
+<p align="center"><img src="https://img.shields.io/badge/Node-v18.12.0-blue" alt="shields"><img src="https://img.shields.io/badge/NPM-v8.19.2-green" alt="shields"></p>
 
   
   
@@ -50,3 +52,5 @@ Technologies used in the project:
 *   Javascript
 *   Html
 *   Css
+*   React-toastify
+*   Styled-components
