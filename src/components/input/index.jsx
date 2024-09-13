@@ -1,11 +1,14 @@
+import { useTheme } from "styled-components";
+import { ThemeBlack, ThemeWhite } from "../../style/theme";
 import { Container, InputMask } from "./style";
 
 export function Input({ nameInput, label, placeholder, icon: Icon, type, ...rest }) {
+
     return (
         <Container>
             {label && <label htmlFor={nameInput}>{label}</label>}
             <div >
-                {Icon && <Icon size={24} color="white" />}
+                {Icon && <Icon color="gray" size={24} />}
                 {type === "file" && 
                     <label htmlFor={nameInput}>{placeholder}</label>
                 }

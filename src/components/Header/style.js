@@ -7,10 +7,14 @@ export const Container = styled.header`
     grid-area: header;
     display: flex;
     align-items: center;
-    background-color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_700 : ThemeWhite.LIGHT_100};
     justify-content: space-evenly;
+
+    border-bottom: 1px solid ${({ theme }) => theme.DARK_700};
+    background-color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_700 : ThemeWhite.LIGHT_100};
+    color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_100  : ThemeWhite.DARK_700};
+
+
     padding: 3.5rem 1.75rem 1.5rem 1.75rem;
-    color:${({ theme }) => theme.LIGHT_300};
     font-family: ${FONTS.SMALLREGULAR_ROBOTO.FONTFAMILY};
     font-size: ${FONTS.SMALLREGULAR_ROBOTO.SIZE};
     font-weight: ${FONTS.SMALLREGULAR_ROBOTO.WEIGTH};

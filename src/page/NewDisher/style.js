@@ -69,7 +69,7 @@ export const Main = styled.main`
         padding: 0.625rem 2rem 3.313rem 2rem;
 
         h2{
-            color: ${({ theme }) => theme.LIGHT_100};
+            color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_100  : ThemeWhite.DARK_800};
             margin-top: 2.188rem;
             margin-bottom: 1.063rem;
             font-family: ${FONTS.MEDIUM_400_POPPINS.FONTFAMILY};
@@ -124,7 +124,9 @@ export const PreviewIMG = styled.div`
 
 export const NewIgredients = styled.div`
     width: 100%;
-    background:  ${({ theme }) => theme.DARK_800};
+    background:  ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_800  : ThemeWhite.LIGHT_100};
+    border: 1px solid ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_800 : ThemeWhite.DARK_800};
+    color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_300  : ThemeWhite.DARK_800};
 
     padding: 0.5rem;
     border-radius: 0.5rem;
@@ -139,5 +141,5 @@ export const Label = styled.label`
     font-family: ${FONTS.SMALLREGULAR_ROBOTO.FONTFAMILY};
     font-weight: ${FONTS.SMALLREGULAR_ROBOTO.WEIGTH};
     font-size: ${FONTS.SMALLREGULAR_ROBOTO.SIZE};
-    color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_400 : ThemeWhite.LIGHT_400};
+    color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_400 : ThemeWhite.DARK_800};
 `;

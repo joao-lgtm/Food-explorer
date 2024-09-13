@@ -14,6 +14,7 @@ import { Button } from './../Button';
 import { useOrder } from "../../hooks/order";
 import { PiReceiptLight,PiSignOut } from "react-icons/pi";
 import { GoSignOut } from "react-icons/go";
+import { ThemeSwitcher } from "../ThemeSwitcher";
 
 export function Header({ setDisherIngredients }) {
     const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -54,7 +55,7 @@ export function Header({ setDisherIngredients }) {
     }
     return (
         <Container>
-            <RxHamburgerMenu className='icon' onClick={() => setMenuIsOpen(true)} color="white" size={24} />
+            <RxHamburgerMenu className='icon' onClick={() => setMenuIsOpen(true)} size={24} />
 
             <Logo onClick={() => handleHome()} />
 
@@ -85,9 +86,10 @@ export function Header({ setDisherIngredients }) {
             </div>
 
             <div className="logout">
-                <GoSignOut onClick={() => (navigation('/') ,signOut())} color="white"/>
+                <GoSignOut onClick={() => (navigation('/') ,signOut())} />
             </div>
             
+            <div><ThemeSwitcher></ThemeSwitcher></div>
         </Container>
     )
 }

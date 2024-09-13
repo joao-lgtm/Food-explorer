@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import Sun from "../../assets/sun.svg"
+import moon from "../../assets/moon.svg"
 
 export const Container = styled.div`
     border: 2px solid red;
@@ -16,7 +18,7 @@ export const Container = styled.div`
 
         border-radius: 50%;
         transform: translateX(0%);
-        transition: transform 0.5s ease-in-out;
+        transition: transform 1s ease-in-out;
 
 
         &[data-theme-mode="true"]{
@@ -24,7 +26,7 @@ export const Container = styled.div`
             background-repeat: no-repeat;
             background-position: center;
             transform: translateX(100%);
-            transition: transform 0.5s ease-in-out;
+            transition: transform 1s ease-in-out;
         }
     }
 `;
