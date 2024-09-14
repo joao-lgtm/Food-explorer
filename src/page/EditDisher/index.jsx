@@ -200,63 +200,67 @@ export function EditDisher() {
                             <img src={previewUrl} alt="Preview" />
                         </PreviewIMG>
                     )}
-                    <Input
-                        label="Imagem do prato"
-                        nameInput="Imagem do prato"
-                        placeholder={file ? fileName : "selecione uma imagem"}
-                        type="file"
-                        icon={FiUpload}
-                        onChange={(e) => handleImageChange(e.target.files)}
-                    />
-                    <Input
-                        label="Nome"
-                        nameInput="nome"
-                        placeholder="Ex.: Salada Ceasar"
-                        type="text"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                    />
-                    <Select
-                        label="Categoria"
-                        name="category"
-                        data={data}
-                        setItem={setCategory}
-                    />
-                    <div>
-                        <Label>Ingredientes</Label>
-                        <NewIgredients>
-                            {OldIngredients.map((ingredient, index) => (
-                                <Ingredients
-                                    key={String(index)}
-                                    value={ingredient.name}
-                                    onClick={() => handleRemoveOldIngredient(ingredient.id)}
-                                />
-                            ))}
-                            {ingredients.map((ingredient, index) => (
-                                <Ingredients
-                                    key={String(index)}
-                                    value={ingredient.name}
-                                    onClick={() => handleRemoveIngredient(ingredient.name)}
-                                />
-                            ))}
-                            <Ingredients
-                                isNew
-                                placeholder="Adicionar"
-                                value={newIngredient}
-                                onChange={(e) => setNewIngredient(e.target.value)}
-                                onClick={handleAddNewIngredient}
-                            />
-                        </NewIgredients>
+                    <div className="ImgAndNameAndCategory">
+                        <Input
+                            label="Imagem do prato"
+                            nameInput="Imagem do prato"
+                            placeholder={file ? fileName : "selecione uma imagem"}
+                            type="file"
+                            icon={FiUpload}
+                            onChange={(e) => handleImageChange(e.target.files)}
+                        />
+                        <Input
+                            label="Nome"
+                            nameInput="nome"
+                            placeholder="Ex.: Salada Ceasar"
+                            type="text"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                        />
+                        <Select
+                            label="Categoria"
+                            name="category"
+                            data={data}
+                            setItem={setCategory}
+                        />
                     </div>
-                    <Input
-                        label="Preço"
-                        nameInput="preco"
-                        placeholder="R$ 00,00"
-                        type="text"
-                        value={price}
-                        onChange={(e) => setPrice(e.target.value)}
-                        mask="99,99"
-                    />
+                    <div className="igredientsAndPrice">
+                        <div className="igredients">
+                            <Label>Ingredientes</Label>
+                            <NewIgredients>
+                                {OldIngredients.map((ingredient, index) => (
+                                    <Ingredients
+                                        key={String(index)}
+                                        value={ingredient.name}
+                                        onClick={() => handleRemoveOldIngredient(ingredient.id)}
+                                    />
+                                ))}
+                                {ingredients.map((ingredient, index) => (
+                                    <Ingredients
+                                        key={String(index)}
+                                        value={ingredient.name}
+                                        onClick={() => handleRemoveIngredient(ingredient.name)}
+                                    />
+                                ))}
+                                <Ingredients
+                                    isNew
+                                    placeholder="Adicionar"
+                                    value={newIngredient}
+                                    onChange={(e) => setNewIngredient(e.target.value)}
+                                    onClick={handleAddNewIngredient}
+                                />
+                            </NewIgredients>
+                        </div>
+                        <Input
+                            label="Preço"
+                            nameInput="preco"
+                            placeholder="R$ 00,00"
+                            type="text"
+                            value={price}
+                            onChange={(e) => setPrice(e.target.value)}
+                            mask="99,99"
+                        />
+                    </div>
                     <TextArea
                         label="Descrição"
                         name="description"

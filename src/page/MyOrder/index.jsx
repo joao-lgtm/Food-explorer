@@ -1,6 +1,6 @@
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
-import { Container, Detail, Main } from "./style";
+import { Container, DetailAndPayment, Main } from "./style";
 import { useParams } from "react-router-dom";
 import { Button } from "../../components/Button";
 import { Order } from "../../components/Order";
@@ -15,14 +15,13 @@ export function MyOrder() {
         <Container>
             <Header />
             <Main>
-                <Detail>
+                <DetailAndPayment>
                     <Order id={id} />
-
-                    <div className="Advanced">
-                        <Button name="Avançar" onClick={() => setPaymentObservetion(true)} />
-                    </div>
-                </Detail>
-                <PaymentMethod setPaymentObservetion={setPaymentObservetion} paymentObservetion={paymentObservetion} />
+                    <PaymentMethod setPaymentObservetion={setPaymentObservetion} paymentObservetion={paymentObservetion} />
+                </DetailAndPayment>
+                <div className="advanced">
+                    <Button name="Avançar" onClick={() => setPaymentObservetion(true)} />
+                </div>
             </Main>
             <Footer />
         </Container>

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { FONTS } from "../../style/fonts";
+import { DEVICE_BREAKPOINTS } from "../../style/deviceBreakPoint";
 
 export const Container = styled.div`
     width: 100%;
@@ -19,11 +20,14 @@ export const ContainerCarousel = styled.div`
     max-width: 100%;
     overflow-x: auto;
     display: inline-flex;
-    gap: 1rem;
+    gap: 1.688rem;
 
 
     > * {
         flex-shrink: 0;
     }
 
+    @media (max-width:${DEVICE_BREAKPOINTS.MD}) {
+        gap: 1rem;
+    }
 `;

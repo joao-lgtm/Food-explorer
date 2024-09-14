@@ -4,13 +4,32 @@ import { DEVICE_BREAKPOINTS } from "../../style/deviceBreakPoint";
 
 
 export const Container = styled.div`
+    width: 50%;
+    h2{
+        margin: 0;
+        font-family: ${FONTS.MEDIUM_400_POPPINS.FONTFAMILY};
+        font-size: ${FONTS.MEDIUM_400_POPPINS.SIZE};
+        font-weight: ${FONTS.MEDIUM_400_POPPINS.WEIGTH};
+        line-height: ${FONTS.MEDIUM_400_POPPINS.LINEHEIGHT};
+    }
+
+    img{
+        width: 15rem;
+        padding: 1.563rem;
+    }
+
+    .close{
+        display: none;
+    }
+
     @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
         display: none;
-
-
         &[data-paymentobservetion="true"]{
            display: block;
            position: absolute;
+           z-index: 1;
+           top: 80px;
+           left: -0px;
            background-color: ${({ theme }) => theme.DARK_400};
            color: white;
            width: 100%;
@@ -18,31 +37,39 @@ export const Container = styled.div`
            padding: 0 0.625rem;
            margin-top: 1rem
         }
+
+        .close{
+            display: block;
+        }
+
+        h2{
+            margin: 3.5rem 0 2rem 0;
+            font-family: ${FONTS.MEDIUM_400_POPPINS.FONTFAMILY};
+            font-size: ${FONTS.MEDIUM_400_POPPINS.SIZE};
+            font-weight: ${FONTS.MEDIUM_400_POPPINS.WEIGTH};
+            line-height: ${FONTS.MEDIUM_400_POPPINS.LINEHEIGHT};
+        }
+
+        span {
+            font-family: ${FONTS.SMALLREGULAR_ROBOTO.FONTFAMILY};
+            font-size: ${FONTS.SMALLREGULAR_ROBOTO.SIZE};
+            font-weight: ${FONTS.SMALLREGULAR_ROBOTO.WEIGTH};
+            line-height: ${FONTS.SMALLREGULAR_ROBOTO.LINEHEIGHT};
+            color: ${({ theme }) => theme.LIGHT_100}
+        }
+
+        img{
+            padding: 1.563rem;
+        }
     }
 
-    h2{
-        margin: 3.5rem 0 2rem 0;
-        font-family: ${FONTS.MEDIUM_400_POPPINS.FONTFAMILY};
-        font-size: ${FONTS.MEDIUM_400_POPPINS.SIZE};
-        font-weight: ${FONTS.MEDIUM_400_POPPINS.WEIGTH};
-        line-height: ${FONTS.MEDIUM_400_POPPINS.LINEHEIGHT};
-    }
 
-    span {
-        font-family: ${FONTS.SMALLREGULAR_ROBOTO.FONTFAMILY};
-        font-size: ${FONTS.SMALLREGULAR_ROBOTO.SIZE};
-        font-weight: ${FONTS.SMALLREGULAR_ROBOTO.WEIGTH};
-        line-height: ${FONTS.SMALLREGULAR_ROBOTO.LINEHEIGHT};
-        color: ${({ theme }) => theme.LIGHT_100}
-    }
 
-    img{
-        padding: 1.563rem;
-        
-    }
+    
 `;
 
 export const PaymentContainer = styled.div`
+    margin-top: 30px ;
     border: 1px solid ${({ theme }) => theme.LIGHT_600};
     display: flex;
     flex-direction: column;
@@ -113,5 +140,9 @@ export const InfoCard = styled.form`
         display: flex;
         gap: 1.563rem;
         width: 100%;
+
+        > div {
+            width: 100%;
+        }
     }
 `;

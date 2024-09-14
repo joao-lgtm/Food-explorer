@@ -6,6 +6,8 @@ export const Container = styled.div`
     width: 100%;
     height: 100vh;
     overflow-y: auto;
+    overflow-x: hidden;
+
 
     display: grid;
     grid-template-columns: 100%;
@@ -65,6 +67,7 @@ export const Banner = styled.div`
         img{
             position: relative;
             width: 11.93rem;
+            height: auto;
             top: -0.9rem;
             left: -1.875rem;
         }

@@ -27,6 +27,7 @@ export const Global = createGlobalStyle`
         color: ${({ theme }) => theme.FONT_COLOR};
         transition: background-color 0.3s ease-in-out;
         -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
     }
 `
 

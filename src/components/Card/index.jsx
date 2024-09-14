@@ -1,4 +1,4 @@
-import { Container, Disher, Edit, Favorite, Name, Presentation, Price } from "./style";
+import { Container, Description, Disher, Edit, Favorite, Name, Presentation, Price } from "./style";
 import { Button } from './../Button';
 import { Count } from '../../components/Count';
 import { MdOutlineFavoriteBorder, MdOutlineFavorite } from "react-icons/md";
@@ -10,7 +10,7 @@ import { api } from "../../services/api";
 import { USER_ROLE } from "../../utils/roles";
 import { useAuth } from "../../hooks/auth";
 
-export function Card({ id, img, name, price, liked = false }) {
+export function Card({ id, img, name, description, price, liked = false }) {
     const { user } = useAuth();
     const [isOver, setIsOver] = useState(false);
     const [isLiked, setIsLiked] = useState(liked);
@@ -77,16 +77,33 @@ export function Card({ id, img, name, price, liked = false }) {
 
                 </Presentation>
                 <Name>{name}</Name>
+                <Description><p>{description}</p></Description>
+
                 <Price>
                     R$ {price}
                 </Price>
-                {[USER_ROLE.CLIENT].includes(user.role) &&
-                    <>
-                        <Count setAmount={setAmount} amount={amount} size={18} />
 
-                        <Button onClick={() => handleOrder(id, amount, price)} name="Incluir" />
-                    </>
-                }
+                <div className="large-device">
+
+                    {[USER_ROLE.CLIENT].includes(user.role) &&
+                        <>
+                            <Count setAmount={setAmount} amount={amount} size={18} />
+
+                            <Button onClick={() => handleOrder(id, amount, price)} name="Incluir" />
+                        </>
+                    }
+                </div>
+
+                <div className="small-device">
+                    {[USER_ROLE.CLIENT].includes(user.role) &&
+                        <>
+                            <Count setAmount={setAmount} amount={amount} size={18} />
+
+                            <Button onClick={() => handleOrder(id, amount, price)} name="Incluir" />
+                        </>
+                    }
+                </div>
+
             </Disher>
         </Container>
     );

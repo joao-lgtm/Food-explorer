@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { FONTS } from "../../style/fonts";
+import { DEVICE_BREAKPOINTS } from './../../style/deviceBreakPoint';
+import { Button } from './../Button/index';
 
 export const Container = styled.div`
     position: relative;
@@ -12,11 +14,64 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    gap: 0.75rem;
-
-    width: 18.18rem;
-    padding: 1.5rem;
+    
+    
+    padding: 1.5rem 1.5rem 2.875rem 1.5rem ;
+    width: 304px;
+    height: auto;
     color: ${({ theme }) => theme.LIGHT_100};
+
+
+    .large-device{
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        width: 100%;
+        > button {
+            width: 92px;
+        }
+    }
+
+    .small-device{
+        display: none;
+    }
+
+    @media (max-width: ${DEVICE_BREAKPOINTS.MD}){
+        position: relative;
+        background: ${({ theme }) => theme.DARK_200};
+
+        border: 1px solid ${({ theme }) => theme.DARK_300};
+        border-radius: 0.5rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+
+        width: 18.18rem;
+        padding: 1.5rem;
+        color: ${({ theme }) => theme.LIGHT_100};
+
+
+        .large-device{
+           display: none;
+        }
+
+        .small-device{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 1rem;
+            > button{
+                width: 100%;
+            }
+        }
+    }
+
+
+
+
 `;
 
 export const Favorite = styled.div`
@@ -37,36 +92,97 @@ export const Disher = styled.div`
     align-items: center;
     gap: 1rem;
     width: 100%;
-    height: 100%;
+    height: auto;
     justify-content: center;
 
     button{
         width: 100%;
+    } 
+
+    @media (max-width: ${DEVICE_BREAKPOINTS.MD}){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+
+        button{
+            width: 100%;
+        } 
     }
+
 `;
 
 export const Presentation = styled.div`
-    cursor: pointer;    
+    cursor: pointer; 
+    
     > img {
-        width: 88px;
-        height: 88px;
+            width: 176px;
+            height: 176px;
+        }
+
+    @media (max-width: ${DEVICE_BREAKPOINTS.MD}){
+        > img {
+            width: 88px;
+            height: 88px;
+        }
     }
 `;
 
 export const Name = styled.div`
-    font-family: ${FONTS.MEDIUM_100_POPPINS.FONTFAMILY};
-    font-size: ${FONTS.MEDIUM_100_POPPINS.SIZE};
-    font-weight: ${FONTS.MEDIUM_100_POPPINS.WEIGTH};
-    line-height: ${FONTS.MEDIUM_100_POPPINS.LINEHEIGHT};  
+    font-family: ${FONTS.BOLD_300_POPPINS.FONTFAMILY}; 
+    font-size: ${FONTS.BOLD_300_POPPINS.SIZE};
+    font-weight: ${FONTS.BOLD_300_POPPINS.WEIGTH};
+    line-height: ${FONTS.BOLD_300_POPPINS.LINEHEIGHT}; 
+
+
+
+    @media (max-width: ${DEVICE_BREAKPOINTS.MD}){
+        font-family: ${FONTS.MEDIUM_100_POPPINS.FONTFAMILY};
+        font-size: ${FONTS.MEDIUM_100_POPPINS.SIZE};
+        font-weight: ${FONTS.MEDIUM_100_POPPINS.WEIGTH};
+        line-height: ${FONTS.MEDIUM_100_POPPINS.LINEHEIGHT};  
+    }
+    
 `;
+
+export const Description = styled.div`
+    font-family: ${FONTS.SMALLREGULAR_ROBOTO.FONTFAMILY};
+    font-size: ${FONTS.SMALLREGULAR_ROBOTO.SIZE};
+    font-weight: ${FONTS.SMALLREGULAR_ROBOTO.WEIGHT};
+    color: ${({ theme }) => theme.LIGHT_400};
+
+    height: 40px;
+    text-align: center;
+   
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+        display: none;
+    }
+`;
+
 
 export const Price = styled.div`
     color: ${({ theme }) => theme.CAKE_200};
 
-    font-family: ${FONTS.SMALLREGULAR_ROBOTO.FONTFAMILY};
-    font-size: ${FONTS.SMALLREGULAR_ROBOTO.SIZE};
-    font-weight: ${FONTS.SMALLREGULAR_ROBOTO.SIZE};
-    line-height: ${FONTS.SMALLREGULAR_ROBOTO.SIZE};
+    font-family: ${FONTS.BIGGESTREGULAR_ROBOTO.FONTFAMILY};
+    font-size: ${FONTS.BIGGESTREGULAR_ROBOTO.SIZE};
+    font-weight: ${FONTS.BIGGESTREGULAR_ROBOTO.SIZE};
+    line-height: ${FONTS.BIGGESTREGULAR_ROBOTO.SIZE};
+
+
+    @media (max-width: ${DEVICE_BREAKPOINTS.MD}){
+        font-family: ${FONTS.SMALLREGULAR_ROBOTO.FONTFAMILY};
+        font-size: ${FONTS.SMALLREGULAR_ROBOTO.SIZE};
+        font-weight: ${FONTS.SMALLREGULAR_ROBOTO.SIZE};
+        line-height: ${FONTS.SMALLREGULAR_ROBOTO.SIZE};
+    }
+
+ 
 
     
 `;

@@ -24,11 +24,22 @@ export const Main = styled.main`
     grid-area: content; 
     padding: 0 125px;
 
+    h2{
+            color: ${({ theme }) => theme.LIGHT_100};
+            margin-top: 2.188rem;
+            margin-bottom: 1.063rem;
+            font-family: ${FONTS.MEDIUM_400_POPPINS.FONTFAMILY};
+            font-weight: ${FONTS.MEDIUM_400_POPPINS.WEIGTH};
+            font-size: ${FONTS.MEDIUM_400_POPPINS.SIZE};
+            line-height: ${FONTS.MEDIUM_400_POPPINS.LINEHEIGHT};
+        }
+
     form{
         display: flex;
         flex-direction: column;
         width: 100%;
-        gap: 32px;
+        gap: 2rem;
+        margin-bottom: 2rem;
     }
 
     .ImgAndNameAndCategory{

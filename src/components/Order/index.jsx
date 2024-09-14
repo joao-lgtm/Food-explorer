@@ -1,4 +1,4 @@
-import { Count, Description, Dishes, DishesContainer, Container, Quantity, Remove, Address, Total } from "./style";
+import { Count, Description, Dishes, DishesContainer, Container, Quantity, Remove, Address, Total, Presentation } from "./style";
 import { LuMinus, LuPlus } from "react-icons/lu";
 import { FaRegTrashCan } from "react-icons/fa6";
 import { useEffect, useState } from "react";
@@ -53,40 +53,47 @@ export function Order({ id }) {
             <h2>Meu pedido</h2>
             <DishesContainer>
                 {orderById && orderById.details.map((details, index) => (
-                    <Dishes key={index}>
-                        <img src={handleImg(details.img)} alt={details.description} />
-                        <Description>
-                            <span> {details.name}</span>
-                            <div>
-                                <span>R$ {details.price}</span>
-                            </div>
-                        </Description>
+                    <Presentation>
+                        <Dishes key={index}>
+                            <img src={handleImg(details.img)} alt={details.description} />
+                            <Description>
+                                <div className="detailsAndRemove">
+                                    <span> {details.name}</span>
+                                    <Remove onClick={() => handleRemove(orderById.id, details.id)}>
+                                        <FaRegTrashCan color="red" /> <span>remover</span>
+                                    </Remove>
+                                </div>
+                                <div className="price">
+                                    <span>R$ {details.price}</span>
+                                </div>
+                            </Description>
 
+
+                        </Dishes>
                         <Quantity>
                             <Count>
                                 <LuMinus onClick={() => count("subtraction", index)} cursor="pointer" size={12} />
                                 {details.quantity}
                                 <LuPlus onClick={() => count("sum", index)} cursor="pointer" size={12} />
                             </Count>
-
-                            <Remove onClick={() => handleRemove(orderById.id, details.id)}>
-                                <FaRegTrashCan color="red" /> <span>remover</span>
-                            </Remove>
                         </Quantity>
-                    </Dishes>
+                    </Presentation>
                 ))}
             </DishesContainer>
-            {orderById && orderById.address.map((address, index) => (
-                <Address key={Number(index)}>
-                    <span> {address.street}</span> 
-                    <span>{address.neighborhood}</span>
-                    <span>{address.number}</span>
-                    <span>{address.zipcode}</span>
-                </Address>
+            <Address>
+                <h3>Endereco de entrega</h3>
+                {orderById && orderById.address.map((address, index) => (
+                    <div key={Number(index)}>
+                        <span> <b>Rua:</b> {address.street}</span>
+                        <span> <b>Bairro:</b> {address.neighborhood}</span>
+                        <span><b>Numero:</b> {address.number}</span>
+                        <span><b>Cep:</b> {address.zipcode}</span>
+                    </div>
 
-            ))}
+                ))}
+            </Address>
             <Total>
-                <span>Total: R$ {orderById && orderById.price}</span>
+                <span><b>Total:</b> R$ {orderById && orderById.price}</span>
             </Total>
         </Container>
     )

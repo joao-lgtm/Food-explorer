@@ -16,7 +16,7 @@ export function PaymentMethod({ paymentObservetion,setPaymentObservetion }) {
         name: '',
         focus: '',
     });
-    const [paymentMethod, setPaymentMethod] = useState("");
+    const [paymentMethod, setPaymentMethod] = useState("credito");
     
 
     const handleInputChange = (evt) => {
@@ -35,7 +35,7 @@ export function PaymentMethod({ paymentObservetion,setPaymentObservetion }) {
 
     return (
         <Container data-paymentobservetion={paymentObservetion} >
-            <IoClose onClick={() => setPaymentObservetion(!paymentObservetion)} size={24} color="white"/>
+            <IoClose className='close' onClick={() => setPaymentObservetion(!paymentObservetion)} size={24} color="white"/>
             <h2>Pagamento </h2>
             <PaymentContainer>
                 <PaymentMedthod>
@@ -91,9 +91,6 @@ export function PaymentMethod({ paymentObservetion,setPaymentObservetion }) {
                                     onChange={handleInputChange}
                                     onFocus={handleInputFocus}
                                 />
-
-
-
                                 <Input
                                     label="CVC"
                                     type="text"

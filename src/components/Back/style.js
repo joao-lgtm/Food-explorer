@@ -6,6 +6,7 @@ export const Container = styled.div`
     margin-top: 2.25rem;
     margin-bottom: 1rem;
     align-items: center;
+    cursor: pointer;
 
     > span {
         font-family: ${FONTS.MEDIUM_400_POPPINS.FONTFAMILY};

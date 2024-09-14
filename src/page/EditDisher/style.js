@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { FONTS } from "../../style/fonts";
 import { ThemeBlack, ThemeWhite } from "../../style/theme";
+import { DEVICE_BREAKPOINTS } from "../../style/deviceBreakPoint";
 
 export const Container = styled.div`
     width: 100%;
@@ -20,27 +21,105 @@ export const Container = styled.div`
 
 
 export const Main = styled.main`
-    grid-area: content; 
-    padding: 0.625rem 2rem 3.313rem 2rem;
+ grid-area: content; 
+    padding: 0 125px;
 
     h2{
-        color: ${({ theme }) => theme.LIGHT_100};
-        margin-top: 2.188rem;
-        margin-bottom: 1.063rem;
-        font-family: ${FONTS.MEDIUM_400_POPPINS.FONTFAMILY};
-        font-weight: ${FONTS.MEDIUM_400_POPPINS.WEIGTH};
-        font-size: ${FONTS.MEDIUM_400_POPPINS.SIZE};
-        line-height: ${FONTS.MEDIUM_400_POPPINS.LINEHEIGHT};
-    }
+            color: ${({ theme }) => theme.LIGHT_100};
+            margin-top: 2.188rem;
+            margin-bottom: 1.063rem;
+            font-family: ${FONTS.MEDIUM_400_POPPINS.FONTFAMILY};
+            font-weight: ${FONTS.MEDIUM_400_POPPINS.WEIGTH};
+            font-size: ${FONTS.MEDIUM_400_POPPINS.SIZE};
+            line-height: ${FONTS.MEDIUM_400_POPPINS.LINEHEIGHT};
+        }
 
     form{
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
+        width: 100%;
+        gap: 2rem;
+        margin-bottom: 2rem;
     }
 
-    textarea{
+    .ImgAndNameAndCategory{
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
 
+        div {
+            &:nth-child(1) {
+                flex: 2;
+            }
+
+            &:nth-child(2) {
+                flex: 4;
+            }
+
+            &:nth-child(3) {
+                flex: 4; 
+            }
+        }
+    }
+
+    .igredientsAndPrice{
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+
+        .igredients{
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            width: 90%;
+        }
+    }
+
+
+    @media (max-width: ${DEVICE_BREAKPOINTS.MD}){
+        padding: 0.625rem 2rem 3.313rem 2rem;
+
+        h2{
+            color: ${({ theme }) => theme.LIGHT_100};
+            margin-top: 2.188rem;
+            margin-bottom: 1.063rem;
+            font-family: ${FONTS.MEDIUM_400_POPPINS.FONTFAMILY};
+            font-weight: ${FONTS.MEDIUM_400_POPPINS.WEIGTH};
+            font-size: ${FONTS.MEDIUM_400_POPPINS.SIZE};
+            line-height: ${FONTS.MEDIUM_400_POPPINS.LINEHEIGHT};
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .ImgAndNameAndCategory{
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            div{
+                width: 100%;
+            }
+        }
+       
+        .igredientsAndPrice{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            .igredients{
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                width: 100%;
+            }
+        }
+        textarea{
+
+        }
     }
 `;
 
@@ -81,6 +160,16 @@ export const Buttons = styled.div`
     > button{
         padding: 16px 0;
         width: 100%;
+    }
+    @media (max-width: ${DEVICE_BREAKPOINTS.MD}){
+        display: flex;
+        gap: 24px;
+        width: 100%;
+
+        > button{
+            padding: 16px 0;
+            width: 100%;
+        }
     }
 `;
 
