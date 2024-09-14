@@ -1,3 +1,4 @@
+import { useTheme } from "../../hooks/ThemeSwitcher"
 import { Container } from "./style";
 
 export function ThemeSwitcher() {

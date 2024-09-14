@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { FONTS } from "../../style/fonts";
+import { ThemeBlack, ThemeWhite } from "../../style/theme";
 
 
 export const Container = styled.div`
@@ -24,7 +25,7 @@ export const Container = styled.div`
                 font-family: ${FONTS.BIGGERBOLD_ROBOTO.FONTFAMILY};
                 font-size: ${({ fontSize }) => fontSize ? fontSize : FONTS.BIGGERBOLD_ROBOTO.SIZE};
                 font-weight: ${FONTS.BIGGERBOLD_ROBOTO.WEIGTH};
-                color: ${({ theme }) => theme.LIGHT_100};
+                color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_100 : ThemeWhite.DARK_100};
             }
         }
         > span {

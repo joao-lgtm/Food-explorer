@@ -10,7 +10,7 @@ export function Back() {
 
     return (
         <Container onClick={handleBack}>
-            <IoIosArrowBack size={20} color='white'/> <span>Voltar</span>
+            <IoIosArrowBack  size={20}/> <span>Voltar</span>
         </Container>
     )
 

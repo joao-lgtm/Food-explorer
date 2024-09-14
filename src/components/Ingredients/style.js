@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ThemeBlack, ThemeWhite } from "../../style/theme";
 
 export const Container = styled.div`
     background-color: ${({ theme, $isNew }) => $isNew ? "transparent" : theme.LIGHT_600}; ;
@@ -20,7 +21,7 @@ export const Container = styled.div`
 
     input {
         width: 100%;
-        color: ${({ theme }) => theme.LIGHT_100};
+        color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_100 : ThemeWhite.DARK_800};
         background: transparent;
         border: none;
         &::placeholder{
@@ -36,10 +37,10 @@ export const Container = styled.div`
     }
 
     .button-add{
-        color: ${({ theme }) => theme.LIGHT_600}
+        color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_100 : ThemeWhite.DARK_800};
     }
 
     .button-delete{
-        color: ${({ theme }) => theme.LIGHT_100}
+        color: ${({ theme }) => theme.LIGHT_100};
     }
 `;

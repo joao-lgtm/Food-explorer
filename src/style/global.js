@@ -29,5 +29,33 @@ export const Global = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
         overflow-x: hidden;
     }
-`
+    *::-webkit-scrollbar {
+        height: 5px;
+        width: 5px;
+    }
+    *::-webkit-scrollbar-track {
+        border-radius: 5px;
+        background-color: #DFE9EB;
+    }
 
+    *::-webkit-scrollbar-track:hover {
+        background-color: #B8C0C2;
+    }
+
+    *::-webkit-scrollbar-track:active {
+        background-color: #B8C0C2;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background-color: #757575;
+    }
+
+    *::-webkit-scrollbar-thumb:hover {
+        background-color: #717171;
+    }
+
+    *::-webkit-scrollbar-thumb:active {
+        background-color: #A3A3A3;
+    }
+`;

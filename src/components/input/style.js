@@ -11,7 +11,7 @@ export const Container = styled.div`
         font-family: ${FONTS.SMALLREGULAR_ROBOTO.FONTFAMILY};
         font-weight: ${FONTS.SMALLREGULAR_ROBOTO.WEIGTH};
         font-size: ${FONTS.SMALLREGULAR_ROBOTO.SIZE};
-        color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_400 : ThemeWhite.LIGHT_400};
+        color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_100 : ThemeWhite.DARK_100};
         width: 100%;
     }
     > div {
@@ -19,6 +19,7 @@ export const Container = styled.div`
         align-items: center;
         gap:0.875rem;
         background:  ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_800 : ThemeWhite.LIGHT_100};
+        border: 1px solid ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_800 : ThemeWhite.DARK_800};
         border-radius: 0.5rem;
         padding: 16px 14px;
     }
@@ -32,14 +33,14 @@ export const InputMask = styled(ReactInputMask)`
     background: transparent;
     border: none;
     
-    color: ${({ theme }) => theme.LIGHT_100};
+    color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_100 : ThemeWhite.DARK_100};
         &::placeholder{
-            color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_500 : ThemeWhite.LIGHT_500};
+            color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_500 : ThemeWhite.DARK_100};
         }
         &:focus-visible{
         outline: 0;
     }   
-
+  
     &[data-type="file"]{
       display: none;
       width: 100%;

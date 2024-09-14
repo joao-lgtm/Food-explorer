@@ -9,7 +9,9 @@ export const Container = styled.footer`
     padding: 1.83rem 1.73rem;
 
     background-color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_700 : ThemeWhite.LIGHT_100};
-    color: ${({ theme }) => theme.LIGHT_100};
+    color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_100  : ThemeWhite.DARK_700};
+
+    border-top: 1px solid ${({ theme }) => theme.DARK_700};
 
     >  img {
         width: 8.875rem;

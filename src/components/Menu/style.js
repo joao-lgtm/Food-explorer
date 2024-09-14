@@ -38,7 +38,7 @@ export const Container = styled.div`
 export const Header = styled.div`
     grid-area: header;
     background-color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_700 : ThemeWhite.LIGHT_100};
-    color: ${({ theme }) => theme.LIGHT_100};
+    color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_300  : ThemeWhite.DARK_100};
 
     display: flex;
     align-items: center;
@@ -49,11 +49,9 @@ export const Header = styled.div`
     font-family: ${FONTS.REGULAR_ROBOTO.FONTFAMILY};
     font-size: ${FONTS.REGULAR_ROBOTO.SIZE};
     font-weight: ${FONTS.REGULAR_ROBOTO.WEIGTH};
-     
-    > img {
-        width: 1.21rem;
-    }
-`
+
+    border-bottom: 1px solid ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_700 : ThemeWhite.DARK_700};
+`;
 
 export const Main = styled.main`
     grid-area: content;
@@ -68,9 +66,9 @@ export const Main = styled.main`
             list-style: none;
             li {
                 margin-bottom: 0.65rem;
-                color: ${({ theme }) => theme.LIGHT_100};
+                color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_300  : ThemeWhite.DARK_100};
                 font-family: ${FONTS.MEDIUM_500_POPPINS.FONTFAMILY};
-                font-weight: 200;
+                font-weight: 400;
                 font-size: 1.5rem;
 
                 border-bottom: 1px solid ${({ theme }) => theme.DARK_1000};

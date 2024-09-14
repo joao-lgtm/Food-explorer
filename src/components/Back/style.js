@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { FONTS } from "../../style/fonts";
+import { ThemeBlack, ThemeWhite } from "../../style/theme";
 
 export const Container = styled.div`
     display: flex;
@@ -13,7 +14,11 @@ export const Container = styled.div`
         font-size: 1.6rem;
         line-height: ${FONTS.MEDIUM_400_POPPINS.LINEHEIGHT};
         font-weight: ${FONTS.MEDIUM_400_POPPINS.WEIGTH};  
-        color: ${({theme}) => theme.LIGHT_100};
+        color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_100  : ThemeWhite.DARK_800};;
+    }
+
+    svg{
+        color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_100  : ThemeWhite.DARK_800};
     }
    
 `;

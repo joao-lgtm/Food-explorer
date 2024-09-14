@@ -1,19 +1,30 @@
 import styled from "styled-components";
+import { ThemeBlack, ThemeWhite } from "../../style/theme";
 
 export const Dropdown = styled.div`
   position: relative;
-  display: inline-block;
-  width: 200px;
+  width: 100%;
+  background-color:  ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_900 : ThemeWhite.LIGHT_100};
+  border: 1px solid ${({ theme }) => theme.DARK_900};
+  color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_100 : ThemeWhite.DARK_900};
+  border-radius: 4px;
 `;
 
 export const DropdownToggle = styled.div`
   padding: 10px;
-  background-color: ${({ theme }) => theme.GRAY_100};
+  background-color:  ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_900 : ThemeWhite.LIGHT_100};
   cursor: pointer;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   border-radius: 4px;
+  width: 100%;
+
+  .infos{
+    display: flex; 
+    align-items: center;
+    gap: 0.5rem;
+  }
 `;
 
 export const DropdownMenu = styled.div`
@@ -21,8 +32,8 @@ export const DropdownMenu = styled.div`
   top: 100%;
   left: 0;
   width: 100%;
-  background-color: ${({ theme }) => theme.DARK_600};
-  border: 1px solid ${({ theme }) => theme.GRAY_300};
+  background-color:  ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_900 : ThemeWhite.LIGHT_100};
+  border: 1px solid ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_100 : ThemeWhite.DARK_900};
   border-radius: 4px;
   max-height: 200px;
   overflow-y: auto;
@@ -32,12 +43,13 @@ export const DropdownMenu = styled.div`
 export const DropdownItem = styled.div`
   padding: 10px;
   display: flex;
+  gap: 0.5rem;
   align-items: center;
   cursor: pointer;
-  background-color: ${({ theme }) => theme.DARK_700};
+  background-color:  ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_900 : ThemeWhite.LIGHT_100};
 
   &:hover {
-    background-color: ${({ theme }) => theme.DARK_500};
+    background-color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_500 : ThemeWhite.LIGHT_300};
   }
 `;
 

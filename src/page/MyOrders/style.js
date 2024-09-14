@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { FONTS } from "../../style/fonts";
 import { DEVICE_BREAKPOINTS } from "../../style/deviceBreakPoint";
+import { USER_ROLE } from "../../utils/roles";
+import { ThemeBlack, ThemeWhite } from "../../style/theme";
 
 export const Container = styled.div`
     width: 100%;
@@ -45,7 +47,7 @@ export const Main = styled.main`
     }
 
     h2 {
-        color: ${({ theme }) => theme.LIGHT_100};
+        color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_300  : ThemeWhite.DARK_700};
         margin-bottom: 1.063rem;
         font-family: ${FONTS.MEDIUM_400_POPPINS.FONTFAMILY};
         font-weight: ${FONTS.MEDIUM_400_POPPINS.WEIGTH};
@@ -64,7 +66,6 @@ export const Main = styled.main`
     table {
         width: 100%;
         font-size: 16px;
-        color: #fff;
         border-collapse: collapse;
         @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
             display: none;
@@ -80,7 +81,7 @@ export const Main = styled.main`
         font-size: ${FONTS.SMALLER_ROBOTO.SIZE};
         font-weight: bold;
         line-height: ${FONTS.SMALLER_ROBOTO.LINEHEIGHT};
-        color: ${({ theme }) => theme.LIGHT_300};
+        color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_300  : ThemeWhite.DARK_700};
     }
 
     th, td {
@@ -91,7 +92,7 @@ export const Main = styled.main`
     }
 
     td{
-        color: ${({ theme }) => theme.LIGHT_400};
+        color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_300  : ThemeWhite.DARK_700};
         font-family: ${FONTS.SMALLREGULAR_ROBOTO.FONTFAMILY};
         font-size: ${FONTS.SMALLREGULAR_ROBOTO.SIZE};
         line-height: ${FONTS.SMALLREGULAR_ROBOTO.LINEHEIGHT};
@@ -142,7 +143,7 @@ export const Orders = styled.div`
         font-weight: ${FONTS.SMALLREGULAR_ROBOTO.WEIGTH};
         line-height: ${FONTS.SMALLREGULAR_ROBOTO.LINEHEIGHT};
         
-        color: ${({ theme }) => theme.LIGHT_400};
+        color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_300  : ThemeWhite.DARK_100};
         
 
         display: flex;
@@ -159,17 +160,30 @@ export const Orders = styled.div`
 export const Status = styled.div`
     width: 100%;
     display: flex;
-    justify-content: space-between;
+
+    &[data-client="admin"]{
+        gap: 1rem;
+    }
+
+    &[data-client="client"]{
+        justify-content: space-between;
+    }
     
     > div {
         display: flex;
         align-items: center;
         gap: 0.5rem;
     }
+
 `;
 export const Infos = styled.div`
     display: flex;
     gap: 1.5rem;
+`;
+
+export const OrderStatus = styled.div`
+    margin-left: 2rem;
+    margin-right: 2rem;
 `;
 
 export const StatusBall = styled.div`
