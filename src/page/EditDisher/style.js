@@ -136,13 +136,15 @@ export const Label = styled.label`
     font-family: ${FONTS.SMALLREGULAR_ROBOTO.FONTFAMILY};
     font-weight: ${FONTS.SMALLREGULAR_ROBOTO.WEIGTH};
     font-size: ${FONTS.SMALLREGULAR_ROBOTO.SIZE};
-    color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_400 : ThemeWhite.LIGHT_400};
+    color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_100 : ThemeWhite.DARK_800};
 `;
 
 export const NewIgredients = styled.div`
     width: 100%;
-    background:  ${({ theme }) => theme.DARK_800};
-
+    background:  ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_800  : ThemeWhite.LIGHT_100};
+    border: 1px solid ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_800 : ThemeWhite.DARK_800};
+    color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_300  : ThemeWhite.DARK_800};
+    
     padding: 0.5rem;
     border-radius: 0.5rem;
     

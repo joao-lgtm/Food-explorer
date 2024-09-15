@@ -6,7 +6,6 @@ import { Button } from "../../components/Button";
 import { Order } from "../../components/Order";
 import { PaymentMethod } from "../../components/Payment";
 import { useState } from "react";
-import { Back } from "../../components/Back";
 
 export function MyOrder() {
     const { id } = useParams();

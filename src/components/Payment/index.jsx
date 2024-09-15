@@ -40,10 +40,10 @@ export function PaymentMethod({ paymentObservetion,setPaymentObservetion }) {
             <PaymentContainer>
                 <PaymentMedthod>
                     <div onClick={() => handlePaymentMethod("pix")} data-payment={paymentMethod === "pix" ? paymentMethod : null}>
-                        <PiPixLogoFill size={24} color='white' /><span>PIX</span>
+                        <PiPixLogoFill size={24} /><span>PIX</span>
                     </div>
                     <div onClick={() => handlePaymentMethod("credito")} data-payment={paymentMethod === "credito" ? paymentMethod : null}>
-                        <PiCreditCardLight size={24} color='white' /><span>Crédito</span>
+                        <PiCreditCardLight size={24}/><span>Crédito</span>
                     </div>
                 </PaymentMedthod>
 

@@ -13,7 +13,7 @@ export function Receipt() {
     }
     return (
         <Container onClick={() => order ? handleOrderPreview(order.id) : null} >
-            <PiReceiptLight color='white' size={24} />
+            <PiReceiptLight size={24} />
             <div className="notification-count">{ count }</div>
         </Container>
     );

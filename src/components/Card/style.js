@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { FONTS } from "../../style/fonts";
 import { DEVICE_BREAKPOINTS } from './../../style/deviceBreakPoint';
-import { Button } from './../Button/index';
+import { ThemeBlack, ThemeWhite } from "../../style/theme";
 
 export const Container = styled.div`
     position: relative;
-    background: ${({ theme }) => theme.DARK_200};
+    background:  ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_200 : ThemeWhite.LIGHT_100};
 
     border: 1px solid ${({ theme }) => theme.DARK_300};
     border-radius: 0.5rem;
@@ -19,7 +19,7 @@ export const Container = styled.div`
     padding: 1.5rem 1.5rem 2.875rem 1.5rem ;
     width: 304px;
     height: auto;
-    color: ${({ theme }) => theme.LIGHT_100};
+    color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_100 : ThemeWhite.DARK_200};
 
 
     .large-device{
@@ -38,7 +38,6 @@ export const Container = styled.div`
 
     @media (max-width: ${DEVICE_BREAKPOINTS.MD}){
         position: relative;
-        background: ${({ theme }) => theme.DARK_200};
 
         border: 1px solid ${({ theme }) => theme.DARK_300};
         border-radius: 0.5rem;
@@ -51,7 +50,6 @@ export const Container = styled.div`
 
         width: 18.18rem;
         padding: 1.5rem;
-        color: ${({ theme }) => theme.LIGHT_100};
 
 
         .large-device{
@@ -157,6 +155,8 @@ export const Description = styled.div`
     height: 40px;
     text-align: center;
    
+    color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_400 : ThemeWhite.DARK_200};
+
     overflow: hidden;
     text-overflow: ellipsis;
 
@@ -167,7 +167,7 @@ export const Description = styled.div`
 
 
 export const Price = styled.div`
-    color: ${({ theme }) => theme.CAKE_200};
+    color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.CAKE_200 : ThemeWhite.CAKE_100};
 
     font-family: ${FONTS.BIGGESTREGULAR_ROBOTO.FONTFAMILY};
     font-size: ${FONTS.BIGGESTREGULAR_ROBOTO.SIZE};

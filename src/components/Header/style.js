@@ -11,7 +11,7 @@ export const Container = styled.header`
 
     border-bottom: 1px solid ${({ theme }) => theme.DARK_700};
     background-color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_700 : ThemeWhite.LIGHT_100};
-    color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_100  : ThemeWhite.DARK_700};
+    color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_100 : ThemeWhite.DARK_700};
 
 
     padding: 3.5rem 1.75rem 1.5rem 1.75rem;
@@ -36,7 +36,9 @@ export const Container = styled.header`
         width: 23%;
     }
 
-   
+    .theme{
+        display: block;
+    }
 
     .receipt{
         display: none;
@@ -68,6 +70,10 @@ export const Container = styled.header`
             display: block;
         }
         .button-receipt{
+            display: none;
+        }
+
+        .theme{
             display: none;
         }
 

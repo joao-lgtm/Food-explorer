@@ -222,6 +222,7 @@ export function EditDisher() {
                             name="category"
                             data={data}
                             setItem={setCategory}
+                            category={category}
                         />
                     </div>
                     <div className="igredientsAndPrice">

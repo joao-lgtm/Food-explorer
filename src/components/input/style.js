@@ -22,6 +22,7 @@ export const Container = styled.div`
         border: 1px solid ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_800 : ThemeWhite.DARK_800};
         border-radius: 0.5rem;
         padding: 16px 14px;
+        
     }
 `;
 
@@ -32,6 +33,7 @@ export const InputMask = styled(ReactInputMask)`
     width: 100%;
     background: transparent;
     border: none;
+    
     
     color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_100 : ThemeWhite.DARK_100};
         &::placeholder{
@@ -44,6 +46,7 @@ export const InputMask = styled(ReactInputMask)`
     &[data-type="file"]{
       display: none;
       width: 100%;
+      
     }
 
 

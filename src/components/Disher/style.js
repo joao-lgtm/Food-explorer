@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import { FONTS } from "../../style/fonts";
 import { DEVICE_BREAKPOINTS } from "../../style/deviceBreakPoint";
+import { ThemeBlack, ThemeWhite } from "../../style/theme";
 
 export const Container = styled.div`
     display: flex;
     flex-direction: row;
     gap: 47px;
-    color: ${({ theme }) => theme.LIGHT_300};
+    color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_300 : ThemeWhite.DARK_200};
 
 
     @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
@@ -87,6 +88,8 @@ export const Ingredients = styled.div`
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
+
+    color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_300 : ThemeWhite.LIGHT_300};
 
     @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
         display: flex;

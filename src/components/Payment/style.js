@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { FONTS } from "../../style/fonts";
 import { DEVICE_BREAKPOINTS } from "../../style/deviceBreakPoint";
+import { ThemeBlack, ThemeWhite } from "../../style/theme";
 
 
 export const Container = styled.div`
@@ -97,6 +98,8 @@ export const PaymentMedthod = styled.div`
     width: 100%;
     margin-bottom: 0.938rem;
 
+    color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_100 : ThemeWhite.DARK_800};
+
     div:first-child {
         border-right: 1px solid ${({ theme }) => theme.LIGHT_600};
     }
@@ -113,11 +116,12 @@ export const PaymentMedthod = styled.div`
 
         
         &[data-payment="pix"]{
-            background-color: ${({ theme }) => theme.DARK_800};
+            background-color:  ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_800 : ThemeWhite.LIGHT_400};
+            
             border-top-left-radius: 0.438rem;
         }
         &[data-payment="credito"]{
-            background-color: ${({ theme }) => theme.DARK_800};
+            background-color:  ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_800 : ThemeWhite.LIGHT_400};
             border-top-right-radius: 0.438rem;
         }
     }

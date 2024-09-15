@@ -1,12 +1,15 @@
 import styled from "styled-components";
 import { FONTS } from "../../style/fonts";
 import { DEVICE_BREAKPOINTS } from "../../style/deviceBreakPoint";
+import { ThemeBlack, ThemeWhite } from "../../style/theme";
 
 
 export const Container = styled.div`
     width: 50%;
 
     > h2 {
+        color:  ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_100 : ThemeWhite.DARK_800};
+
         font-family: ${FONTS.MEDIUM_400_POPPINS.FONTFAMILY};
         font-size: ${FONTS.MEDIUM_400_POPPINS.SIZE};
         font-weight: ${FONTS.MEDIUM_400_POPPINS.WEIGTH};
@@ -56,6 +59,7 @@ export const Presentation = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color:  ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_100 : ThemeWhite.DARK_800};
 
     @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
         width: 100%;
@@ -80,7 +84,8 @@ export const Dishes = styled.div`
     }
 
     .price{
-        color: ${({ theme }) => theme.LIGHT_400};
+        color:  ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_400 : ThemeWhite.DARK_800};
+
         > span{
             font-size: 0.875rem;
         }
@@ -162,6 +167,7 @@ export const Remove = styled.div`
 
 export const Address = styled.div`
     h3{
+        color:  ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_100 : ThemeWhite.DARK_800};
         font-family: ${FONTS.MEDIUM_200_POPPINS.FONTFAMILY};
         font-size: ${FONTS.MEDIUM_200_POPPINS.SIZE};
         font-weight: ${FONTS.MEDIUM_200_POPPINS.WEIGTH};
@@ -172,7 +178,7 @@ export const Address = styled.div`
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
-
+        color:  ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_100 : ThemeWhite.DARK_800};
         
         > span{
             b{
@@ -194,6 +200,7 @@ export const Address = styled.div`
 
 export const Total = styled.div`
     margin-top: 1.5rem;
+    color:  ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_100 : ThemeWhite.DARK_800};
     span {
         b{
             font-size: 1.1rem;

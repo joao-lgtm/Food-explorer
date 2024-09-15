@@ -51,6 +51,7 @@ export const Banner = styled.div`
         height: 27rem;
         top: -5.313rem;
         left: -30px;
+        opacity: 1;
     }
 
     @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
@@ -72,11 +73,38 @@ export const Banner = styled.div`
             left: -1.875rem;
         }
     }
+
+    
+    @media (width: ${DEVICE_BREAKPOINTS.LG}) {
+        display: grid;
+        grid-template-columns: 32rem 1fr;
+        grid-template-rows: 7.5rem;
+        height: 16.25rem;
+        align-items: center;
+        align-content: center;
+        border-radius: 8px;
+
+        div:first-child {
+            width: 32rem;
+        }
+
+        img{
+            position: relative;
+            width: 32rem;
+            height: 27rem;
+            top: -4.313rem;
+            left: -50px;
+            opacity: 1;
+        }
+    }
+
 `;
 
 
 export const TextBanner = styled.div`
         > h2 {
+
+            word-break: break-all;
             color: ${({ theme }) => theme.LIGHT_100};
             font-family: ${FONTS.MEDIUM_500_POPPINS.FONTFAMILY};
             font-size: ${FONTS.MEDIUM_500_POPPINS.SIZE};
@@ -85,6 +113,7 @@ export const TextBanner = styled.div`
         }
 
         > span {
+            word-break: break-all;
             color: ${({ theme }) => theme.LIGHT_300};
             font-family: ${FONTS.SMALLREGULAR_ROBOTO.FONTFAMILY};
             font-size:  ${FONTS.SMALLREGULAR_ROBOTO.SIZE};

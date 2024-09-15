@@ -54,7 +54,7 @@ export function Card({ id, img, name, description, price, liked = false }) {
             {[USER_ROLE.ADMIN].includes(user.role) &&
                 <>
                     <Edit ref={favoriteRef}>
-                        <MdOutlineModeEditOutline onClick={() => editDisher(id)} cursor="pointer" color="white" size={24} />
+                        <MdOutlineModeEditOutline onClick={() => editDisher(id)} cursor="pointer" size={24} />
                     </Edit>
                 </>
             }
@@ -65,8 +65,8 @@ export function Card({ id, img, name, description, price, liked = false }) {
                         ref={favoriteRef}
                     >
                         {isOver || isLiked ?
-                            <MdOutlineFavorite cursor="pointer" color="white" size={24} />
-                            : <MdOutlineFavoriteBorder cursor="pointer" color="white" size={24} />
+                            <MdOutlineFavorite cursor="pointer" size={24} />
+                            : <MdOutlineFavoriteBorder cursor="pointer" size={24} />
                         }
                     </Favorite>
                 </>

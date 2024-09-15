@@ -13,9 +13,9 @@ export function Count({ setAmount, amount,size}) {
     }
     return (
         <Container>
-            <LuMinus color="white" onClick={() => count("subtraction")} cursor="pointer" size={size} />
+            <LuMinus color="gray"  onClick={() => count("subtraction")} cursor="pointer" size={size} />
             {amount}
-            <LuPlus color="white"  onClick={() => count("sum")} cursor="pointer" size={size} />
+            <LuPlus  color="gray"  onClick={() => count("sum")} cursor="pointer" size={size} />
         </Container>
     );
 }

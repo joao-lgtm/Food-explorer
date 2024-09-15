@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { ThemeBlack, ThemeWhite } from "../../style/theme";
 
 export const Container = styled.div`
-    background-color: ${({ theme, $isNew }) => $isNew ? "transparent" : theme.LIGHT_600}; ;
+    background-color: ${({ theme, $isNew }) => $isNew ? "transparent" : theme.LIGHT_600}; 
     border-radius: 0.5rem;
     width: 9rem;
    

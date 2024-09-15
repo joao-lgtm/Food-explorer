@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Sun from "../../assets/sun.svg"
 import moon from "../../assets/moon.svg"
+import { DEVICE_BREAKPOINTS } from "../../style/deviceBreakPoint";
 
 export const Container = styled.div`
     border: 2px solid red;
@@ -29,4 +30,28 @@ export const Container = styled.div`
             transition: transform 1s ease-in-out;
         }
     }
+
+
+    @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+        width: 4rem;
+        padding: 0rem;
+
+        > div {
+            background-size: 15px;
+            padding: 0.925rem;
+            border-radius: 50%;
+            transform: translateX(0%);
+            transition: transform 1s ease-in-out;
+
+
+        &[data-theme-mode="true"]{
+            background-image: url(${moon}); 
+            background-repeat: no-repeat;
+            background-position: center;
+            transform: translateX(100%);
+            transition: transform 1s ease-in-out;
+        }
+    }
+    }
+
 `;

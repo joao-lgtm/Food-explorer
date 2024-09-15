@@ -12,7 +12,7 @@ import { Input } from "../Input";
 import { CiSearch } from "react-icons/ci";
 import { Button } from './../Button';
 import { useOrder } from "../../hooks/order";
-import { PiReceiptLight,PiSignOut } from "react-icons/pi";
+import { PiReceiptLight, PiSignOut } from "react-icons/pi";
 import { GoSignOut } from "react-icons/go";
 import { ThemeSwitcher } from "../ThemeSwitcher";
 
@@ -23,7 +23,7 @@ export function Header({ setDisherIngredients }) {
     });
     const { signOut, user } = useAuth();
     const navigation = useNavigate();
-    const { order ,count } = useOrder();
+    const { order, count } = useOrder();
     function handleHome() {
         navigation('/');
     }
@@ -50,7 +50,7 @@ export function Header({ setDisherIngredients }) {
 
     }, [windowSize]);
 
-    function handleOrderPreview (id){
+    function handleOrderPreview(id) {
         navigation(`/salesOrder/${id}`)
     }
     return (
@@ -69,27 +69,25 @@ export function Header({ setDisherIngredients }) {
                 <Input type="text" onChange={e => setDisherIngredients(e.target.value)} icon={CiSearch} placeholder="Busque por pratos ou ingredientes" />
             </div>
 
-            <div className="favorites">
-                 <span >Meus favoritos</span>
-            </div>
-
             <div className="order-history">
-               <span  onClick={() => navigation('/salesOrder')}>Histórico de pedidos</span>
+                <span onClick={() => navigation('/salesOrder')}>Histórico de pedidos</span>
             </div>
 
-            {[USER_ROLE.CLIENT].includes(user.role) && <Button  onClick={() => order ? handleOrderPreview(order.id) : null}  className='button-receipt' icon={PiReceiptLight } name={`pedidos (${count})`}/>}
+            {[USER_ROLE.CLIENT].includes(user.role) && <Button onClick={() => order ? handleOrderPreview(order.id) : null} className='button-receipt' icon={PiReceiptLight} name={`pedidos (${count})`} />}
 
-            {[USER_ROLE.ADMIN].includes(user.role) && <Button onClick={() => navigation('/newDisher')} className='button-receipt' name={`Novo prato`}/>}
+            {[USER_ROLE.ADMIN].includes(user.role) && <Button onClick={() => navigation('/newDisher')} className='button-receipt' name={`Novo prato`} />}
 
             <div className="receipt">
                 {[USER_ROLE.CLIENT].includes(user.role) && <Receipt count={0} />}
             </div>
-
-            <div className="logout">
-                <GoSignOut onClick={() => (navigation('/') ,signOut())} />
+            <div className="theme">
+                <ThemeSwitcher />
             </div>
-            
-            <div><ThemeSwitcher></ThemeSwitcher></div>
+            <div className="logout">
+                <GoSignOut onClick={() => (navigation('/'), signOut())} />
+            </div>
+
+
         </Container>
     )
 }
