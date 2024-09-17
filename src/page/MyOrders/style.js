@@ -200,9 +200,12 @@ export const StatusBall = styled.div`
         background-color: ${({ theme }) => theme.CARROT_100};   
     }
     &[data-status="2"]{
-        background-color: ${({ theme }) => theme.MINT_100};   
+        background-color: ${({ theme }) => theme.CAKE_100};   
     }
 
+    &[data-status="3"] {
+    background-color: ${({ theme }) => theme.MINT_100};
+  }
 `;
 
 export const Details = styled.div`

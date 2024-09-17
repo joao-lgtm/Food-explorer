@@ -11,7 +11,6 @@ import { CustomSelect } from "../../components/DropDown";
 
 export function MyOrders() {
     const [data, setData] = useState();
-    const navigation = useNavigate();
     const { user } = useAuth();
 
     useEffect(() => {
@@ -33,13 +32,16 @@ export function MyOrders() {
         let status
         switch (statusOrder) {
             case statusOrder = 0:
-                status = "Pendete"
+                status = "Pendete de Pagamento"
                 break;
             case statusOrder = 1:
-                status = "Preparando"
+                status = "Confirmação de pagamento pendete"
                 break;
             case statusOrder = 2:
-                status = "Entregue"
+                status = "Pagamento Aprovado"
+                break;
+            case statusOrder = 3:
+                status = " Pedido Entregue"
                 break;
         }
 
@@ -69,7 +71,7 @@ export function MyOrders() {
                                 <tr key={Number(index)}>
                                     <td>
                                         {[USER_ROLE.ADMIN].includes(user.role) &&
-                                            <CustomSelect status={orders.status} statusName={status(orders.status)} />
+                                            <CustomSelect id={orders.id} status={orders.status} statusName={status(orders.status)} />
                                         }
                                         {[USER_ROLE.CLIENT].includes(user.role) &&
                                             <div>

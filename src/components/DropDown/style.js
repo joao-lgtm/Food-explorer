@@ -68,6 +68,10 @@ export const StatusBall = styled.div`
   }
 
   &[data-status="2"] {
+    background-color: ${({ theme }) => theme.CAKE_100};
+  }
+
+  &[data-status="3"] {
     background-color: ${({ theme }) => theme.MINT_100};
   }
 `;

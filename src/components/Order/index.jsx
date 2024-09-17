@@ -7,7 +7,7 @@ import { api } from "../../services/api";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-export function Order({ id }) {
+export function Order({ id, setStatusOrder }) {
     const { handleOrderById, orderById, removeDetail } = useOrder();
     const [orderObservetion, setOrderObservetion] = useState(false);
     const navigate = useNavigate();
@@ -17,6 +17,12 @@ export function Order({ id }) {
     }, [id, orderObservetion]);
 
 
+    useEffect(() => {
+        if (orderById) {
+            setStatusOrder(orderById.status);
+        }
+    }, [orderById]);
+    
     function handleImg(img) {
         return `${api.defaults.baseURL}/files/${img}`;
     }

@@ -29,10 +29,10 @@ export const Container = styled.div`
            display: block;
            position: absolute;
            z-index: 1;
-           top: 80px;
+           top: 75px;
            left: -0px;
-           background-color: ${({ theme }) => theme.DARK_400};
-           color: white;
+           background-color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_600 : ThemeWhite.LIGHT_100};
+           color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_100 : ThemeWhite.DARK_800};
            width: 100%;
            height: 100%;
            padding: 0 0.625rem;
@@ -56,7 +56,7 @@ export const Container = styled.div`
             font-size: ${FONTS.SMALLREGULAR_ROBOTO.SIZE};
             font-weight: ${FONTS.SMALLREGULAR_ROBOTO.WEIGTH};
             line-height: ${FONTS.SMALLREGULAR_ROBOTO.LINEHEIGHT};
-            color: ${({ theme }) => theme.LIGHT_100}
+            color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_100 : ThemeWhite.DARK_800};
         }
 
         img{
@@ -91,6 +91,14 @@ export const PaymentContainer = styled.div`
         padding: 0.938rem;
     }
  `;
+
+
+export const Payment = styled.div`
+    width: 100%;
+
+
+    display: ${({ $finalizePayment }) => $finalizePayment === true ? "none" : 'block'};
+`;
 
 export const PaymentMedthod = styled.div`
     display: flex;

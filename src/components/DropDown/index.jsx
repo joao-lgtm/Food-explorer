@@ -1,15 +1,25 @@
 import { useState } from "react";
 import { Arrow, Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from "./style";
 import { StatusBall } from "../../page/MyOrders/style";
+import { api } from "../../services/api";
 
-export function CustomSelect({ status, statusName }) {
+export function CustomSelect({ id ,status, statusName }) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState({ status: status, description: statusName });
 
-  const handleSelect = (status, description) => {
+   const handleSelect = async (status, description) => {
     setSelectedValue({ status, description });
     setIsOpen(false);
+
+
+    await api.patch('/salesOrder',  {
+      sales_order_id: id,
+      status: status
+  },{ withCredentials: true })
+
+    
   };
+  
 
   return (
     <Dropdown>
@@ -22,17 +32,21 @@ export function CustomSelect({ status, statusName }) {
       </DropdownToggle>
       {isOpen && (
         <DropdownMenu>
-          <DropdownItem onClick={() => handleSelect(0, "Cancelado")}>
+          <DropdownItem onClick={() => handleSelect(0, "Pendete de Pagamento")}>
             <StatusBall data-status={0} />
-            Cancelado
+            Pendete de Pagamento
           </DropdownItem>
-          <DropdownItem onClick={() => handleSelect(1, "Preparando")}>
+          <DropdownItem onClick={() => handleSelect(1, "Confirmação de pagamento pendete")}>
             <StatusBall data-status={1} />
-            Preparando
+            Confirmação de pagamento pendete
           </DropdownItem>
-          <DropdownItem onClick={() => handleSelect(2, "Aprovado")}>
+          <DropdownItem onClick={() => handleSelect(2, "Pagamento Aprovado")}>
             <StatusBall data-status={2} />
-            Aprovado
+            Pagamento Aprovado
+          </DropdownItem>
+          <DropdownItem onClick={() => handleSelect(3, "Pedido Entregue")}>
+            <StatusBall data-status={3} />
+            Pedido Entregue
           </DropdownItem>
         </DropdownMenu>
       )}
