@@ -2,7 +2,7 @@ import { Banner, Container, Main, TextBanner } from "./style";
 import { Header } from './../../components/Header';
 import { Footer } from "../../components/Footer";
 import BannerImg from "../../assets/pngegg 2.svg"
-import { Carousel } from "../../components/Carousel";
+import { CarouselTest } from "../../components/Carousel";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { useAuth } from "../../hooks/auth";
@@ -45,7 +45,7 @@ export function Home() {
                     </TextBanner>
                 </Banner>
                 {dishes && dishes.map(disher => (
-                    <Carousel key={disher.key} title={disher.key} disher={disher.value} />
+                    <CarouselTest key={disher.key} title={disher.key} disher={disher.value} />
                 ))}
             </Main>
             <Footer />
