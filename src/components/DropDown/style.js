@@ -7,17 +7,17 @@ export const Dropdown = styled.div`
   background-color:  ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_900 : ThemeWhite.LIGHT_100};
   border: 1px solid ${({ theme }) => theme.DARK_900};
   color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_100 : ThemeWhite.DARK_900};
-  border-radius: 4px;
+  border-radius: 0.25rem;
 `;
 
 export const DropdownToggle = styled.div`
-  padding: 10px;
+  padding: 0.625rem;
   background-color:  ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_900 : ThemeWhite.LIGHT_100};
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   width: 100%;
 
   .infos{
@@ -34,14 +34,14 @@ export const DropdownMenu = styled.div`
   width: 100%;
   background-color:  ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_900 : ThemeWhite.LIGHT_100};
   border: 1px solid ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_100 : ThemeWhite.DARK_900};
-  border-radius: 4px;
-  max-height: 200px;
+  border-radius: 0.25rem;
+  max-height: 12.5rem;
   overflow-y: auto;
   z-index: 1;
 `;
 
 export const DropdownItem = styled.div`
-  padding: 10px;
+  padding: 0.625rem;
   display: flex;
   gap: 0.5rem;
   align-items: center;
@@ -57,7 +57,7 @@ export const StatusBall = styled.div`
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 100%;
-  margin-right: 10px;
+  margin-right: 0.625rem;
 
   &[data-status="0"] {
     background-color: ${({ theme }) => theme.TOMATO_300};
@@ -80,7 +80,7 @@ export const Arrow = styled.span`
   border: solid ${({ theme }) => theme.GRAY_300};
   border-width: 0 2px 2px 0;
   display: inline-block;
-  padding: 3px;
+  padding: 0.188rem;
   transform: rotate(45deg);
   margin-left: auto;
 `;

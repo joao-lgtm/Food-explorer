@@ -9,7 +9,7 @@ import { FONTS } from '../../style/fonts';
 
 export const Container = styled.div`
     position: fixed;
-    z-index: 11; 
+    z-index: 999999; 
     width: 100%;
     height: 100vh;
     left: 0;

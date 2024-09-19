@@ -39,7 +39,7 @@ export const Banner = styled.div`
     grid-template-rows: 7.5rem;
     align-items: center;
     align-content: center;
-    border-radius: 8px;
+    border-radius: 0.5rem;
 
     div:first-child {
         width: 39.5rem;
@@ -50,7 +50,7 @@ export const Banner = styled.div`
         width: 39.5rem;
         height: 27rem;
         top: -5.313rem;
-        left: -30px;
+        left: -1.875rem;
         opacity: 1;
     }
 
@@ -82,7 +82,7 @@ export const Banner = styled.div`
         height: 16.25rem;
         align-items: center;
         align-content: center;
-        border-radius: 8px;
+        border-radius: 0.5rem;
 
         div:first-child {
             width: 32rem;
@@ -93,7 +93,7 @@ export const Banner = styled.div`
             width: 32rem;
             height: 27rem;
             top: -4.313rem;
-            left: -50px;
+            left: -3.125rem;
             opacity: 1;
         }
     }

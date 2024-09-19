@@ -3,23 +3,23 @@ import { Arrow, Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from "./s
 import { StatusBall } from "../../page/MyOrders/style";
 import { api } from "../../services/api";
 
-export function CustomSelect({ id ,status, statusName }) {
+export function CustomSelect({ id, status, statusName }) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState({ status: status, description: statusName });
 
-   const handleSelect = async (status, description) => {
+  const handleSelect = async (status, description) => {
     setSelectedValue({ status, description });
     setIsOpen(false);
 
 
-    await api.patch('/salesOrder',  {
+    await api.patch('/salesOrder', {
       sales_order_id: id,
       status: status
-  },{ withCredentials: true })
+    }, { withCredentials: true })
 
-    
+
   };
-  
+
 
   return (
     <Dropdown>
@@ -47,6 +47,10 @@ export function CustomSelect({ id ,status, statusName }) {
           <DropdownItem onClick={() => handleSelect(3, "Pedido Entregue")}>
             <StatusBall data-status={3} />
             Pedido Entregue
+          </DropdownItem>
+          <DropdownItem onClick={() => handleSelect(4, "Finalizado")}>
+            <StatusBall data-status={4} />
+            Finalizado
           </DropdownItem>
         </DropdownMenu>
       )}

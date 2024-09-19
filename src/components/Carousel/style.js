@@ -15,22 +15,11 @@ export const Container = styled.div`
         font-size:  ${FONTS.MEDIUM_200_POPPINS.SIZE};
         line-height:  ${FONTS.MEDIUM_200_POPPINS.LINEHEIGHT};
         font-weight:  ${FONTS.MEDIUM_200_POPPINS.WEIGTH};
-        margin-bottom: 15px;
-    }
-`;
-
-export const ContainerCarousel = styled.div`
-    max-width: 100%;
-    overflow-x: auto;
-    display: inline-flex;
-    gap: 1.688rem;
-
-
-    > * {
-        flex-shrink: 0;
+        margin-bottom: 0.938rem;
     }
 
-    @media (max-width:${DEVICE_BREAKPOINTS.MD}) {
-        gap: 1rem;
-    }
+
+    .carouselItem{
+    padding-right: 2.5rem
+}  
 `;

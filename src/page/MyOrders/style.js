@@ -57,7 +57,7 @@ export const Main = styled.main`
 
     .container{
         border: 1px solid ${({ theme }) => theme.DARK_1000};
-        border-radius: 8px;
+        border-radius: 0.5rem;
         @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
             border: none;
         }
@@ -65,7 +65,7 @@ export const Main = styled.main`
 
     table {
         width: 100%;
-        font-size: 16px;
+        font-size: 1rem;
         border-collapse: collapse;
         @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
             display: none;
@@ -85,7 +85,7 @@ export const Main = styled.main`
     }
 
     th, td {
-        padding: 21px 24px 21px 24px;
+        padding: 1.313rem 1.5rem 1.313rem 1.5rem ;
         text-align: left;
         border-bottom: 1px solid ${({ theme }) => theme.DARK_1000};
         border-right: 1px solid ${({ theme }) => theme.DARK_1000};
@@ -204,7 +204,10 @@ export const StatusBall = styled.div`
     }
 
     &[data-status="3"] {
-    background-color: ${({ theme }) => theme.MINT_100};
+        background-color: ${({ theme }) => theme.MINT_100};
+    }
+    &[data-status="4"] {
+    background-color: #00F0CF;
   }
 `;
 

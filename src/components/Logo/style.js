@@ -15,7 +15,7 @@ export const Container = styled.div`
         > div{
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 0.313rem;
             > img {              
                 width: ${({ imgSize }) => imgSize || "1.5rem"};
                 height: ${({ imgSize }) => imgSize || "1.5rem"};

@@ -22,7 +22,7 @@ export const Container = styled.div`
 
 export const Main = styled.main`
  grid-area: content; 
-    padding: 0 125px;
+    padding: 0 7.813rem;
 
     h2{
             color: ${({ theme }) => theme.LIGHT_100};
@@ -156,20 +156,20 @@ export const NewIgredients = styled.div`
 
 export const Buttons = styled.div`
     display: flex;
-    gap: 24px;
+    gap: 1.5rem;
     width: 100%;
 
     > button{
-        padding: 16px 0;
+        padding: 1rem 0;
         width: 100%;
     }
     @media (max-width: ${DEVICE_BREAKPOINTS.MD}){
         display: flex;
-        gap: 24px;
+        gap: 1.5rem;
         width: 100%;
 
         > button{
-            padding: 16px 0;
+            padding: 1rem 0;
             width: 100%;
         }
     }
@@ -178,7 +178,7 @@ export const Buttons = styled.div`
 
 export const ExcludeButton = styled.button`
     background-color: ${({ theme }) => theme.DARK_800};
-    border-radius: 8px;
+    border-radius: 0.5rem;
     border: none;
 
     color: ${({ theme }) => theme.LIGHT_100};

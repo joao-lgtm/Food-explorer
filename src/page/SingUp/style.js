@@ -18,9 +18,9 @@ export const Container = styled.div`
         align-items: center;
         justify-content: center;
         gap: 4.56rem;
-        margin-top: 25px;
-        margin-bottom: 25px;
-        padding: 25px;
+        margin-top: 1.563rem;
+        margin-bottom: 1.563rem;
+        padding: 1.563rem;
     }
 
     .next{

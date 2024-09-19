@@ -24,7 +24,7 @@ export const Container = styled.div`
 
 export const SelectApparence = styled.div`
     width: 100%;
-    padding: 16px 14px;
+    padding: 1rem 0.875rem;
     position: relative;
     background-color:  ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_800  : ThemeWhite.LIGHT_100};
     color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_100  : ThemeWhite.DARK_800};
@@ -37,7 +37,7 @@ export const SelectApparence = styled.div`
 
     .options{
         position: absolute;
-        top: 52px;
+        top: 3.25rem;
         left: 0;
         width: 100%;
         background-color:  ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_800  : ThemeWhite.LIGHT_100};

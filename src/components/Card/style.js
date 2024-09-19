@@ -17,7 +17,7 @@ export const Container = styled.div`
     
     
     padding: 1.5rem 1.5rem 2.875rem 1.5rem ;
-    width: 304px;
+    width: 19rem;
     height: auto;
     color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_100 : ThemeWhite.DARK_200};
 
@@ -25,10 +25,10 @@ export const Container = styled.div`
     .large-device{
         display: flex;
         justify-content: center;
-        gap: 16px;
+        gap: 1rem;
         width: 100%;
         > button {
-            width: 92px;
+            width: 5.75rem;
         }
     }
 
@@ -117,14 +117,14 @@ export const Presentation = styled.div`
     cursor: pointer; 
     
     > img {
-            width: 176px;
-            height: 176px;
+            width: 11rem;
+            height: 11rem;
         }
 
     @media (max-width: ${DEVICE_BREAKPOINTS.MD}){
         > img {
-            width: 88px;
-            height: 88px;
+            width: 5.5rem;
+            height: 5.5rem;
         }
     }
 `;
@@ -152,7 +152,7 @@ export const Description = styled.div`
     font-weight: ${FONTS.SMALLREGULAR_ROBOTO.WEIGHT};
     color: ${({ theme }) => theme.LIGHT_400};
 
-    height: 40px;
+    height: 2.5rem;
     text-align: center;
    
     color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_400 : ThemeWhite.DARK_200};

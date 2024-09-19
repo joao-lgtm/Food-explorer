@@ -8,8 +8,8 @@ export const Container = styled.div`
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 37px;
-        padding: 91px;
+        gap: 2.313rem;
+        padding: 5.688rem;
 
         > span{
             font-family: ${FONTS.BIGGERBOLD_ROBOTO.FONTFAMILY};

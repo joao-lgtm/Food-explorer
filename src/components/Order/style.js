@@ -45,7 +45,7 @@ export const Container = styled.div`
 `;
 
 export const DishesContainer = styled.div`
-    margin-top: 30px ;
+    margin-top: 1.875rem ;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -159,6 +159,7 @@ export const Remove = styled.div`
     display: flex;
     align-items: center;
     gap: .5rem;
+    cursor: pointer;
     > span {
         font-size: 0.875rem;
         color: ${({ theme }) => theme.TOMATO_300};
@@ -172,7 +173,7 @@ export const Address = styled.div`
         font-size: ${FONTS.MEDIUM_200_POPPINS.SIZE};
         font-weight: ${FONTS.MEDIUM_200_POPPINS.WEIGTH};
         line-height: ${FONTS.MEDIUM_200_POPPINS.LINEHEIGHT}; 
-        margin: 32px 0;
+        margin: 2rem 0;
     }
     div{
         display: flex;

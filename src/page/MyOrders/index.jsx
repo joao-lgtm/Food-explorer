@@ -4,7 +4,6 @@ import { Footer } from "../../components/Footer";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { dateFormatad } from "../../utils/dateFormated";
-import { useNavigate } from "react-router-dom";
 import { USER_ROLE } from "../../utils/roles";
 import { useAuth } from "../../hooks/auth";
 import { CustomSelect } from "../../components/DropDown";
@@ -42,6 +41,9 @@ export function MyOrders() {
                 break;
             case statusOrder = 3:
                 status = " Pedido Entregue"
+                break;
+            case statusOrder = 4:
+                status = "Finalizado"
                 break;
         }
 

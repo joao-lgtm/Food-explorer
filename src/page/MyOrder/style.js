@@ -56,6 +56,6 @@ export const Main = styled.main`
 
 export const DetailAndPayment = styled.div`
     display: flex;
-    gap: 60px;
+    gap: 3.75rem;
     width: 100%;
 `;

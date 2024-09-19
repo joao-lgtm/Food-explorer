@@ -22,9 +22,9 @@ export const Main = styled.div`
 
     display: flex;
     flex-direction: column;
-    gap: 47px;
+    gap: 2.938rem;
 
-    padding: 0 121px 151px 121px;
+    padding: 0 7.563rem 9.438rem 7.563rem;
 
     @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
         padding: 2.25rem 3.5rem 2.25rem 3.5rem ;

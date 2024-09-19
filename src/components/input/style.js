@@ -21,7 +21,7 @@ export const Container = styled.div`
         background:  ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_800 : ThemeWhite.LIGHT_100};
         border: 1px solid ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_800 : ThemeWhite.DARK_800};
         border-radius: 0.5rem;
-        padding: 16px 14px;
+        padding: 1rem 0.875rem;
         
     }
 `;

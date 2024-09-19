@@ -15,6 +15,7 @@ export const Container = styled.div`
     }
 
     img{
+        text-align: center;
         width: 15rem;
         padding: 1.563rem;
     }
@@ -29,7 +30,7 @@ export const Container = styled.div`
            display: block;
            position: absolute;
            z-index: 1;
-           top: 75px;
+           top: 4.375rem;
            left: -0px;
            background-color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_600 : ThemeWhite.LIGHT_100};
            color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_100 : ThemeWhite.DARK_800};
@@ -59,7 +60,8 @@ export const Container = styled.div`
             color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_100 : ThemeWhite.DARK_800};
         }
 
-        img{
+        img {
+            text-align: center;
             padding: 1.563rem;
         }
     }
@@ -70,7 +72,7 @@ export const Container = styled.div`
 `;
 
 export const PaymentContainer = styled.div`
-    margin-top: 30px ;
+    margin-top: 1.875rem ;
     border: 1px solid ${({ theme }) => theme.LIGHT_600};
     display: flex;
     flex-direction: column;
@@ -95,7 +97,7 @@ export const PaymentContainer = styled.div`
 
 export const Payment = styled.div`
     width: 100%;
-
+    text-align: center;
 
     display: ${({ $finalizePayment }) => $finalizePayment === true ? "none" : 'block'};
 `;

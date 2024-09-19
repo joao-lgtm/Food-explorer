@@ -6,7 +6,7 @@ import { ThemeBlack, ThemeWhite } from "../../style/theme";
 export const Container = styled.div`
     display: flex;
     flex-direction: row;
-    gap: 47px;
+    gap: 2.938rem;
     color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.LIGHT_300 : ThemeWhite.DARK_200};
 
 
@@ -19,7 +19,7 @@ export const Container = styled.div`
 export const Img = styled.div`
     > img {
         width: 24.375rem;
-        height: 389px;
+        height: 24.313rem;
     }
 
     @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
@@ -28,8 +28,8 @@ export const Img = styled.div`
         margin-bottom: 1rem;
 
         > img {
-            width: 263px;
-            height: 263px;
+            width: 16.438rem;
+            height: 16.438rem;
         }
     }
 `;
@@ -37,7 +37,7 @@ export const Img = styled.div`
 export const Info = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 1.5rem;
     justify-content: center;
 `;
 
@@ -103,10 +103,10 @@ export const Ingredients = styled.div`
 
 export const OrderControls = styled.div`
     display: flex;
-    gap: 33px;
+    gap: 2.063rem;
 
     > button{
-        padding: 12px 24px;
+        padding: 0.75rem 1.5rem;
     }
 
     @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {

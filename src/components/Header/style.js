@@ -45,14 +45,14 @@ export const Container = styled.header`
     }
     
     .button-receipt{
-        padding: 16px 46.5px 16px 46.5px ;
+        padding: 1rem 2.906rem 1rem 2.906rem ;
     }
 
     .logout{
         cursor: pointer;
         > svg{
-            width: 22px;
-            height: 22px;
+            width: 1.375rem;
+            height: 1.375rem;
         }
     }
 

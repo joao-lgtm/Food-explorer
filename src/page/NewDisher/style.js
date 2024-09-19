@@ -22,7 +22,7 @@ export const Container = styled.div`
 
 export const Main = styled.main`
     grid-area: content; 
-    padding: 0 125px;
+    padding: 0 7.813rem;
 
     h2{
             color: ${({ theme }) => theme.LIGHT_100};

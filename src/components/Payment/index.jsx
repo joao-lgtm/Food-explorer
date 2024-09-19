@@ -9,6 +9,7 @@ import { Button } from '../Button'
 import QRCode from '../../assets/Meu_QR_Code_Instagram.svg'
 import { PaymentStatus } from '../PaymentStatus';
 import { api } from '../../services/api';
+import { toast } from 'react-toastify';
 
 export function PaymentMethod({ paymentObservetion, setPaymentObservetion, statusOrder , id, setObservetionStatus}) {
     const [state, setState] = useState({
@@ -42,6 +43,7 @@ export function PaymentMethod({ paymentObservetion, setPaymentObservetion, statu
         },{ withCredentials: true })
         setObservetionStatus(true)
         setFinalizePayment(true);
+        toast.success("Pagamento realizado");
     }
 
     return (
