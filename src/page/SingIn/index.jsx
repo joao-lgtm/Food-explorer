@@ -1,9 +1,9 @@
 import { Button } from "../../components/Button";
-import { Input } from "../../components/Input";
 import { Container, CreateAccount, Form } from "./style";
 import { useState } from "react";
 import { useAuth } from "../../hooks/auth";
 import { Logo } from "../../components/Logo";
+import { Input } from "../../components/Input";
 
 export function SingIn() {
     const [email, setEmail] = useState("");
