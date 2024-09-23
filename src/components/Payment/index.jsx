@@ -127,6 +127,7 @@ export function PaymentMethod({ paymentObservetion, setPaymentObservetion, statu
 
                             {paymentMethod === "pix" &&
                                 <>
+                                    <h3>em breve colocaremos a função do pix enquanto isso me siga no instagram</h3>
                                     <img src={QRCode} alt="QRCode do pix" />
                                 </>
                             }
