@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Back } from "../../components/Back";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
-import { InputComponent } from "../../components/Input";
+import { InputComponent } from "../../components/InputComponets";
 import { Select } from "../../components/Select";
 import { Buttons, Container, Label, Main, NewIgredients, PreviewIMG } from "./style";
 import { FiUpload } from "react-icons/fi";

@@ -8,7 +8,7 @@ import { USER_ROLE } from "../../utils/roles";
 import { useAuth } from "../../hooks/auth";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Logo } from "../Logo";
-import { InputComponent } from "../Input";
+import { InputComponent } from "../InputComponets";
 import { CiSearch } from "react-icons/ci";
 import { Button } from './../Button';
 import { useOrder } from "../../hooks/order";

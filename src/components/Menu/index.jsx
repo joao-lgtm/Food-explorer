@@ -2,7 +2,7 @@ import { Footer } from "../Footer";
 import { Container, Header, Main } from "./style";
 import { VscClose } from "react-icons/vsc";
 import { CiSearch } from "react-icons/ci";
-import { InputComponent } from "../Input";
+import { InputComponent } from "../InputComponets";
 import { useAuth } from "../../hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { USER_ROLE } from "../../utils/roles";

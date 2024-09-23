@@ -3,7 +3,7 @@ import { Container, CreateAccount, Form } from "./style";
 import { useState } from "react";
 import { useAuth } from "../../hooks/auth";
 import { Logo } from "../../components/Logo";
-import { InputComponent } from "../../components/Input";
+import { InputComponent } from "../../components/InputComponets";
 
 export function SingIn() {
     const [email, setEmail] = useState("");

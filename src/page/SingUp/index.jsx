@@ -1,4 +1,4 @@
-import { InputComponent } from "../../components/Input";
+import { InputComponent } from "../../components/InputComponets";
 import { AccountExists, Address, Container, Form, Infos, PreviousAndNext } from "./style";
 import { Button } from "../../components/Button";
 import { useState } from "react";

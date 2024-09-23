@@ -4,7 +4,7 @@ import { PiCreditCardLight, PiPixLogoFill } from "react-icons/pi";
 import { IoClose } from "react-icons/io5";
 import { Container, PaymentMedthod, InfoCard, PaymentContainer, Payment } from './style';
 import { useState } from 'react';
-import { InputComponent } from '../Input';
+import { InputComponent } from '../InputComponets';
 import { Button } from '../Button'
 import QRCode from '../../assets/Meu_QR_Code_Instagram.svg'
 import { PaymentStatus } from '../PaymentStatus';
