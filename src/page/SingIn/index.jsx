@@ -3,7 +3,7 @@ import { Container, CreateAccount, Form } from "./style";
 import { useState } from "react";
 import { useAuth } from "../../hooks/auth";
 import { Logo } from "../../components/Logo";
-import { Input } from "../../components/Input";
+import { InputComponent } from "../../components/Input";
 
 export function SingIn() {
     const [email, setEmail] = useState("");
@@ -19,7 +19,7 @@ export function SingIn() {
             <Logo ImgSize="2.688rem" FontSize="2.328rem"/>
             <Form>
                 <h1>Faça Login</h1>
-                <Input
+                <InputComponent
                     nameInput="email"
                     label="Email"
                     placeholder="Exemplo: exemplo@exemplo.com.br"
@@ -28,7 +28,7 @@ export function SingIn() {
                     required
                     
                 />
-                 <Input
+                 <InputComponent
                     nameInput="Senha"
                     label="Senha"
                     placeholder="senha"

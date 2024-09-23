@@ -4,7 +4,7 @@ import { PiCreditCardLight, PiPixLogoFill } from "react-icons/pi";
 import { IoClose } from "react-icons/io5";
 import { Container, PaymentMedthod, InfoCard, PaymentContainer, Payment } from './style';
 import { useState } from 'react';
-import { Input } from '../Input';
+import { InputComponent } from '../Input';
 import { Button } from '../Button'
 import QRCode from '../../assets/Meu_QR_Code_Instagram.svg'
 import { PaymentStatus } from '../PaymentStatus';
@@ -75,7 +75,7 @@ export function PaymentMethod({ paymentObservetion, setPaymentObservetion, statu
 
                                     <InfoCard>
                                         <div className='card_number'>
-                                            <Input
+                                            <InputComponent
                                                 label="Número do Cartão"
                                                 type="text"
                                                 name="number"
@@ -87,7 +87,7 @@ export function PaymentMethod({ paymentObservetion, setPaymentObservetion, statu
                                             />
                                         </div>
 
-                                        <Input
+                                        <InputComponent
                                             label="Nome"
                                             type="text"
                                             name="name"
@@ -97,7 +97,7 @@ export function PaymentMethod({ paymentObservetion, setPaymentObservetion, statu
                                             onFocus={handleInputFocus}
                                         />
                                         <div className='expiry_cvc'>
-                                            <Input
+                                            <InputComponent
                                                 label="Validade"
                                                 type="text"
                                                 name="expiry"
@@ -107,7 +107,7 @@ export function PaymentMethod({ paymentObservetion, setPaymentObservetion, statu
                                                 onChange={handleInputChange}
                                                 onFocus={handleInputFocus}
                                             />
-                                            <Input
+                                            <InputComponent
                                                 label="CVC"
                                                 type="text"
                                                 name="cvc"

@@ -1,4 +1,4 @@
-import { Input } from "../../components/Input";
+import { InputComponent } from "../../components/Input";
 import { AccountExists, Address, Container, Form, Infos, PreviousAndNext } from "./style";
 import { Button } from "../../components/Button";
 import { useState } from "react";
@@ -82,14 +82,14 @@ export function SingUp() {
             <Form>
                 <h1>Crie sua conta</h1>
                 <Infos data-next={next}>
-                    <Input
+                    <InputComponent
                         nameInput="name"
                         label="Seu nome"
                         placeholder="Exemplo: Maria da Silva"
                         onChange={e => setName(e.target.value)}
                         required
                     />
-                    <Input
+                    <InputComponent
                         nameInput="email"
                         label="Email"
                         placeholder="Exemplo: exemplo@exemplo.com.br"
@@ -97,7 +97,7 @@ export function SingUp() {
                         type="email"
                         required
                     />
-                    <Input
+                    <InputComponent
                         nameInput="Senha"
                         label="Senha"
                         placeholder="No mínimo 6 caracteres"
@@ -109,7 +109,7 @@ export function SingUp() {
 
                 <Address data-next={next}>
                     <div className="addressAndZipcode">
-                        <Input
+                        <InputComponent
                             nameInput="street"
                             label="Rua"
                             value={street}
@@ -118,7 +118,7 @@ export function SingUp() {
                         />
                     </div>
                     <div className="neighborhoodAndNumber">
-                        <Input
+                        <InputComponent
                             nameInput="neighborhood"
                             label="Bairro"
                             value={neighborhood}
@@ -127,7 +127,7 @@ export function SingUp() {
                         />
                     </div>
                     <div className="neighborhoodAndNumber">
-                        <Input
+                        <InputComponent
                             nameInput="number"
                             label="Número"
                             value={number}
@@ -136,7 +136,7 @@ export function SingUp() {
                         />
                     </div>
                     <div className="neighborhoodAndNumber">
-                        <Input
+                        <InputComponent
                             nameInput="city"
                             label="Cidade"
                             value={city}
@@ -145,7 +145,7 @@ export function SingUp() {
                         />
                     </div>
                     <div className="neighborhoodAndNumber">
-                        <Input
+                        <InputComponent
                             nameInput="uf"
                             label="UF"
                             value={uf}
@@ -154,7 +154,7 @@ export function SingUp() {
                         />
                     </div>
                     <div className="addressAndZipcode">
-                        <Input
+                        <InputComponent
                             nameInput="zipcode"
                             label="CEP"
                             value={zipcode}

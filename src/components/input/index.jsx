@@ -1,6 +1,6 @@
 import { Container, InputMask } from "./style";
 
-export function Input({ nameInput, label, placeholder, icon: Icon, type, ...rest }) {
+export function InputComponent({ nameInput, label, placeholder, icon: Icon, type, ...rest }) {
 
     return (
         <Container>

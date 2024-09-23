@@ -8,7 +8,7 @@ import { USER_ROLE } from "../../utils/roles";
 import { useAuth } from "../../hooks/auth";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Logo } from "../Logo";
-import { Input } from "../Input";
+import { InputComponent } from "../Input";
 import { CiSearch } from "react-icons/ci";
 import { Button } from './../Button';
 import { useOrder } from "../../hooks/order";
@@ -66,7 +66,7 @@ export function Header({ setDisherIngredients }) {
             />
 
             <div className='search'>
-                <Input type="text" onChange={e => setDisherIngredients(e.target.value)} icon={CiSearch} placeholder="Busque por pratos ou ingredientes" />
+                <InputComponent type="text" onChange={e => setDisherIngredients(e.target.value)} icon={CiSearch} placeholder="Busque por pratos ou ingredientes" />
             </div>
 
             <div className="order-history">

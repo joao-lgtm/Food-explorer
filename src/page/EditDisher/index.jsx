@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { Back } from "../../components/Back";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
-import { Input } from "../../components/Input";
+import { InputComponent } from "../../components/Input";
 import { Select } from "../../components/Select";
-import { Buttons, Container, ExcludeButton, Label, Main, NewIgredients, PreviewIMG } from "./style";
+import { Buttons, Container, Label, Main, NewIgredients, PreviewIMG } from "./style";
 import { FiUpload } from "react-icons/fi";
 import { api } from "../../services/api";
 import { Ingredients } from "../../components/Ingredients";
@@ -201,7 +201,7 @@ export function EditDisher() {
                         </PreviewIMG>
                     )}
                     <div className="ImgAndNameAndCategory">
-                        <Input
+                        <InputComponent
                             label="Imagem do prato"
                             nameInput="Imagem do prato"
                             placeholder={file ? fileName : "selecione uma imagem"}
@@ -209,7 +209,7 @@ export function EditDisher() {
                             icon={FiUpload}
                             onChange={(e) => handleImageChange(e.target.files)}
                         />
-                        <Input
+                        <InputComponent
                             label="Nome"
                             nameInput="nome"
                             placeholder="Ex.: Salada Ceasar"
@@ -252,7 +252,7 @@ export function EditDisher() {
                                 />
                             </NewIgredients>
                         </div>
-                        <Input
+                        <InputComponent
                             label="Preço"
                             nameInput="preco"
                             placeholder="R$ 00,00"

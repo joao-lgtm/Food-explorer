@@ -2,7 +2,7 @@ import { Footer } from "../Footer";
 import { Container, Header, Main } from "./style";
 import { VscClose } from "react-icons/vsc";
 import { CiSearch } from "react-icons/ci";
-import { Input } from "../Input";
+import { InputComponent } from "../Input";
 import { useAuth } from "../../hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { USER_ROLE } from "../../utils/roles";
@@ -19,7 +19,7 @@ export function Menu({ menuIsOpen, onCloseMenu, setDisherIngredients }) {
                 <span>Menu</span>
             </Header>
             <Main>
-                <Input type="text" onChange={e => setDisherIngredients(e.target.value)} icon={CiSearch} placeholder="Busque por pratos ou ingredientes" />
+                <InputComponent type="text" onChange={e => setDisherIngredients(e.target.value)} icon={CiSearch} placeholder="Busque por pratos ou ingredientes" />
 
                 <nav>
                     <ul>
