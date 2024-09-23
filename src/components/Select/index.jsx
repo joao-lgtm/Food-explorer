@@ -3,7 +3,7 @@ import { Container, SelectApparence } from "./style";
 
 export function Select({ name, data, label, setItem, category }) {
     const [open, setOpen] = useState(false);
-    const [selectedItem, setSelectedItem] = useState(null); 
+    const [selectedItem, setSelectedItem] = useState(null);
 
     useEffect(() => {
         if (category) {
@@ -14,9 +14,9 @@ export function Select({ name, data, label, setItem, category }) {
 
     const handleItemClick = (id) => {
         const selected = data.find((item) => item.id === id);
-        setSelectedItem(selected); 
-        setItem(id); 
-        setOpen(false); 
+        setSelectedItem(selected);
+        setItem(id);
+        setOpen(false);
     };
 
     return (
@@ -30,7 +30,7 @@ export function Select({ name, data, label, setItem, category }) {
                             <div>{selectedItem ? selectedItem.name : "Selecione uma categoria"}</div>
                             <div className="options">
                                 {data && data.map((item) => (
-                                    <div key={item.id} onClick={() => handleItemClick(item.id)}>
+                                    <div className="itens" key={item.id} onClick={() => handleItemClick(item.id)}>
                                         {item.name}
                                     </div>
                                 ))}
@@ -39,7 +39,7 @@ export function Select({ name, data, label, setItem, category }) {
                     ) : selectedItem ? selectedItem.name : "Selecione uma categoria"
                 }
             </SelectApparence>
-        
+
         </Container>
     );
 }
