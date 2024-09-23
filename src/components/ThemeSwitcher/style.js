@@ -1,5 +1,6 @@
 import sunPath from "../../assets/sun.svg";
 import moonPath from "../../assets/moon.svg";
+import styled from "styled-components";
 
 export const Container = styled.div`
     border: 2px solid red;
