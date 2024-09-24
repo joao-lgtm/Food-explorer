@@ -1,27 +1,25 @@
-import sunPath from "../../assets/sun.svg";
-import moonPath from "../../assets/moon.svg";
 import styled from "styled-components";
+import { ThemeBlack, ThemeWhite } from "../../style/theme";
 
 export const Container = styled.div`
-    border: 2px solid red;
-    padding: 0.31rem;
-    border-radius: 0.625rem;
-    width: 4.5rem;
-    background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  
+  // Estilo baseado no tema
+  background-color: ${({ theme }) => theme === ThemeBlack ? ThemeBlack.DARK_800  : ThemeWhite. LIGHT_100};
+  color: #fff;
 
-    > div {
-        background-image: url(${sunPath}); // Agora utilizando a variável sunPath
-        background-repeat: no-repeat;
-        background-position: center;
-        width: 5px;
-        padding: 0.925rem;
-        border-radius: 50%;
-        transform: translateX(0%);
-        transition: transform 1s ease-in-out;
+  div {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #555;
+    transition: background-color 0.3s ease;
 
-        &[data-theme-mode="true"] {
-            background-image: url(${moonPath}); // Usando moonPath
-            transform: translateX(100%);
-        }
+    &:hover {
+      background-color:#666;
     }
+  }
 `;

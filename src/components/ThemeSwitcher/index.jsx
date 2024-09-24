@@ -6,7 +6,9 @@ export function ThemeSwitcher() {
     
     return (
         <Container>
-            <div onClick={handleThemeSwitch} data-theme-mode={theme}></div>
+            <div onClick={handleThemeSwitch}>
+                {theme === true ? "🌚 Dark Mode" : "🌞 Light Mode"  }
+            </div>
         </Container>
     )
 }
