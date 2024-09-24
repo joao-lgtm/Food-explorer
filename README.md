@@ -6,6 +6,8 @@
 
 <p align="center"><img src="https://img.shields.io/badge/Node-v18.12.0-blue" alt="shields"><img src="https://img.shields.io/badge/NPM-v8.19.2-green" alt="shields"></p>
 
+<p>online em <a href="https://foodexplorer-api-z0vq.onrender.com](https://dapper-phoenix-9bf0cb.netlify.app/">Food Explorer</a></p>
+
  <h2>Project Screenshots:</h2>
 
 <img src="https://media.discordapp.net/attachments/1037719224107405415/1287838188294901895/image.png?ex=66f3a906&amp;is=66f25786&amp;hm=ff5151f05382d1b90b8b4c548354d772395c8953b5a74520ce31f49aae6228b5&amp;=&amp;format=webp&amp;quality=lossless&amp;width=1259&amp;height=592" alt="project-screenshot" width="1259" height="592/">
