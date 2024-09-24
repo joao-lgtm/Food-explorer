@@ -6,8 +6,12 @@
 
 <p align="center"><img src="https://img.shields.io/badge/Node-v18.12.0-blue" alt="shields"><img src="https://img.shields.io/badge/NPM-v8.19.2-green" alt="shields"></p>
 
-  
-  
+ <h2>Project Screenshots:</h2>
+
+<img src="https://media.discordapp.net/attachments/1037719224107405415/1287838188294901895/image.png?ex=66f3a906&amp;is=66f25786&amp;hm=ff5151f05382d1b90b8b4c548354d772395c8953b5a74520ce31f49aae6228b5&amp;=&amp;format=webp&amp;quality=lossless&amp;width=1259&amp;height=592" alt="project-screenshot" width="1259" height="592/">
+
+<img align="center" src="https://media.discordapp.net/attachments/1037719224107405415/1288123769646223424/image.png?ex=66f40a3e&amp;is=66f2b8be&amp;hm=01e00f8d2c862a7ec5ac331e5d318c75659525e50d484a6509abc5256840edec&amp;=&amp;format=webp&amp;quality=lossless&amp;width=231&amp;height=591" alt="project-screenshot" width="231" height="591/">
+
 <h2>🧐 Features</h2>
 
 Here're some of the project's best features:
