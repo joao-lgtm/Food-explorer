@@ -6,7 +6,7 @@
 
 <p align="center"><img src="https://img.shields.io/badge/Node-v18.12.0-blue" alt="shields"><img src="https://img.shields.io/badge/NPM-v8.19.2-green" alt="shields"></p>
 
-<p>online em <a href="https://foodexplorer-api-z0vq.onrender.com](https://dapper-phoenix-9bf0cb.netlify.app/">Food Explorer</a></p>
+<p>online em <a href="https://dapper-phoenix-9bf0cb.netlify.app">Food Explorer</a></p>
 
  <h2>Project Screenshots:</h2>
 
